@@ -15,14 +15,10 @@ import Project from "./Project";
 // Budget-tracker
 // React-Employee Directory]
 
-
-
 const Portfolio = () => {
   return (
-    <Grid 
-    container 
-    justify="space-around" 
-    spacing={2}>
+    <div>
+    <Grid container justify="space-around" spacing={2}>
       <Grid item xs={4}>
         <Project />
       </Grid>
@@ -33,6 +29,41 @@ const Portfolio = () => {
         <Project />
       </Grid>
     </Grid>
+    <Grid container justify="space-around" spacing={2}>
+      <Grid item xs={4}>
+        <Project />
+      </Grid>
+      <Grid item xs={4}>
+        <Project />
+      </Grid>
+      <Grid item xs={4}>
+        <Project />
+      </Grid>
+    </Grid>
+    <Grid container justify="space-around" spacing={2}>
+      <Grid item xs={4}>
+        <Project />
+      </Grid>
+      <Grid item xs={4}>
+        <Project />
+      </Grid>
+      <Grid item xs={4}>
+        <Project />
+      </Grid>
+    </Grid>
+    <Grid container justify="space-around" spacing={2}>
+      <Grid item xs={4}>
+        <Project />
+      </Grid>
+      <Grid item xs={4}>
+        <Project />
+      </Grid>
+      <Grid item xs={4}>
+        <Project />
+      </Grid>
+    </Grid>
+      </div>
+    
   );
 };
 
