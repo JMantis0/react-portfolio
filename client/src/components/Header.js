@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -6,13 +6,39 @@ import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { makeStyles } from "@material-ui/core/styles";
+import {
+  BrowserRouter as Router,
+  Route,
+  useLocation,
+  Redirect,
+  useHistory
+} from "react-router-dom";
 
-const Header = ({ tabState, setTabState }) => {
+const useStyles = makeStyles({
+  activeTab: {
+    color: "white",
+  },
+  inactiveTab: {
+    color: "gray",
+  },
+});
+
+const Header = (props) => {
+  //  used for styling components
+  const history = useHistory();
+  const classes = useStyles();
+  const location = useLocation();
+  const [tabState, setTabState] = useState("/");
+
+  //  When the tabState changes, history.push sets the route
+  useEffect(() => {
+    history.push(tabState);
+  }, [tabState]);
+
   //  use setTabState prop from App.js to route.
 
   const handleChange = (event, newValue) => {
-    console.log("newValue", newValue);
     setTabState(newValue);
   };
 
@@ -20,35 +46,24 @@ const Header = ({ tabState, setTabState }) => {
     <div>
       <AppBar position="static">
         <Toolbar>
-          <IconButton
-            edge="start"
-            // className={classes.menuButton}
-            color="inherit"
-            aria-label="menu"
-          >
+          <IconButton edge="start" color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            // className={classes.title}
-          >
-            Jesse Mazur
-          </Typography>
+          <Typography variant="h6">Jesse Mazur</Typography>
         </Toolbar>
         <Tabs
           value={tabState}
           onChange={handleChange}
           aria-label="header navigation tabs"
         >
-          <Link to="/">
-            <Tab value="/" label="Home" onClick={() => console.log("home")} />
-          </Link>
-          <Link to="/portfolio">
-            <Tab value="/portfolio" label="Portfolio" />
-          </Link>
-          <Link to="/about">
-            <Tab value="/about" label="About" />
-          </Link>
+          <Tab
+            className={classes.inactiveTab}
+            value="/"
+            label="Home"
+            onClick={() => console.log("home")}
+          />
+          <Tab value="/portfolio" label="Portfolio" />
+          <Tab value="/about" label="About" />
         </Tabs>
       </AppBar>
 
