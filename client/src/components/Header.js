@@ -40,9 +40,15 @@ const Header = ({ tabState, setTabState }) => {
           onChange={handleChange}
           aria-label="header navigation tabs"
         >
-          <Tab value="/" label="Home" onClick={() => console.log("home")} />
-          <Tab value="/portfolio" label="Portfolio" />
-          <Tab value="/about" label="About" />
+          <Link to="/">
+            <Tab value="/" label="Home" onClick={() => console.log("home")} />
+          </Link>
+          <Link to="/portfolio">
+            <Tab value="/portfolio" label="Portfolio" />
+          </Link>
+          <Link to="/about">
+            <Tab value="/about" label="About" />
+          </Link>
         </Tabs>
       </AppBar>
 
