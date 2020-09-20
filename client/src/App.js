@@ -1,22 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Header from "./components/Header";
+import Home from "./components/Home";
 import Portfolio from "./components/Portfolio";
 import About from "./components/About";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 function App() {
-  const [tabState, setTabState] = useState("/");
-
-  useEffect(() => {
-    console.log("the tab state has changed to: ", tabState);
-  }, [tabState]);
-
   return (
     <div className="App">
       <CssBaseline />
       <Router>
-        <Header tabState={tabState} setTabState={setTabState} />
-        <Route path="/" />
+        <Header />
+        <Route exact path="/">
+          <Home />
+        </Route>
         <Route exact path="/portfolio">
           <Portfolio />
         </Route>
