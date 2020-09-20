@@ -57,10 +57,8 @@ const Header = (props) => {
           aria-label="header navigation tabs"
         >
           <Tab
-            className={classes.inactiveTab}
             value="/"
             label="Home"
-            onClick={() => console.log("home")}
           />
           <Tab value="/portfolio" label="Portfolio" />
           <Tab value="/about" label="About" />
