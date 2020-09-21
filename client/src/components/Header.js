@@ -27,6 +27,11 @@ const useStyles = makeStyles({
     backgroundColor: "#92A8A8",
     padding: "5rem 0 0 0",
   },
+  headerImage: {
+    width: "250px",
+    height: "250px",
+    marginRight: "50%"
+  }
 });
 
 const Header = (props) => {
@@ -55,7 +60,11 @@ const Header = (props) => {
           </IconButton>
           <Typography variant="h6">Jesse Mazur</Typography>
         </Toolbar> */}
-      <Grid container justify="flex-end">
+
+      <Grid id="tabsGrid?" container justify="flex-end">
+        <Grid item>
+          <img className={classes.headerImage} src={require("../assets/react-portfolio-draft-image.png")}></img>
+        </Grid>
         <Tabs
           value={tabState}
           onChange={handleChange}
@@ -66,6 +75,7 @@ const Header = (props) => {
           <Tab value="/about" label="About" />
         </Tabs>
       </Grid>
+
       <div>This is the banner</div>
     </AppBar>
   );
