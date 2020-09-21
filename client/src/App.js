@@ -36,6 +36,9 @@ function App() {
         <Route exact path="/about">
           <About />
         </Route>
+        <Route exact path="/contact">
+          Contact
+        </Route>
       </Router>
     </Grid>
   );

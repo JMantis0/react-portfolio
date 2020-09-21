@@ -25,13 +25,18 @@ const useStyles = makeStyles({
   },
   appBar: {
     backgroundColor: "#92A8A8",
-    padding: "5rem 0 0 0",
+    padding: "2px 0 0 0",
   },
   headerImage: {
     width: "250px",
     height: "250px",
-    marginRight: "50%"
-  }
+    position: "relative",
+    top: "150px",
+    left: "50px",
+  },
+  tabsGridItem: {
+    width: "100%",
+  },
 });
 
 const Header = (props) => {
@@ -61,19 +66,25 @@ const Header = (props) => {
           <Typography variant="h6">Jesse Mazur</Typography>
         </Toolbar> */}
 
-      <Grid id="tabsGrid?" container justify="flex-end">
-        <Grid item>
-          <img className={classes.headerImage} src={require("../assets/react-portfolio-draft-image.png")}></img>
+      
+        <img
+          className={classes.headerImage}
+          src={require("../assets/react-portfolio-draft-image.png")}
+        ></img>
+
+      <Grid className={classes.tabsGridItem} item>
+        <Grid id="tabsGrid?" container justify="flex-end">
+          <Tabs
+            value={tabState}
+            onChange={handleChange}
+            aria-label="header navigation tabs"
+          >
+            <Tab value="/" label="Home" />
+            <Tab value="/portfolio" label="Portfolio" />
+            <Tab value="/about" label="About" />
+            <Tab value="/contact" label="Contact" />
+          </Tabs>
         </Grid>
-        <Tabs
-          value={tabState}
-          onChange={handleChange}
-          aria-label="header navigation tabs"
-        >
-          <Tab value="/" label="Home" />
-          <Tab value="/portfolio" label="Portfolio" />
-          <Tab value="/about" label="About" />
-        </Tabs>
       </Grid>
 
       <div>This is the banner</div>
