@@ -4,7 +4,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
-import Grid from "@material-ui/core/Grid"
+import Grid from "@material-ui/core/Grid";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { makeStyles } from "@material-ui/core/styles";
@@ -61,14 +61,12 @@ const Header = (props) => {
           onChange={handleChange}
           aria-label="header navigation tabs"
         >
-          <Grid item>
           <Tab value="/" label="Home" />
-          </Grid>
           <Tab value="/portfolio" label="Portfolio" />
           <Tab value="/about" label="About" />
         </Tabs>
       </Grid>
-        <div>This is the banner</div>
+      <div>This is the banner</div>
     </AppBar>
   );
 };
