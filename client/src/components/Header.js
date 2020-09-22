@@ -65,7 +65,7 @@ const Header = (props) => {
         <AppBar className={classes.appBar} position="static">
           <img
             className={classes.headerImage}
-            src={require("../assets/react-portfolio-draft-image.png")}
+            // src={require("../assets/react-portfolio-draft-image.png")}
           ></img>
 
           <Grid className={classes.tabsGridItem} item>
