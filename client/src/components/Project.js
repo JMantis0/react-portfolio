@@ -6,7 +6,7 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
-import Typogrophy from "@material-ui/core/Typography";
+import Typography from "@material-ui/core/Typography";
 import Paper from "@material-ui/core/Paper";
 
 //I'd like this to cause a modal to pop up when clicked on.  otherwise
@@ -34,7 +34,23 @@ const Project = () => {
         image={require("../assets/high-scores.png")}
         title="High Scores"
         />
+        <CardContent>
+          <Typography gutterBottom variant="h5" component="h2">
+            High Scores
+          </Typography>
+          <Typography variant="body2" color="textSecondary" component="p">
+            This is a description of the project.  Blah blah and stuff and things.
+          </Typography>
+        </CardContent>
       </CardActionArea>
+      <CardActions>
+        <Button size="small" color="primary">
+          Click
+        </Button>
+        <Button size="small" color="primary">
+          Learn more
+        </Button>
+      </CardActions>
     </Card>
   );
 };
