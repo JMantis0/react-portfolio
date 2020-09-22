@@ -17,11 +17,12 @@ import {
 } from "react-router-dom";
 
 const useStyles = makeStyles({
-  activeTab: {
-    color: "white",
+  headerBanner: {
+    marginTop: "150px",
+    marginBottom: "150px",
   },
-  inactiveTab: {
-    color: "gray",
+  bannerParagraph: {
+    margin: 0,
   },
   appBar: {
     backgroundColor: "#92A8A8",
@@ -58,37 +59,51 @@ const Header = (props) => {
   };
 
   return (
-    <AppBar className={classes.appBar} position="static">
-      {/* <Toolbar>
+    <Grid container>
+      <AppBar className={classes.appBar} position="static">
+        {/* <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="menu">
             <MenuIcon />
           </IconButton>
           <Typography variant="h6">Jesse Mazur</Typography>
         </Toolbar> */}
 
-      
         <img
           className={classes.headerImage}
           src={require("../assets/react-portfolio-draft-image.png")}
         ></img>
 
-      <Grid className={classes.tabsGridItem} item>
-        <Grid id="tabsGrid?" container justify="flex-end">
-          <Tabs
-            value={tabState}
-            onChange={handleChange}
-            aria-label="header navigation tabs"
-          >
-            <Tab value="/" label="Home" />
-            <Tab value="/portfolio" label="Portfolio" />
-            <Tab value="/about" label="About" />
-            <Tab value="/contact" label="Contact" />
-          </Tabs>
+        <Grid className={classes.tabsGridItem} item>
+          <Grid id="tabsGrid?" container justify="flex-end">
+            <Tabs
+              value={tabState}
+              onChange={handleChange}
+              aria-label="header navigation tabs"
+            >
+              <Tab value="/" label="Home" />
+              <Tab value="/portfolio" label="Portfolio" />
+              <Tab value="/about" label="About" />
+              <Tab value="/contact" label="Contact" />
+            </Tabs>
+          </Grid>
+        </Grid>
+
+        <div>This is the banner</div>
+      </AppBar>
+      <Grid container>
+        <Grid item className={classes.headerBanner} item>
+          <Typography variant="h4" align="center">
+            <p className={classes.bannerParagraph}>
+              Burgeoning Web Designer & Developer based in Seattle, Washington.
+            </p>
+            <p>
+              Experienced in designing & developing MERN applications.
+            </p>
+          </Typography>
+          Washington.
         </Grid>
       </Grid>
-
-      <div>This is the banner</div>
-    </AppBar>
+    </Grid>
   );
 };
 
