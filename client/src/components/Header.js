@@ -61,13 +61,6 @@ const Header = (props) => {
   return (
     <Grid container>
       <AppBar className={classes.appBar} position="static">
-        {/* <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6">Jesse Mazur</Typography>
-        </Toolbar> */}
-
         <img
           className={classes.headerImage}
           src={require("../assets/react-portfolio-draft-image.png")}
@@ -87,8 +80,6 @@ const Header = (props) => {
             </Tabs>
           </Grid>
         </Grid>
-
-        <div>This is the banner</div>
       </AppBar>
       <Grid container>
         <Grid item className={classes.headerBanner} item>
@@ -96,11 +87,8 @@ const Header = (props) => {
             <p className={classes.bannerParagraph}>
               Burgeoning Web Designer & Developer based in Seattle, Washington.
             </p>
-            <p>
-              Experienced in designing & developing MERN applications.
-            </p>
+            <p>Experienced in designing & developing MERN applications.</p>
           </Typography>
-          Washington.
         </Grid>
       </Grid>
     </Grid>
