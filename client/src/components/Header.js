@@ -4,6 +4,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import Grid from "@material-ui/core/Grid";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { makeStyles } from "@material-ui/core/styles";
@@ -12,15 +13,31 @@ import {
   Route,
   useLocation,
   Redirect,
-  useHistory
+  useHistory,
 } from "react-router-dom";
 
 const useStyles = makeStyles({
-  activeTab: {
-    color: "white",
+  headerBanner: {
+    marginTop: "150px",
+    marginBottom: "150px",
+    width: "100%"
   },
-  inactiveTab: {
-    color: "gray",
+  bannerParagraph: {
+    margin: 0,
+  },
+  appBar: {
+    backgroundColor: "#92A8A8",
+    padding: "2px 0 0 0",
+  },
+  headerImage: {
+    width: "250px",
+    height: "250px",
+    position: "relative",
+    top: "150px",
+    left: "50px",
+  },
+  tabsGridItem: {
+    width: "100%",
   },
 });
 
@@ -43,32 +60,41 @@ const Header = (props) => {
   };
 
   return (
-    <div>
-      <AppBar position="static">
-        <Toolbar>
-          <IconButton edge="start" color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6">Jesse Mazur</Typography>
-        </Toolbar>
-        <Tabs
-          value={tabState}
-          onChange={handleChange}
-          aria-label="header navigation tabs"
-        >
-          <Tab
-            value="/"
-            label="Home"
-          />
-          <Tab value="/portfolio" label="Portfolio" />
-          <Tab value="/about" label="About" />
-        </Tabs>
-      </AppBar>
+    <Grid container>
+      <Grid container>
+        <AppBar className={classes.appBar} position="static">
+          <img
+            className={classes.headerImage}
+            // src={require("../assets/react-portfolio-draft-image.png")}
+          ></img>
 
-      <Router>
-        <Route></Route>
-      </Router>
-    </div>
+          <Grid className={classes.tabsGridItem} item>
+            <Grid id="tabsGrid?" container justify="flex-end">
+              <Tabs
+                value={tabState}
+                onChange={handleChange}
+                aria-label="header navigation tabs"
+              >
+                <Tab value="/" label="Home" />
+                <Tab value="/portfolio" label="Portfolio" />
+                <Tab value="/about" label="About" />
+                <Tab value="/contact" label="Contact" />
+              </Tabs>
+            </Grid>
+          </Grid>
+        </AppBar>
+      </Grid>
+      <Grid container>
+        <Grid className={classes.headerBanner} item>
+          <Typography variant="h4" align="center">
+            <p className={classes.bannerParagraph}>
+              Burgeoning Web Designer & Developer based in Seattle, Washington.
+            </p>
+            <p>Experienced in designing & developing MERN applications.</p>
+          </Typography>
+        </Grid>
+      </Grid>
+    </Grid>
   );
 };
 
