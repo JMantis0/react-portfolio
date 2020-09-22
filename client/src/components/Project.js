@@ -31,7 +31,7 @@ const Project = () => {
       <CardActionArea>
         <CardMedia
         className={classes.media}
-        image="../assets/high-scores.png"
+        image={require("../assets/high-scores.png")}
         title="High Scores"
         />
       </CardActionArea>
