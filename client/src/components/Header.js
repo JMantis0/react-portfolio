@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { makeStyles } from "@material-ui/core/styles";
+import { borders } from "@material-ui/system";
 import {
   BrowserRouter as Router,
   Route,
@@ -37,8 +38,8 @@ const useStyles = makeStyles({
     width: "100%",
   },
   tab: {
-    textTransform: "capitalize"
-  }
+    textTransform: "capitalize",
+  },
 });
 
 const Header = (props) => {
@@ -65,7 +66,7 @@ const Header = (props) => {
         <AppBar className={classes.appBar} position="static">
           <img
             className={classes.headerImage}
-            // src={require("../assets/react-portfolio-draft-image.png")}
+            src={require("../assets/react-portfolio-draft-image.png")}
           ></img>
 
           <Grid className={classes.tabsGridItem} item>
@@ -76,7 +77,11 @@ const Header = (props) => {
                 aria-label="header navigation tabs"
               >
                 <Tab className={classes.tab} value="/" label="Home" />
-                <Tab className={classes.tab} value="/portfolio" label="Portfolio" />
+                <Tab
+                  className={classes.tab}
+                  value="/portfolio"
+                  label="Portfolio"
+                />
                 <Tab className={classes.tab} value="/about" label="About" />
                 <Tab className={classes.tab} value="/contact" label="Contact" />
               </Tabs>
