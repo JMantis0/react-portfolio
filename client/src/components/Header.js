@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
 import Grid from "@material-ui/core/Grid";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
@@ -12,7 +9,6 @@ import {
   BrowserRouter as Router,
   Route,
   useLocation,
-  Redirect,
   useHistory,
 } from "react-router-dom";
 
@@ -20,7 +16,7 @@ const useStyles = makeStyles({
   headerBanner: {
     marginTop: "150px",
     marginBottom: "150px",
-    width: "100%"
+    width: "100%",
   },
   bannerParagraph: {
     margin: 0,
@@ -28,6 +24,7 @@ const useStyles = makeStyles({
   appBar: {
     backgroundColor: "#92A8A8",
     padding: "2px 0 0 0",
+    height: "150px",
   },
   headerImage: {
     width: "250px",
@@ -39,6 +36,9 @@ const useStyles = makeStyles({
   tabsGridItem: {
     width: "100%",
   },
+  tab: {
+    textTransform: "capitalize"
+  }
 });
 
 const Header = (props) => {
@@ -75,10 +75,10 @@ const Header = (props) => {
                 onChange={handleChange}
                 aria-label="header navigation tabs"
               >
-                <Tab value="/" label="Home" />
-                <Tab value="/portfolio" label="Portfolio" />
-                <Tab value="/about" label="About" />
-                <Tab value="/contact" label="Contact" />
+                <Tab className={classes.tab} value="/" label="Home" />
+                <Tab className={classes.tab} value="/portfolio" label="Portfolio" />
+                <Tab className={classes.tab} value="/about" label="About" />
+                <Tab className={classes.tab} value="/contact" label="Contact" />
               </Tabs>
             </Grid>
           </Grid>
