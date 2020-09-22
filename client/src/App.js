@@ -4,9 +4,9 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Header from "./components/Header";
-import Home from "./components/Home";
-import Portfolio from "./components/Portfolio";
-import About from "./components/About";
+import Home from "./pages/Home";
+import Portfolio from "./pages/Portfolio";
+import About from "./pages/About";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {

@@ -20,6 +20,7 @@ const useStyles = makeStyles({
   headerBanner: {
     marginTop: "150px",
     marginBottom: "150px",
+    width: "100%"
   },
   bannerParagraph: {
     margin: 0,
@@ -60,29 +61,31 @@ const Header = (props) => {
 
   return (
     <Grid container>
-      <AppBar className={classes.appBar} position="static">
-        <img
-          className={classes.headerImage}
-          src={require("../assets/react-portfolio-draft-image.png")}
-        ></img>
-
-        <Grid className={classes.tabsGridItem} item>
-          <Grid id="tabsGrid?" container justify="flex-end">
-            <Tabs
-              value={tabState}
-              onChange={handleChange}
-              aria-label="header navigation tabs"
-            >
-              <Tab value="/" label="Home" />
-              <Tab value="/portfolio" label="Portfolio" />
-              <Tab value="/about" label="About" />
-              <Tab value="/contact" label="Contact" />
-            </Tabs>
-          </Grid>
-        </Grid>
-      </AppBar>
       <Grid container>
-        <Grid item className={classes.headerBanner} item>
+        <AppBar className={classes.appBar} position="static">
+          <img
+            className={classes.headerImage}
+            src={require("../assets/react-portfolio-draft-image.png")}
+          ></img>
+
+          <Grid className={classes.tabsGridItem} item>
+            <Grid id="tabsGrid?" container justify="flex-end">
+              <Tabs
+                value={tabState}
+                onChange={handleChange}
+                aria-label="header navigation tabs"
+              >
+                <Tab value="/" label="Home" />
+                <Tab value="/portfolio" label="Portfolio" />
+                <Tab value="/about" label="About" />
+                <Tab value="/contact" label="Contact" />
+              </Tabs>
+            </Grid>
+          </Grid>
+        </AppBar>
+      </Grid>
+      <Grid container>
+        <Grid className={classes.headerBanner} item>
           <Typography variant="h4" align="center">
             <p className={classes.bannerParagraph}>
               Burgeoning Web Designer & Developer based in Seattle, Washington.

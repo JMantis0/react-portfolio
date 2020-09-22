@@ -1,6 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import Project from "./Project";
+import Project from "../components/Project";
 
 //  Portfolio contains a grid setup that displays Projects
 
