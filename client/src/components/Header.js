@@ -23,13 +23,13 @@ const useStyles = makeStyles({
     margin: 0,
   },
   appBar: {
-    backgroundColor: "#92A8A8",
+    backgroundColor: "#eeeeee",
     padding: "2px 0 0 0",
-    height: "150px",
+    height: "250px",
   },
   headerImage: {
-    width: "250px",
-    height: "250px",
+    width: "175px",
+    height: "175px",
     position: "relative",
     top: "150px",
     left: "50px",
@@ -39,6 +39,7 @@ const useStyles = makeStyles({
   },
   tab: {
     textTransform: "capitalize",
+    color: "black"
   },
 });
 
