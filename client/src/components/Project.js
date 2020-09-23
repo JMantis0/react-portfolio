@@ -13,6 +13,33 @@ import Paper from "@material-ui/core/Paper";
 //  has a screenshot with a banner
 // Image
 //  Link?
+const projectData = {
+  javaScriptQuiz: {
+    deployedLink: "https://jmantis0.github.io/depth-of-knowledge-javascript-edition/",
+    gitHubRepoLink: "https://github.com/JMantis0/depth-of-knowledge-javascript-edition",
+    cardImage: "../assets/javascript-quiz.jpg",
+    description: "Interactive browser based application featuring jQuery DOM manipulation, dynamic CSS, Bootstrap Framework, data-attributes, and local storage."
+  },
+  weatherDashBoard: {
+    deployedLink: "https://jmantis0.github.io/weather-dashboard/",
+    gitHubRepoLink: "http://github.com/JMantis0/weather-dashboard",
+    cardImage: "../assets/w-dashboard.png",
+    description: "Browser based weather forecast application featuring data called from the OpenWeatherMaps api. "
+  },
+  workDayScheduler: {
+    deployedLink: "https://jmantis0.githubio/work-day-scheduler",
+    gitHubRepoLink: "",
+    cardImage: "",
+    description: "",
+  },
+  budgetTracker: {
+    deployedLink: "",
+    gitHubRepoLink: "",
+    cardImage: "",
+    description: "",
+  },
+
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
