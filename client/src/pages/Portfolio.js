@@ -26,7 +26,7 @@ const projectData = {
       "https://jmantis0.github.io/depth-of-knowledge-javascript-edition/",
     gitHubRepoLink:
       "https://github.com/JMantis0/depth-of-knowledge-javascript-edition",
-    cardImage: "/javascript-quiz.jpg",
+    cardImage: "/images/javascript-quiz.jpg",
     description:
       "Interactive browser based application featuring jQuery DOM manipulation, dynamic CSS, Bootstrap Framework, data-attributes, and local storage.",
   },
@@ -34,7 +34,7 @@ const projectData = {
     title: "Weather Dashboard",
     deployedLink: "https://jmantis0.github.io/weather-dashboard/",
     gitHubRepoLink: "http://github.com/JMantis0/weather-dashboard",
-    cardImage: "/w-dashboard.png",
+    cardImage: "/images/w-dashboard.png",
     description:
       "Browser based weather forecast application featuring data called from the OpenWeatherMaps api. ",
   },
@@ -42,7 +42,7 @@ const projectData = {
     title: "Work Day Scheduler",
     deployedLink: "https://jmantis0.githubio/work-day-scheduler",
     gitHubRepoLink: "https://github.com/JMantis0/work-day-scheduler",
-    cardImage: "/wd-scheduler.JPG",
+    cardImage: "/images/wd-scheduler.JPG",
     description:
       "Task management scheduler application featuring mobile responsive design, dynamic appearance, data storage, css animations, and sound.",
   },
@@ -50,7 +50,7 @@ const projectData = {
     title: "Budget Tracker",
     deployedLink: "https://jbudget-tracker.herokuapp.com/",
     gitHubRepoLink: "https://github.com/JMantis0/budget-tracker",
-    cardImage: "/budget-tracker.JPG",
+    cardImage: "/images/budget-tracker.JPG",
     description:
       "Full Stack progressive web application.  MongoDB, Sequelize, IndexedDB, PWA (look at other things)",
   },
