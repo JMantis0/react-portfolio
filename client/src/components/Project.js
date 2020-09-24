@@ -40,7 +40,7 @@ console.log(
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={require(cardImage)}
+          image={cardImage}
           title={projectTitle}
         />
         <CardContent>
