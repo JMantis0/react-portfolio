@@ -5,13 +5,8 @@ import Project from "../components/Project";
 //  Portfolio contains a grid setup that displays Projects
 
 //Pick which projects to feature
-// Javascript quiz
-// Weather Dashboard
-// Employee Management System
-// Employee Management CLI
-// readme-generator
-// work-day scheduler
 // Brewr
+// European translation map
 // Budget-tracker
 // React-Employee Directory]
 
@@ -38,6 +33,13 @@ const projectData = {
     description:
       "Browser based weather forecast application featuring data called from the OpenWeatherMaps api. ",
   },
+  euroTranslationMap: {
+    title: "European Translation Map",
+    deployedLink: "https://progharrison234.github.io/european-translation-map/",
+    gitHubRepoLink: "https://github.com/ProgHarrison234/european-translation-map",
+    cardImage: "/images/eurotrans.gif",
+    description: "This web application provides travelers and language enthusiasts alike a tool that translates words from english into several European languages and displays the translations according to their geographic location."
+  },
   workDayScheduler: {
     title: "Work Day Scheduler",
     deployedLink: "https://jmantis0.githubio/work-day-scheduler",
@@ -54,6 +56,29 @@ const projectData = {
     description:
       "Full Stack progressive web application.  MongoDB, Sequelize, IndexedDB, PWA (look at other things)",
   },
+  employeeManagementCLI: {
+    title: " CLI",
+    deployedLink: "",
+    gitHubRepoLink: "https://github.com/JMantis0/Employee-Manager_CLI",
+    cardImage: "/images/cli.JPG",
+    description: "Employee Management App that allows users to quickly draft development teams and generate a website of its roster, featuring Javascript Classes, npm inquirer, and html writing technologies"
+  },
+  employeeManagementSystem: {
+    title: "Employee Database Manager",
+    deployedLink: "",
+    gitHubRepoLink: "https://hithub.com/Jmantis0/Employee-Management-System",
+    cardImage: "/images/emp-dbs-system.JPG",
+    description: "Command Line Employee Database Manager and information interface featuring crud functionality with a MySQL database"
+  },
+  readmeGenerator : {
+    title: "Readme Generator",
+    deployedLink: "",
+    gitHubRepoLink: "https://github.com/JMantis0/readme-generator",
+    cardImage: "/images/readme-generator.JPG",
+    description: "Command line node application that aids developers in generating quality readme files for GitHub Repositories"
+  },
+
+
 };
 
 const Portfolio = () => {
