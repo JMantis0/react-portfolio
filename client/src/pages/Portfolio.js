@@ -51,7 +51,8 @@ const projectData = {
     deployedLink: "https://jbudget-tracker.herokuapp.com/",
     gitHubRepoLink: "https://github.com/JMantis0/budget-tracker",
     cardImage: "../assets/budget-tracker.JPG",
-    description: "",
+    description:
+      "Full Stack progressive web application.  MongoDB, Sequelize, IndexedDB, PWA (look at other things)",
   },
 };
 
@@ -62,16 +63,19 @@ const Portfolio = () => {
   );
   return (
     <div>
-      <Grid container justify="space-around" spacing={2}>
+      {/* Need to make the height of each project uniform */}
+      <Grid container justify="space-around" spacing={5}>
         {Object.keys(projectData).map((key) => {
           return (
-            <Project
-              projectTitle={projectData[key].title}
-              deployedLink={projectData[key].deployedLink}
-              gitHubRepoLink={projectData[key].gitHubRepoLink}
-              cardImage={projectData[key].cardImage}
-              description={projectData[key].description}
-            />
+            <Grid item xs={10} sm={6} md={4} lg={4} xl={4}>
+              <Project
+                projectTitle={projectData[key].title}
+                deployedLink={projectData[key].deployedLink}
+                gitHubRepoLink={projectData[key].gitHubRepoLink}
+                cardImage={projectData[key].cardImage}
+                description={projectData[key].description}
+              />
+            </Grid>
           );
         })}
       </Grid>

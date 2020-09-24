@@ -12,6 +12,7 @@ import Paper from "@material-ui/core/Paper";
 const useStyles = makeStyles((theme) => ({
   root: {
     maxWidth: 345,
+    height: 400
   },
   media: {
     height: 140,
@@ -45,8 +46,7 @@ console.log(
             {projectTitle}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            This is a description of the project. Blah blah and stuff and
-            things.
+            {description}
           </Typography>
         </CardContent>
       </CardActionArea>
