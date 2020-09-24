@@ -7,7 +7,6 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import Paper from "@material-ui/core/Paper";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,7 +14,8 @@ const useStyles = makeStyles((theme) => ({
     height: 400
   },
   media: {
-    height: 140,
+    height: 0,
+    paddingTop: "56.25%"
   },
 }));
 
@@ -30,6 +30,8 @@ console.log(
   gitHubRepoLink,
   "cardImage",
   cardImage,
+  "typeOf cardImage",
+  typeof cardImage,
   "description",
   description
 )
@@ -38,7 +40,7 @@ console.log(
       <CardActionArea>
         <CardMedia
           className={classes.media}
-          image={cardImage}
+          image={require(cardImage)}
           title={projectTitle}
         />
         <CardContent>
