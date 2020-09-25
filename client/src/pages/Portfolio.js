@@ -31,7 +31,7 @@ const projectData = {
     gitHubRepoLink: "http://github.com/JMantis0/weather-dashboard",
     cardImage: "/images/w-dashboard.png",
     description:
-      "Browser based weather forecast application featuring data called from the OpenWeatherMaps api. ",
+      "Browser based weather forecast application featuring data called from the OpenWeatherMaps api.",
   },
   euroTranslationMap: {
     title: "European Translation Map",
@@ -57,7 +57,7 @@ const projectData = {
       "Full Stack progressive web application.  MongoDB, Sequelize, IndexedDB, PWA (look at other things)",
   },
   employeeManagementCLI: {
-    title: " CLI",
+    title: "Development Team Roster CLI",
     deployedLink: "",
     gitHubRepoLink: "https://github.com/JMantis0/Employee-Manager_CLI",
     cardImage: "/images/cli.JPG",
@@ -77,6 +77,13 @@ const projectData = {
     cardImage: "/images/readme-generator.JPG",
     description: "Command line node application that aids developers in generating quality readme files for GitHub Repositories"
   },
+  brewR: {
+    title: "brewR",
+    deployedLink: "https://brewrs.herokuapp.com/",
+    gitHubRepoLink: "https://github.com/JMantis0/brewR",
+    cardImage: "/images/brewrs.JPG",
+    description: "brewR App "
+  }
 
 
 };
