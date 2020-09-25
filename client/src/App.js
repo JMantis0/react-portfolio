@@ -5,7 +5,6 @@ import {
   createMuiTheme,
   ThemeProvider,
 } from "@material-ui/core/styles";
-import { spacing } from "@material-ui/system";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
