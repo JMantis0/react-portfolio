@@ -36,9 +36,11 @@ const projectData = {
   euroTranslationMap: {
     title: "European Translation Map",
     deployedLink: "https://progharrison234.github.io/european-translation-map/",
-    gitHubRepoLink: "https://github.com/ProgHarrison234/european-translation-map",
+    gitHubRepoLink:
+      "https://github.com/ProgHarrison234/european-translation-map",
     cardImage: "/images/eurotrans.gif",
-    description: "This web application provides travelers and language enthusiasts alike a tool that translates words from english into several European languages and displays the translations according to their geographic location."
+    description:
+      "This web application provides travelers and language enthusiasts alike a tool that translates words from english into several European languages and displays the translations according to their geographic location.",
   },
   workDayScheduler: {
     title: "Work Day Scheduler",
@@ -61,31 +63,40 @@ const projectData = {
     deployedLink: "",
     gitHubRepoLink: "https://github.com/JMantis0/Employee-Manager_CLI",
     cardImage: "/images/cli.JPG",
-    description: "Employee Management App that allows users to quickly draft development teams and generate a website of its roster, featuring Javascript Classes, npm inquirer, and html writing technologies"
+    description:
+      "Employee Management App that allows users to quickly draft development teams and generate a website of its roster, featuring Javascript Classes, npm inquirer, and html writing technologies",
   },
   employeeManagementSystem: {
     title: "Employee Database Manager",
     deployedLink: "",
     gitHubRepoLink: "https://hithub.com/Jmantis0/Employee-Management-System",
     cardImage: "/images/emp-dbs-system.JPG",
-    description: "Command Line Employee Database Manager and information interface featuring crud functionality with a MySQL database"
+    description:
+      "Command Line Employee Database Manager and information interface featuring crud functionality with a MySQL database",
   },
-  readmeGenerator : {
+  readmeGenerator: {
     title: "Readme Generator",
     deployedLink: "",
     gitHubRepoLink: "https://github.com/JMantis0/readme-generator",
     cardImage: "/images/readme-generator.JPG",
-    description: "Command line node application that aids developers in generating quality readme files for GitHub Repositories"
+    description:
+      "Command line node application that aids developers in generating quality readme files for GitHub Repositories",
   },
   brewR: {
     title: "brewR",
     deployedLink: "https://brewrs.herokuapp.com/",
     gitHubRepoLink: "https://github.com/JMantis0/brewR",
     cardImage: "/images/brewrs.JPG",
-    description: "brewR App "
-  }
-
-
+    description:
+      "Full stack website craft beer afficianados and amateurs alike can create accounts, search breweries, save their favorites, and post to their own blog.",
+  },
+  eatDaBurger: {
+    title: "Eat - Da - Burger",
+    deployedLink: "https://secret-scrubland-53219.herokuapp.com/",
+    gitHubRepoLink: "httpss://github.com/JMantis0/Eat-Da-Burger",
+    cardImage: "/images/burger.gif",
+    description: "A fun full-stack MVC app that allows user to create and consume burgers, featuring mobile first design, MySQL, jQuery, and express-handlebars."
+  },
 };
 
 const Portfolio = () => {
