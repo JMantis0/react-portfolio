@@ -21,7 +21,7 @@ const projectData = {
       "https://jmantis0.github.io/depth-of-knowledge-javascript-edition/",
     gitHubRepoLink:
       "https://github.com/JMantis0/depth-of-knowledge-javascript-edition",
-    cardImage: "/images/javascript-quiz.jpg",
+    cardImage: "/assets/images/javascript-quiz.jpg",
     description:
       "Interactive browser based application featuring jQuery DOM manipulation, dynamic CSS, Bootstrap Framework, data-attributes, and local storage.",
   },
@@ -29,7 +29,7 @@ const projectData = {
     title: "Weather Dashboard",
     deployedLink: "https://jmantis0.github.io/weather-dashboard/",
     gitHubRepoLink: "http://github.com/JMantis0/weather-dashboard",
-    cardImage: "/images/w-dashboard.png",
+    cardImage: "/assets/images/w-dashboard.png",
     description:
       "Browser based weather forecast application featuring data called from the OpenWeatherMaps api.",
   },
@@ -38,7 +38,7 @@ const projectData = {
     deployedLink: "https://progharrison234.github.io/european-translation-map/",
     gitHubRepoLink:
       "https://github.com/ProgHarrison234/european-translation-map",
-    cardImage: "/images/eurotrans.gif",
+    cardImage: "/assets/images/eurotrans.gif",
     description:
       "This web application provides travelers and language enthusiasts alike a tool that translates words from english into several European languages and displays the translations according to their geographic location.",
   },
@@ -46,7 +46,7 @@ const projectData = {
     title: "Work Day Scheduler",
     deployedLink: "https://jmantis0.githubio/work-day-scheduler",
     gitHubRepoLink: "https://github.com/JMantis0/work-day-scheduler",
-    cardImage: "/images/wd-scheduler.JPG",
+    cardImage: "/assets/images/wd-scheduler.JPG",
     description:
       "Task management scheduler application featuring mobile responsive design, dynamic appearance, data storage, css animations, and sound.",
   },
@@ -54,7 +54,7 @@ const projectData = {
     title: "Budget Tracker",
     deployedLink: "https://jbudget-tracker.herokuapp.com/",
     gitHubRepoLink: "https://github.com/JMantis0/budget-tracker",
-    cardImage: "/images/budget-tracker.JPG",
+    cardImage: "/assets/images/budget-tracker.JPG",
     description:
       "Full Stack progressive web application.  MongoDB, Sequelize, IndexedDB, PWA (look at other things)",
   },
@@ -62,7 +62,7 @@ const projectData = {
     title: "Development Team Roster CLI",
     deployedLink: "",
     gitHubRepoLink: "https://github.com/JMantis0/Employee-Manager_CLI",
-    cardImage: "/images/cli.JPG",
+    cardImage: "/assets/images/cli.JPG",
     description:
       "Employee Management App that allows users to quickly draft development teams and generate a website of its roster, featuring Javascript Classes, npm inquirer, and html writing technologies",
   },
@@ -70,7 +70,7 @@ const projectData = {
     title: "Employee Database Manager",
     deployedLink: "",
     gitHubRepoLink: "https://hithub.com/Jmantis0/Employee-Management-System",
-    cardImage: "/images/emp-dbs-system.JPG",
+    cardImage: "/assets/images/emp-dbs-system.JPG",
     description:
       "Command Line Employee Database Manager and information interface featuring crud functionality with a MySQL database",
   },
@@ -78,7 +78,7 @@ const projectData = {
     title: "Readme Generator",
     deployedLink: "",
     gitHubRepoLink: "https://github.com/JMantis0/readme-generator",
-    cardImage: "/images/readme-generator.JPG",
+    cardImage: "/assets/images/readme-generator.JPG",
     description:
       "Command line node application that aids developers in generating quality readme files for GitHub Repositories",
   },
@@ -86,7 +86,7 @@ const projectData = {
     title: "brewR",
     deployedLink: "https://brewrs.herokuapp.com/",
     gitHubRepoLink: "https://github.com/JMantis0/brewR",
-    cardImage: "/images/brewrs.JPG",
+    cardImage: "/assets/images/brewrs.JPG",
     description:
       "Full stack website craft beer afficianados and amateurs alike can create accounts, search breweries, save their favorites, and post to their own blog.",
   },
@@ -94,7 +94,7 @@ const projectData = {
     title: "Eat - Da - Burger",
     deployedLink: "https://secret-scrubland-53219.herokuapp.com/",
     gitHubRepoLink: "httpss://github.com/JMantis0/Eat-Da-Burger",
-    cardImage: "/images/burger.gif",
+    cardImage: "/assets/images/burger.gif",
     description: "A fun full-stack MVC app that allows user to create and consume burgers, featuring mobile first design, MySQL, jQuery, and express-handlebars."
   },
 };

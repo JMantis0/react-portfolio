@@ -39,7 +39,7 @@ const useStyles = makeStyles({
   },
   tab: {
     textTransform: "capitalize",
-    color: "black"
+    color: "black",
   },
 });
 
@@ -58,6 +58,7 @@ const Header = (props) => {
   //  use setTabState prop from App.js to route.
 
   const handleChange = (event, newValue) => {
+    console.log("newValue", newValue);
     setTabState(newValue);
   };
 
@@ -84,6 +85,7 @@ const Header = (props) => {
                   label="Portfolio"
                 />
                 <Tab className={classes.tab} value="/about" label="About" />
+                <Tab className={classes.tab} value="/resume" label="Resume" />
                 <Tab className={classes.tab} value="/contact" label="Contact" />
               </Tabs>
             </Grid>

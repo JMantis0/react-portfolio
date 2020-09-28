@@ -68,6 +68,9 @@ function App() {
           <Route exact path="/contact">
             Contact
           </Route>
+          <Route exact path="/resume">
+            
+          </Route>
         </Router>
       </Grid>
     </Grid>
