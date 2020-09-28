@@ -10,6 +10,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import Resume from "./pages/Resume";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -69,7 +70,7 @@ function App() {
             Contact
           </Route>
           <Route exact path="/resume">
-            
+            <Resume />
           </Route>
         </Router>
       </Grid>
