@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
+import DrawerSnippet from "./DrawerSnippet"
 import { makeStyles } from "@material-ui/core/styles";
 import { borders } from "@material-ui/system";
 import {
@@ -63,12 +64,13 @@ const Header = (props) => {
   };
 
   return (
-    <Grid container>
+    <Grid container id="firstHeaderDiv">
       <Grid container>
         <AppBar className={classes.appBar} position="static">
+        <DrawerSnippet />
           <img
             className={classes.headerImage}
-            src={require("../assets/react-portfolio-draft-image.png")}
+            // src={require("../assets/react-portfolio-draft-image.png")}
           ></img>
 
           <Grid className={classes.tabsGridItem} item>
