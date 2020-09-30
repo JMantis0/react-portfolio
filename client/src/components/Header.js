@@ -7,13 +7,7 @@ import Tab from "@material-ui/core/Tab";
 import Hidden from "@material-ui/core/Hidden";
 import DrawerSnippet from "./DrawerSnippet";
 import { makeStyles } from "@material-ui/core/styles";
-import { borders } from "@material-ui/system";
-import {
-  BrowserRouter as Router,
-  Route,
-  useLocation,
-  useHistory,
-} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles({
   headerBanner: {
@@ -23,7 +17,7 @@ const useStyles = makeStyles({
   },
   bannerParagraph: {
     margin: 0,
-    fontSize: "24px"
+    fontSize: "24px",
   },
   appBar: {
     backgroundColor: "#eeeeee",
@@ -53,13 +47,12 @@ const Header = (props) => {
   //  used for styling components
   const history = useHistory();
   const classes = useStyles();
-  const location = useLocation();
   const [tabState, setTabState] = useState("/");
 
   //  When the tabState changes, history.push sets the route
   useEffect(() => {
     history.push(tabState);
-  }, [tabState]);
+  }, [history, tabState]);
 
   //  use setTabState prop from App.js to route.
 
@@ -71,13 +64,11 @@ const Header = (props) => {
   return (
     <Grid container id="firstHeaderDiv">
       <Grid container>
-        <AppBar className={classes.appBar} 
-        position="static"
-        >
-        <img
-          className={classes.headerImage}
-          src={require("../assets/react-portfolio-draft-image.png")}
-        ></img>
+        <AppBar className={classes.appBar} position="static">
+          <img
+            className={classes.headerImage}
+            src={require("../assets/react-portfolio-draft-image.png")}
+          ></img>
 
           <Grid className={classes.tabsGridItem} item>
             <Grid id="tabsGrid?" container justify="flex-end">
@@ -115,7 +106,9 @@ const Header = (props) => {
             <p className={classes.bannerParagraph}>
               Burgeoning Web Designer & Developer based in Seattle, Washington.
             </p>
-            <p className={classes.bannerParagraph}>Experienced in designing & developing MERN applications.</p>
+            <p className={classes.bannerParagraph}>
+              Experienced in designing & developing MERN applications.
+            </p>
           </Typography>
         </Grid>
       </Grid>

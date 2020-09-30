@@ -15,9 +15,10 @@ function Resume(props) {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
   const useStyles = makeStyles({
-    resume: {
-      width: "100%",
-    },
+    // resume: {
+    //   width: "200%",
+    //   minWidth: " 900px",
+    // },
   });
   const classes = useStyles();
 
@@ -28,12 +29,8 @@ function Resume(props) {
   return (
     <Grid id="resumeGridContainer" justify="center" container>
       <Grid item id="resumeGridItem">
-        <Document
-          className={classes.resume}
-          file={resume}
-          onLoadSuccess={onDocumentLoadSuccess}
-        >
-          <Page pageNumber={pageNumber} />
+        <Document file={resume} onLoadSuccess={onDocumentLoadSuccess}>
+          <Page className={classes.resume} scale={1.4} pageNumber={pageNumber} />
         </Document>
         <p>
           Page {pageNumber} of {numPages}

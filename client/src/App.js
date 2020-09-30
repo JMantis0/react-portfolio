@@ -37,9 +37,6 @@ function App() {
     },
   };
 
-  //  This is a media query hook for React from the material-ui library
-
-  const aboveSmall = useMediaQuery(theme.breakpoints.up("sm"));
   const useStyles = makeStyles({
     // root: {
     //   //  Control margins based on useMediaQuery hooks
