@@ -1,0 +1,11 @@
+Make tabs smaller, appear closer together, like on emily site
+ ` Was able to do this through the tab class within makeStyles() Header.js 42-46.
+   Needed a minWidth property.
+
+Make header height shorter, its too big
+
+Done!  
+
+Get drawer button to appear on the right hand side of the screen
+
+get Resume to appear larger on the screen

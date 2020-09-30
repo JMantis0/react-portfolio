@@ -4,7 +4,8 @@ import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
-import DrawerSnippet from "./DrawerSnippet"
+import Hidden from "@material-ui/core/Hidden";
+import DrawerSnippet from "./DrawerSnippet";
 import { makeStyles } from "@material-ui/core/styles";
 import { borders } from "@material-ui/system";
 import {
@@ -22,25 +23,29 @@ const useStyles = makeStyles({
   },
   bannerParagraph: {
     margin: 0,
+    fontSize: "24px"
   },
   appBar: {
     backgroundColor: "#eeeeee",
     padding: "2px 0 0 0",
-    height: "250px",
+    height: "100px",
   },
   headerImage: {
-    width: "175px",
-    height: "175px",
-    position: "relative",
-    top: "150px",
+    width: "125px",
+    height: "125px",
+    position: "absolute",
+    top: "25px",
     left: "50px",
   },
   tabsGridItem: {
+    marginTop: "50px",
     width: "100%",
   },
   tab: {
     textTransform: "capitalize",
     color: "black",
+    minWidth: "50px",
+    width: "70px",
   },
 });
 
@@ -66,30 +71,40 @@ const Header = (props) => {
   return (
     <Grid container id="firstHeaderDiv">
       <Grid container>
-        <AppBar className={classes.appBar} position="static">
-        <DrawerSnippet />
-          <img
-            className={classes.headerImage}
-            // src={require("../assets/react-portfolio-draft-image.png")}
-          ></img>
+        <AppBar className={classes.appBar} 
+        position="static"
+        >
+        <img
+          className={classes.headerImage}
+          src={require("../assets/react-portfolio-draft-image.png")}
+        ></img>
 
           <Grid className={classes.tabsGridItem} item>
             <Grid id="tabsGrid?" container justify="flex-end">
-              <Tabs
-                value={tabState}
-                onChange={handleChange}
-                aria-label="header navigation tabs"
-              >
-                <Tab className={classes.tab} value="/" label="Home" />
-                <Tab
-                  className={classes.tab}
-                  value="/portfolio"
-                  label="Portfolio"
-                />
-                <Tab className={classes.tab} value="/about" label="About" />
-                <Tab className={classes.tab} value="/resume" label="Resume" />
-                <Tab className={classes.tab} value="/contact" label="Contact" />
-              </Tabs>
+              <Hidden smUp>
+                <DrawerSnippet />
+              </Hidden>
+              <Hidden xsDown>
+                <Tabs
+                  value={tabState}
+                  onChange={handleChange}
+                  aria-label="header navigation tabs"
+                >
+                  <Tab className={classes.tab} value="/" label="Home" />
+                  <Tab
+                    className={classes.tab}
+                    value="/portfolio"
+                    label="Portfolio"
+                  />
+                  <Tab className={classes.tab} value="/about" label="About" />
+                  <Tab className={classes.tab} value="/resume" label="Resume" />
+                  <Tab
+                    className={classes.tab}
+                    value="/contact"
+                    label="Contact"
+                  />
+                </Tabs>
+              </Hidden>
             </Grid>
           </Grid>
         </AppBar>
@@ -100,7 +115,7 @@ const Header = (props) => {
             <p className={classes.bannerParagraph}>
               Burgeoning Web Designer & Developer based in Seattle, Washington.
             </p>
-            <p>Experienced in designing & developing MERN applications.</p>
+            <p className={classes.bannerParagraph}>Experienced in designing & developing MERN applications.</p>
           </Typography>
         </Grid>
       </Grid>
