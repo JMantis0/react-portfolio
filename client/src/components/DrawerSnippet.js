@@ -1,6 +1,6 @@
 import React from "react";
 import clsx from "clsx";
-import Grid from "@material-ui/core/Grid"
+import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
@@ -11,6 +11,8 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import MenuIcon from "@material-ui/icons/Menu";
+import IconButton from "@material-ui/core/IconButton";
 
 const useStyles = makeStyles({
   list: {
@@ -33,7 +35,7 @@ export default function DrawerSnippet() {
   const toggleDrawer = (anchor, open) => (event) => {
     //  Console logs to help me understand the drawer function
     console.log("The anchor is : ", anchor);
-    console.log(`The ${anchor} anchor is ${open ? "" : "not"} open`)
+    console.log(`The ${anchor} anchor is ${open ? "" : "not"} open`);
     if (
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
@@ -81,10 +83,14 @@ export default function DrawerSnippet() {
   return (
     <div>
       <Grid container alignItems="center" justify="center">
-        <Grid item >
+        <Grid item>
+          {/* Here is where anchor goes in. */}
           {["right"].map((anchor) => (
             <React.Fragment key={anchor}>
-              <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+              {/* Here is where to implement Hamburger Icon or Menu Icon */}
+              <Button onClick={toggleDrawer(anchor, true)}>
+                <MenuIcon />
+              </Button>
               <Drawer
                 anchor={anchor}
                 open={state[anchor]}

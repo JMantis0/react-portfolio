@@ -11,3 +11,14 @@ Get drawer button to appear on the right hand side of the screen
 Done
 
 get Resume to appear larger on the screen
+
+Done
+
+-------------------------------------------------
+
+Implement Hamburger menu icon instead of 'Right'
+File: DraweSnippet.js
+
+Enable links on drawer buttons
+
+Correct Icons inside drawer
