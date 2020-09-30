@@ -48,7 +48,7 @@ function App() {
   const classes = useStyles();
   return (
     <Grid className={classes.root} container justify="center">
-      <Grid item sm={11} lg={11}>
+      <Grid item sm={11} lg={9}>
         <CssBaseline />
         <Router>
           <ThemeProvider theme={headerTheme}>
