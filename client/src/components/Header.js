@@ -9,65 +9,14 @@ import DrawerSnippet from "./DrawerSnippet";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
-  headerBanner: {
-    [theme.breakpoints.down("xs")]: {
-      margin: "35px 0 0 0",
-    },
-    marginTop: "35px",
-    marginBottom: "35px",
-    width: "100%",
-  },
-  bannerParagraph: {
-    margin: 0,
-    fontSize: "20px",
-  },
-  appBar: {
-    backgroundColor: "#eeeeee",
-    padding: "2px 0 0 0",
-    height: "100px",
-    width: "100%",
-    minWidth: "10px",
-  },
-  headerImage: {
-    width: "100px",
-    height: "100px",
-    position: "absolute",
-    top: "15px",
-    left: "10%",
-  },
-  tabsGridItem: {
-    marginTop: "50px",
-    width: "100%",
-  },
-  lastTab: {
-    marginRight: "20px",
-    textTransform: "capitalize",
-    color: "black",
-    minWidth: "1px",
-    width: "20%",
-  },
-  tab: {
-    textTransform: "capitalize",
-    color: "black",
-    minWidth: "1px",
-    // [theme.breakpoints.down("xs")]: {
-    //   width:
-    // }
-    width: "20%",
-  },
-  tabs: {
-    width: "90%",
-    margin: "0 0 0 0",
-  },
-  tabsGrid: {
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+  
+// }));
 
-const Header = (props) => {
+const Header = ({ classes }) => {
   //  used for styling components
   const history = useHistory();
-  const classes = useStyles();
+  // const classes = useStyles();/
   const [tabState, setTabState] = useState("/");
 
   //  When the tabState changes, history.push sets the route
@@ -78,7 +27,6 @@ const Header = (props) => {
   //  use setTabState prop from App.js to route.
 
   const handleChange = (event, newValue) => {
-    console.log("theme ", props.theme);
     console.log("newValue", newValue);
     setTabState(newValue);
   };

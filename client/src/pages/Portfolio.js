@@ -95,22 +95,23 @@ const projectData = {
     deployedLink: "https://secret-scrubland-53219.herokuapp.com/",
     gitHubRepoLink: "httpss://github.com/JMantis0/Eat-Da-Burger",
     cardImage: "/assets/images/burger.gif",
-    description: "A fun full-stack MVC app that allows user to create and consume burgers, featuring mobile first design, MySQL, jQuery, and express-handlebars."
+    description:
+      "A fun full-stack MVC app that allows user to create and consume burgers, featuring mobile first design, MySQL, jQuery, and express-handlebars.",
   },
 };
 
 const Portfolio = () => {
-  console.log("Object.keys(projectData)", Object.keys(projectData));
-  Object.keys(projectData).forEach((key) =>
-    console.log(projectData[key].deployedLink)
-  );
+  // console.log("Object.keys(projectData)", Object.keys(projectData));
+  // Object.keys(projectData).forEach((key) =>
+  //   console.log(projectData[key].deployedLink)
+  // );
   return (
     <div>
       {/* Need to make the height of each project uniform */}
       <Grid container justify="space-around" spacing={5}>
         {Object.keys(projectData).map((key) => {
           return (
-            <Grid item xs={10} sm={6} md={4} lg={4} xl={4}>
+            <Grid item xs={10} sm={6} md={4} lg={4} xl={4} key={key}>
               <Project
                 projectTitle={projectData[key].title}
                 deployedLink={projectData[key].deployedLink}
@@ -122,50 +123,6 @@ const Portfolio = () => {
           );
         })}
       </Grid>
-      {/* <Grid container justify="space-around" spacing={2}>
-        <Grid item xs={4}>
-          <Project />
-        </Grid>
-        <Grid item xs={4}>
-          <Project />
-        </Grid>
-        <Grid item xs={4}>
-          <Project />
-        </Grid>
-      </Grid>
-      <Grid container justify="space-around" spacing={2}>
-        <Grid item xs={4}>
-          <Project />
-        </Grid>
-        <Grid item xs={4}>
-          <Project />
-        </Grid>
-        <Grid item xs={4}>
-          <Project />
-        </Grid>
-      </Grid>
-      <Grid container justify="space-around" spacing={2}>
-        <Grid item xs={4}>
-          <Project />
-        </Grid>
-        <Grid item xs={4}>
-          <Project />
-        </Grid>
-        <Grid item xs={4}>
-          <Project />
-        </Grid>
-      </Grid>
-      <Grid container justify="space-around" spacing={2}>
-        <Grid item xs={4}>
-          <Project />
-        </Grid>
-        <Grid item xs={4}>
-          <Project />
-        </Grid>
-        <Grid item xs={4}>
-          <Project />
-        </Grid>
-      </Grid> */}
     </div>
   );
 };
