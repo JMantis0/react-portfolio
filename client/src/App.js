@@ -40,12 +40,12 @@ function App() {
 
   const useStyles = makeStyles((theme) => ({
     root: {
-      [theme.breakpoints.down("xs")]: {
-        width: "90%",
-        margin: "0 0 0 5%",
+      [theme.breakpoints.up("xs")]: {
+        width: "95%",
+        margin: "0 0 0 2.5%",
         // backgroundColor: "#000000"
       },
-      [theme.breakpoints.down("sm")]: {
+      [theme.breakpoints.up("sm")]: {
         width: "90%",
         margin: "0 0 0 5%",
         // backgroundColor: "#000000"

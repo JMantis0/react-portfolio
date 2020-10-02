@@ -51,7 +51,16 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "capitalize",
     color: "black",
     minWidth: "1px",
+    // [theme.breakpoints.down("xs")]: {
+    //   width:
+    // }
     width: "20%",
+  },
+  tabs: {
+    width: "90%",
+    margin: "0 0 0 0",
+  },
+  tabsGrid: {
   },
 }));
 
@@ -78,41 +87,48 @@ const Header = (props) => {
     <Grid container id="firstHeaderDiv">
       <AppBar className={classes.appBar} position="static">
         <Grid container>
-          <Grid xs={2} id="666" item>
+          <Grid xs={2} item>
             <img
               className={classes.headerImage}
               src={require("../assets/biopic.PNG")}
               alt="bio"
             ></img>
           </Grid>
+
           <Grid xs={10} className={classes.tabsGridItem} item>
-            <Grid id="tabsGrid?" container justify="center">
-              <Hidden smUp>
-                <DrawerSnippet />
-              </Hidden>
-              <Hidden xsDown>
-                <Tabs
-                  value={tabState}
-                  onChange={handleChange}
-                  aria-label="header navigation tabs"
-                  id="<Tabs>"
-                  style={{width:"100%"}}
-                >
-                  <Tab className={classes.tab} value="/" label="Home" />
-                  <Tab
-                    className={classes.tab}
-                    value="/portfolio"
-                    label="Portfolio"
-                  />
-                  <Tab className={classes.tab} value="/about" label="About" />
-                  <Tab className={classes.tab} value="/resume" label="Resume" />
-                  <Tab
-                    className={classes.lastTab}
-                    value="/contact"
-                    label="Contact"
-                  />
-                </Tabs>
-              </Hidden>
+            <Grid container justify="flex-end">
+              <Grid item style={{ width: "100%" }}>
+                <Hidden smUp>
+                  <DrawerSnippet id="DrawerSnippet" />
+                </Hidden>
+                <Hidden xsDown>
+                  <Tabs
+                    value={tabState}
+                    onChange={handleChange}
+                    aria-label="header navigation tabs"
+                    id="<Tabs>"
+                    className={classes.tabs}
+                  >
+                    <Tab className={classes.tab} value="/" label="Home" />
+                    <Tab
+                      className={classes.tab}
+                      value="/portfolio"
+                      label="Portfolio"
+                    />
+                    <Tab className={classes.tab} value="/about" label="About" />
+                    <Tab
+                      className={classes.tab}
+                      value="/resume"
+                      label="Resume"
+                    />
+                    <Tab
+                      className={classes.lastTab}
+                      value="/contact"
+                      label="Contact"
+                    />
+                  </Tabs>
+                </Hidden>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
