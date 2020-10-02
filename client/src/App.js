@@ -1,21 +1,23 @@
 import React from "react";
 import {
   makeStyles,
-  useTheme,
+  // useTheme,
   createMuiTheme,
   ThemeProvider,
 } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+// import useMediaQuery from "@material-ui/core/useMediaQuery";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import Resume from "./pages/Resume";
+import Footer from "./components/Footer";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 function App() {
-  const theme = useTheme();
+  // const theme = useTheme();
 
   //  Try creating a theme
   const headerTheme = createMuiTheme({
@@ -36,40 +38,47 @@ function App() {
     },
   };
 
-  //  This is a media query hook for React from the material-ui library
-
-  const aboveSmall = useMediaQuery(theme.breakpoints.up("sm"));
-  const useStyles = makeStyles({
-    // root: {
-    //   //  Control margins based on useMediaQuery hooks
-    //   width: aboveSmall ? "90%" : "100%",
-    //   marginLeft: aboveSmall ? "5%" : "0%",
-    //   backgroundColor: "eeff00",
-    // },
-  });
+  const useStyles = makeStyles((theme) => ({
+    root: {
+      [theme.breakpoints.down("xs")]: {
+        width: "90%",
+        margin: "0 0 0 5%",
+        // backgroundColor: "#000000"
+      },
+      [theme.breakpoints.down("sm")]: {
+        width: "90%",
+        margin: "0 0 0 5%",
+        // backgroundColor: "#000000"
+      },
+    },
+  }));
   const classes = useStyles();
   return (
     <Grid className={classes.root} container justify="center">
-      <Grid item sm={11} lg={11}>
-        <CssBaseline />
-        <Router>
-          <ThemeProvider theme={headerTheme}>
-            <Header />
-          </ThemeProvider>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/portfolio">
-            <Portfolio />
-          </Route>
-          <Route exact path="/about">
-            <About />
-          </Route>
-          <Route exact path="/contact">
-            Contact
-          </Route>
-        </Router>
-      </Grid>
+      <CssBaseline />
+      <Router>
+        <ThemeProvider theme={headerTheme}>
+          <Header />
+        </ThemeProvider>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/portfolio">
+          <Portfolio />
+        </Route>
+        <Route exact path="/about">
+          <About />
+        </Route>
+        <Route exact path="/contact">
+          Contact
+        </Route>
+        <Route exact path="/resume">
+          <Resume />
+        </Route>
+        <Grid container justify="center">
+          <Footer />
+        </Grid>
+      </Router>
     </Grid>
   );
 }

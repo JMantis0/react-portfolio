@@ -21,20 +21,20 @@ const useStyles = makeStyles((theme) => ({
 
 const Project = ({ projectTitle, deployedLink, gitHubRepoLink, cardImage, description }) => {
   const classes = useStyles();
-console.log(
-  "projectTitle",
-  projectTitle,
-  "deployedLink",
-  deployedLink,
-  "gitHubRepoLink",
-  gitHubRepoLink,
-  "cardImage",
-  cardImage,
-  "typeOf cardImage",
-  typeof cardImage,
-  "description",
-  description
-)
+// console.log(
+//   "projectTitle",
+//   projectTitle,
+//   "deployedLink",
+//   deployedLink,
+//   "gitHubRepoLink",
+//   gitHubRepoLink,
+//   "cardImage",
+//   cardImage,
+//   "typeOf cardImage",
+//   typeof cardImage,
+//   "description",
+//   description
+// )
   return (
     <Card className={classes.root}>
       <CardActionArea>
