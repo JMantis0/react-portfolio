@@ -17,7 +17,7 @@ Done
 -------------------------------------------------
 
 Implement Hamburger menu icon instead of 'Right'
-File: DraweSnippet.js
+File: DrawerSnippet.js
 
 Enable links on drawer buttons
 

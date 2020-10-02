@@ -2,10 +2,7 @@ import React, { useState } from "react";
 import { Document, Page } from "react-pdf";
 import Grid from "@material-ui/core/Grid";
 import {
-  makeStyles,
-  useTheme,
-  createMuiTheme,
-  ThemeProvider,
+  makeStyles
 } from "@material-ui/core/styles";
 import resume from "../assets/pdf/jesse-mazur-resume.pdf";
 import { pdfjs } from "react-pdf";
