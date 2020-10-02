@@ -40,16 +40,88 @@ function App() {
 
   const useStyles = makeStyles((theme) => ({
     root: {
+      [theme.breakpoints.up("xs")]: {
+        width: "95%",
+        margin: "0 0 0 2.5%",
+        // backgroundColor: "#000000"
+      },
+      [theme.breakpoints.up("sm")]: {
+        width: "90%",
+        margin: "0 0 0 5%",
+        // backgroundColor: "#000000"
+      },
+    },
+    headerBanner: {
       [theme.breakpoints.down("xs")]: {
-        width: "90%",
-        margin: "0 0 0 5%",
-        // backgroundColor: "#000000"
+        margin: "35px 0 0 0",
       },
-      [theme.breakpoints.down("sm")]: {
-        width: "90%",
-        margin: "0 0 0 5%",
-        // backgroundColor: "#000000"
+      marginTop: "35px",
+      marginBottom: "35px",
+      width: "100%",
+    },
+    bannerParagraph: {
+      margin: 0,
+      fontSize: "20px",
+    },
+    appBar: {
+      backgroundColor: "#eeeeee",
+      padding: "2px 0 0 0",
+      height: "100px",
+      width: "100%",
+      minWidth: "10px",
+    },
+    headerImage: {
+      width: "100px",
+      height: "100px",
+      position: "absolute",
+      top: "15px",
+      left: "10%",
+    },
+    tabsGridItem: {
+      marginTop: "50px",
+      width: "100%",
+    },
+    lastTab: {
+      marginRight: "20px",
+      textTransform: "capitalize",
+      color: "black",
+      minWidth: "1px",
+      width: "20%",
+    },
+    tab: {
+      textTransform: "capitalize",
+      color: "black",
+      minWidth: "1px",
+      // [theme.breakpoints.down("xs")]: {
+      //   width:
+      // }
+      width: "20%",
+    },
+    tabs: {
+      width: "75%",
+      margin: "0 0 0 15%",
+      // from 600 to 900, make width less and left margin greater.
+      //  Effectively move the tabs to the right as viewport increases
+      [theme.breakpoints.between("960", "1280")]: {
+        width: "70%",
+        margin: "0 0 0 30%",
       },
+      [theme.breakpoints.between("1280", "1920")]: {
+        width: "50%",
+        margin: "0 0 0 50%",
+      },
+    },
+    tabsGrid: {},
+    bottomBar: {
+      backgroundColor: "#eeeeee",
+      top: "auto",
+      position: "static",
+      bottom: 0,
+      boxShadow:
+        "0px -2px 4px -1px rgba(0,0,0,0.2), 0px -4px 5px 0px rgba(0,0,0,0.14), 0px -1px 10px 0px rgba(0,0,0,0.12)",
+    },
+    bottomNavigation: {
+      backgroundColor: "#eeeeee",
     },
   }));
   const classes = useStyles();
@@ -58,7 +130,7 @@ function App() {
       <CssBaseline />
       <Router>
         <ThemeProvider theme={headerTheme}>
-          <Header />
+          <Header classes={classes} />
         </ThemeProvider>
         <Route exact path="/">
           <Home />
@@ -76,7 +148,7 @@ function App() {
           <Resume />
         </Route>
         <Grid container justify="center">
-          <Footer />
+          <Footer classes={classes} />
         </Grid>
       </Router>
     </Grid>

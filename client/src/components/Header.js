@@ -9,56 +9,14 @@ import DrawerSnippet from "./DrawerSnippet";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
-  headerBanner: {
-    [theme.breakpoints.down("xs")]: {
-      margin: "35px 0 0 0",
-    },
-    marginTop: "35px",
-    marginBottom: "35px",
-    width: "100%",
-  },
-  bannerParagraph: {
-    margin: 0,
-    fontSize: "20px",
-  },
-  appBar: {
-    backgroundColor: "#eeeeee",
-    padding: "2px 0 0 0",
-    height: "100px",
-    width: "100%",
-    minWidth: "10px",
-  },
-  headerImage: {
-    width: "100px",
-    height: "100px",
-    position: "absolute",
-    top: "15px",
-    left: "10%",
-  },
-  tabsGridItem: {
-    marginTop: "50px",
-    width: "100%",
-  },
-  lastTab: {
-    marginRight: "20px",
-    textTransform: "capitalize",
-    color: "black",
-    minWidth: "1px",
-    width: "20%",
-  },
-  tab: {
-    textTransform: "capitalize",
-    color: "black",
-    minWidth: "1px",
-    width: "20%",
-  },
-}));
+// const useStyles = makeStyles((theme) => ({
+  
+// }));
 
-const Header = (props) => {
+const Header = ({ classes }) => {
   //  used for styling components
   const history = useHistory();
-  const classes = useStyles();
+  // const classes = useStyles();/
   const [tabState, setTabState] = useState("/");
 
   //  When the tabState changes, history.push sets the route
@@ -69,7 +27,6 @@ const Header = (props) => {
   //  use setTabState prop from App.js to route.
 
   const handleChange = (event, newValue) => {
-    console.log("theme ", props.theme);
     console.log("newValue", newValue);
     setTabState(newValue);
   };
@@ -78,41 +35,48 @@ const Header = (props) => {
     <Grid container id="firstHeaderDiv">
       <AppBar className={classes.appBar} position="static">
         <Grid container>
-          <Grid xs={2} id="666" item>
+          <Grid xs={2} item>
             <img
               className={classes.headerImage}
               src={require("../assets/biopic.PNG")}
               alt="bio"
             ></img>
           </Grid>
+
           <Grid xs={10} className={classes.tabsGridItem} item>
-            <Grid id="tabsGrid?" container justify="center">
-              <Hidden smUp>
-                <DrawerSnippet />
-              </Hidden>
-              <Hidden xsDown>
-                <Tabs
-                  value={tabState}
-                  onChange={handleChange}
-                  aria-label="header navigation tabs"
-                  id="<Tabs>"
-                  style={{width:"100%"}}
-                >
-                  <Tab className={classes.tab} value="/" label="Home" />
-                  <Tab
-                    className={classes.tab}
-                    value="/portfolio"
-                    label="Portfolio"
-                  />
-                  <Tab className={classes.tab} value="/about" label="About" />
-                  <Tab className={classes.tab} value="/resume" label="Resume" />
-                  <Tab
-                    className={classes.lastTab}
-                    value="/contact"
-                    label="Contact"
-                  />
-                </Tabs>
-              </Hidden>
+            <Grid container justify="flex-end">
+              <Grid item style={{ width: "100%" }}>
+                <Hidden smUp>
+                  <DrawerSnippet id="DrawerSnippet" />
+                </Hidden>
+                <Hidden xsDown>
+                  <Tabs
+                    value={tabState}
+                    onChange={handleChange}
+                    aria-label="header navigation tabs"
+                    id="<Tabs>"
+                    className={classes.tabs}
+                  >
+                    <Tab className={classes.tab} value="/" label="Home" />
+                    <Tab
+                      className={classes.tab}
+                      value="/portfolio"
+                      label="Portfolio"
+                    />
+                    <Tab className={classes.tab} value="/about" label="About" />
+                    <Tab
+                      className={classes.tab}
+                      value="/resume"
+                      label="Resume"
+                    />
+                    <Tab
+                      className={classes.lastTab}
+                      value="/contact"
+                      label="Contact"
+                    />
+                  </Tabs>
+                </Hidden>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>

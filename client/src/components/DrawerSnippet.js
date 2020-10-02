@@ -82,7 +82,7 @@ export default function DrawerSnippet() {
 
   return (
     <div>
-      <Grid container alignItems="center" justify="center">
+      <Grid container alignItems="center" justify="flex-end">
         <Grid item>
           {/* Here is where anchor goes in. */}
           {["right"].map((anchor) => (
