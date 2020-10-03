@@ -50,6 +50,9 @@ function App() {
         margin: "0 0 0 5%",
         // backgroundColor: "#000000"
       },
+      [theme.breakpoints.up("md")]: {
+        maxWidth: "1170px",
+      },
     },
     headerBanner: {
       [theme.breakpoints.down("xs")]: {
@@ -131,25 +134,25 @@ function App() {
       <Router>
         <ThemeProvider theme={headerTheme}>
           <Header classes={classes} />
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/portfolio">
+            <Portfolio />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/contact">
+            Contact
+          </Route>
+          <Route exact path="/resume">
+            <Resume />
+          </Route>
+          <Grid container justify="center">
+            <Footer classes={classes} />
+          </Grid>
         </ThemeProvider>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/portfolio">
-          <Portfolio />
-        </Route>
-        <Route exact path="/about">
-          <About />
-        </Route>
-        <Route exact path="/contact">
-          Contact
-        </Route>
-        <Route exact path="/resume">
-          <Resume />
-        </Route>
-        <Grid container justify="center">
-          <Footer classes={classes} />
-        </Grid>
       </Router>
     </Grid>
   );

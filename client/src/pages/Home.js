@@ -6,19 +6,19 @@ const homeCardData = {
   portfolio: {
     cardTitle: "Portfolio",
     link: "/portfolio",
-    cardImage: "",
+    cardImage: "/assets/images/portfolio-icon.png",
     description: "View Portfolio",
   },
   about: {
     cardTitle: "About",
     link: "/about",
-    cardImage: "",
+    cardImage: "/assets/images/about-icon.png",
     description: "Click to learn about Jesse",
   },
   resume: {
     cardTitle: "Resume",
     link: "/resume",
-    cardImage: "",
+    cardImage: "/assets/images/resume-icon.png",
     description: "View Resume",
   },
 };
@@ -28,7 +28,7 @@ const Home = () => {
     <Grid container justify="space-around">
       {Object.keys(homeCardData).map((key) => {
         return (
-          <Grid key={key} xs={4} style={{ textAlign: "center" }} item>
+          <Grid key={key} xs={3} style={{ textAlign: "center" }} item>
             <HomeCard
               cardTitle={homeCardData[key].cardTitle}
               link={homeCardData[key].link}

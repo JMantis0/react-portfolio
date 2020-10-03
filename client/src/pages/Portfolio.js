@@ -93,7 +93,7 @@ const projectData = {
   eatDaBurger: {
     title: "Eat - Da - Burger",
     deployedLink: "https://secret-scrubland-53219.herokuapp.com/",
-    gitHubRepoLink: "httpss://github.com/JMantis0/Eat-Da-Burger",
+    gitHubRepoLink: "https://github.com/JMantis0/Eat-Da-Burger",
     cardImage: "/assets/images/burger.gif",
     description:
       "A fun full-stack MVC app that allows user to create and consume burgers, featuring mobile first design, MySQL, jQuery, and express-handlebars.",
