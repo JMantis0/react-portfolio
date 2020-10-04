@@ -93,7 +93,7 @@ const projectData = {
   eatDaBurger: {
     title: "Eat - Da - Burger",
     deployedLink: "https://secret-scrubland-53219.herokuapp.com/",
-    gitHubRepoLink: "httpss://github.com/JMantis0/Eat-Da-Burger",
+    gitHubRepoLink: "https://github.com/JMantis0/Eat-Da-Burger",
     cardImage: "/assets/images/burger.gif",
     description:
       "A fun full-stack MVC app that allows user to create and consume burgers, featuring mobile first design, MySQL, jQuery, and express-handlebars.",
@@ -108,7 +108,9 @@ const Portfolio = () => {
   return (
     <div>
       {/* Need to make the height of each project uniform */}
-      <Grid container justify="space-around" spacing={5}>
+      <Grid container justify="space-around" alignItems="center" spacing={5} onClick={() => {
+        console.log("click")
+      }}>
         {Object.keys(projectData).map((key) => {
           return (
             <Grid item xs={10} sm={6} md={4} lg={4} xl={4} key={key}>

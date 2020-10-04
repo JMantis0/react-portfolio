@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   makeStyles,
   // useTheme,
@@ -14,41 +14,42 @@ import Resume from "./pages/Resume";
 import Footer from "./components/Footer";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
 
 function App() {
-  // const theme = useTheme();
+  const [pageState, setPageState] = useState("/");
 
-  //  Try creating a theme
-  const headerTheme = createMuiTheme({
-    typography: {
-      fontFamily: ["'Kumbh Sans'", "sans-serif"].join(","),
+  //  mainTheme supplies typogrophy to theme consumers
+  const mainTheme = createMuiTheme({
+    palette: {
+      type: "dark",
     },
     spacing: 8,
   });
-
-  //  Try a responsive h3
-  headerTheme.typography.h3 = {
-    fontSize: "1.2rem",
-    "@media (min-width:600px)": {
-      fontSize: "1.5rem",
-    },
-    [headerTheme.breakpoints.up("md")]: {
-      fontSize: "2.4rem",
-    },
-  };
 
   const useStyles = makeStyles((theme) => ({
     root: {
       [theme.breakpoints.up("xs")]: {
         width: "95%",
         margin: "0 0 0 2.5%",
-        // backgroundColor: "#000000"
       },
       [theme.breakpoints.up("sm")]: {
         width: "90%",
         margin: "0 0 0 5%",
-        // backgroundColor: "#000000"
+      },
+      [theme.breakpoints.up("1300")]: {
+        maxWidth: "1170px",
+        margin: "0 auto 0 auto",
+      },
+    },
+    headerImage: {
+      width: "100px",
+      height: "100px",
+      position: "absolute",
+      top: "15px",
+      left: "10%",
+      [theme.breakpoints.up("1300")]: {
+        left: "12%",
       },
     },
     headerBanner: {
@@ -64,18 +65,11 @@ function App() {
       fontSize: "20px",
     },
     appBar: {
-      backgroundColor: "#eeeeee",
+      // backgroundColor: "#eeeeee",
       padding: "2px 0 0 0",
       height: "100px",
       width: "100%",
       minWidth: "10px",
-    },
-    headerImage: {
-      width: "100px",
-      height: "100px",
-      position: "absolute",
-      top: "15px",
-      left: "10%",
     },
     tabsGridItem: {
       marginTop: "50px",
@@ -84,13 +78,13 @@ function App() {
     lastTab: {
       marginRight: "20px",
       textTransform: "capitalize",
-      color: "black",
+      // color: "black",
       minWidth: "1px",
       width: "20%",
     },
     tab: {
       textTransform: "capitalize",
-      color: "black",
+      // color: "black",
       minWidth: "1px",
       // [theme.breakpoints.down("xs")]: {
       //   width:
@@ -113,7 +107,7 @@ function App() {
     },
     tabsGrid: {},
     bottomBar: {
-      backgroundColor: "#eeeeee",
+      // backgroundColor: "#eeeeee",
       top: "auto",
       position: "static",
       bottom: 0,
@@ -121,37 +115,41 @@ function App() {
         "0px -2px 4px -1px rgba(0,0,0,0.2), 0px -4px 5px 0px rgba(0,0,0,0.14), 0px -1px 10px 0px rgba(0,0,0,0.12)",
     },
     bottomNavigation: {
-      backgroundColor: "#eeeeee",
+      // backgroundColor: "#eeeeee",
     },
   }));
   const classes = useStyles();
   return (
-    <Grid className={classes.root} container justify="center">
-      <CssBaseline />
-      <Router>
-        <ThemeProvider theme={headerTheme}>
-          <Header classes={classes} />
-        </ThemeProvider>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/portfolio">
-          <Portfolio />
-        </Route>
-        <Route exact path="/about">
-          <About />
-        </Route>
-        <Route exact path="/contact">
-          Contact
-        </Route>
-        <Route exact path="/resume">
-          <Resume />
-        </Route>
-        <Grid container justify="center">
-          <Footer classes={classes} />
-        </Grid>
-      </Router>
-    </Grid>
+    <ThemeProvider theme={mainTheme}>
+      <Grid className={classes.root} container justify="center">
+        <CssBaseline />
+        <Router>
+          <Header
+            setPageState={setPageState}
+            pageState={pageState}
+            classes={classes}
+          />
+          <Route exact path="/">
+            <Home setPageState={setPageState} pageState={pageState} />
+          </Route>
+          <Route exact path="/portfolio">
+            <Portfolio />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/contact">
+            Contact
+          </Route>
+          <Route exact path="/resume">
+            <Resume />
+          </Route>
+          <Grid container justify="center">
+            <Footer classes={classes} />
+          </Grid>
+        </Router>
+      </Grid>
+    </ThemeProvider>
   );
 }
 
