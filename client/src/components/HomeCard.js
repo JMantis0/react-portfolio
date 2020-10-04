@@ -21,11 +21,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const HomeCard = ({ cardTitle, link, cardImage, description }) => {
+const HomeCard = ({ cardTitle, link, cardImage, description, setPageState }) => {
   const history = useHistory();
   const classes = useStyles();
   return (
     <Card onClick={() => {
+      setPageState(link);
       history.push(link);
       console.log("cardClick on home page")
     }} className={classes.root}>

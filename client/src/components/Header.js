@@ -14,7 +14,7 @@ import { useHistory } from "react-router-dom";
 // }));
 
 const Header = ({ classes, setPageState, pageState }) => {
-  
+  const history = useHistory();
   
 
   //  When the pageState changes, history.push sets the route
@@ -22,8 +22,8 @@ const Header = ({ classes, setPageState, pageState }) => {
   //  use setPageState prop from App.js to route.
 
   const handleChange = (event, newValue) => {
-    console.log("newValue", newValue);
     setPageState(newValue);
+    history.push(newValue)
   };
 
   return (

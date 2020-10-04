@@ -14,15 +14,10 @@ import Resume from "./pages/Resume";
 import Footer from "./components/Footer";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
-import { BrowserRouter as Router, Route } from "react-router-dom";
-import { useHistory } from "react-router-dom";
+import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
 
 function App() {
-  const [pageState, setPageState] = useState("");
-  const history = useHistory(null);
-  useEffect(() => {
-    history.push(pageState);
-  }, [history, pageState]);
+  const [pageState, setPageState] = useState("/");
 
   //  mainTheme supplies typogrophy to theme consumers
   const mainTheme = createMuiTheme({

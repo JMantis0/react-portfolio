@@ -25,11 +25,11 @@ const homeCardData = {
 };
 const useStyles = makeStyles((theme) => ({
   homeContainer: {
-   margin: "150px 0 150px 0"
+    margin: "150px 0 150px 0",
   },
 }));
 
-const Home = () => {
+const Home = ({ setPageState }) => {
   const classes = useStyles();
   return (
     <Grid container className={classes.homeContainer} justify="space-around">
@@ -37,6 +37,7 @@ const Home = () => {
         return (
           <Grid key={key} xs={3} style={{ textAlign: "center" }} item>
             <HomeCard
+              setPageState={setPageState}
               cardTitle={homeCardData[key].cardTitle}
               link={homeCardData[key].link}
               cardImage={homeCardData[key].cardImage}
