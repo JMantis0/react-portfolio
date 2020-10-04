@@ -11,7 +11,7 @@ import Typography from "@material-ui/core/Typography";
 const useStyles = makeStyles((theme) => ({
   root: {
     // maxWidth: 345,
-    height: 500
+    // height: 500
   },
   media: {
     height: 0,
@@ -35,6 +35,10 @@ const Project = ({ projectTitle, deployedLink, gitHubRepoLink, cardImage, descri
 //   "description",
 //   description
 // )
+
+//  Give project a large modal with links
+
+
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -52,14 +56,6 @@ const Project = ({ projectTitle, deployedLink, gitHubRepoLink, cardImage, descri
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button size="small" color="primary">
-          Click
-        </Button>
-        <Button size="small" color="primary">
-          Learn more
-        </Button>
-      </CardActions>
     </Card>
   );
 };

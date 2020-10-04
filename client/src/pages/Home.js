@@ -1,6 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import HomeCard from "../components/HomeCard";
+import { makeStyles } from "@material-ui/core/styles";
 
 const homeCardData = {
   portfolio: {
@@ -22,10 +23,16 @@ const homeCardData = {
     description: "View Resume",
   },
 };
+const useStyles = makeStyles((theme) => ({
+  homeContainer: {
+   margin: "150px 0 150px 0"
+  },
+}));
 
 const Home = () => {
+  const classes = useStyles();
   return (
-    <Grid container justify="space-around">
+    <Grid container className={classes.homeContainer} justify="space-around">
       {Object.keys(homeCardData).map((key) => {
         return (
           <Grid key={key} xs={3} style={{ textAlign: "center" }} item>

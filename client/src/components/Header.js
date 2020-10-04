@@ -13,22 +13,17 @@ import { useHistory } from "react-router-dom";
   
 // }));
 
-const Header = ({ classes }) => {
-  //  used for styling components
-  const history = useHistory();
-  // const classes = useStyles();/
-  const [tabState, setTabState] = useState("/");
+const Header = ({ classes, setPageState, pageState }) => {
+  
+  
 
-  //  When the tabState changes, history.push sets the route
-  useEffect(() => {
-    history.push(tabState);
-  }, [history, tabState]);
-
-  //  use setTabState prop from App.js to route.
+  //  When the pageState changes, history.push sets the route
+  
+  //  use setPageState prop from App.js to route.
 
   const handleChange = (event, newValue) => {
     console.log("newValue", newValue);
-    setTabState(newValue);
+    setPageState(newValue);
   };
 
   return (
@@ -51,7 +46,7 @@ const Header = ({ classes }) => {
                 </Hidden>
                 <Hidden xsDown>
                   <Tabs
-                    value={tabState}
+                    value={pageState}
                     onChange={handleChange}
                     aria-label="header navigation tabs"
                     id="<Tabs>"
