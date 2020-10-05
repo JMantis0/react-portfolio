@@ -9,9 +9,12 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
-import MenuIcon from "@material-ui/icons/Menu";
+import MenuIcon from "@material-ui/icons/Menu"
+import HomeTwoToneIcon from '@material-ui/icons/HomeTwoTone';
+import FolderSpecialTwoToneIcon from '@material-ui/icons/FolderSpecialTwoTone';
+import ContactMailTwoToneIcon from '@material-ui/icons/ContactMailTwoTone';
+import DescriptionTwoToneIcon from '@material-ui/icons/DescriptionTwoTone';
+import InfoTwoToneIcon from '@material-ui/icons/InfoTwoTone';
 // import IconButton from "@material-ui/core/IconButton";
 
 const useStyles = makeStyles({
@@ -60,7 +63,11 @@ export default function DrawerSnippet() {
           (text, index) => (
             <ListItem button key={text}>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {text === "Home" ? <HomeTwoToneIcon /> : null}
+                {text === "Portfolio" ? <FolderSpecialTwoToneIcon />: null }
+                {text === "About" ? <InfoTwoToneIcon />: null }
+                {text === "Resume" ? <DescriptionTwoToneIcon />: null }
+                {text === "Contact" ? <ContactMailTwoToneIcon />: null }
               </ListItemIcon>
               {/* primary prop is what text on actual element button inside drawer*/}
               <ListItemText primary={text} />
