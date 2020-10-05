@@ -10,20 +10,19 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 
 // const useStyles = makeStyles((theme) => ({
-  
+
 // }));
 
 const Header = ({ classes, setPageState, pageState }) => {
   const history = useHistory();
-  
 
   //  When the pageState changes, history.push sets the route
-  
+
   //  use setPageState prop from App.js to route.
 
   const handleChange = (event, newValue) => {
     setPageState(newValue);
-    history.push(newValue)
+    history.push(newValue);
   };
 
   return (
@@ -42,7 +41,10 @@ const Header = ({ classes, setPageState, pageState }) => {
             <Grid container justify="flex-end">
               <Grid item style={{ width: "100%" }}>
                 <Hidden smUp>
-                  <DrawerSnippet id="DrawerSnippet" />
+                  <DrawerSnippet
+                    setPageState={setPageState}
+                    id="DrawerSnippet"
+                  />
                 </Hidden>
                 <Hidden xsDown>
                   <Tabs
