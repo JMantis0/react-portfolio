@@ -13,6 +13,7 @@
     "if-env": "^1.0.4",
     "morgan": "^1.9.1",
     "react-pdf": "^5.0.0",
+    "react-sizeme": "^2.6.12",
     "sequelize": "^5.8.6"
   },
   "devDependencies": {
