@@ -10,8 +10,8 @@ import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: 275,
-    padding: "20px 0 0 0",
+    // height: 275,
+    padding: "40px 0 40px 0",
     // "&:hover": {
     //   backgroundColor: "#ee0000",
     // },
@@ -21,24 +21,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const HomeCard = ({
-  cardTitle,
-  link,
-  cardImage,
-  description,
-  setPageState,
-}) => {
+const HomeCard = ({ cardTitle, link, cardImage, description, setPageState }) => {
   const history = useHistory();
   const classes = useStyles();
   return (
-    <Card
-      onClick={() => {
-        setPageState(link);
-        history.push(link);
-        console.log("cardClick on home page");
-      }}
-      className={classes.root}
-    >
+    <Card onClick={() => {
+      setPageState(link);
+      history.push(link);
+      console.log("cardClick on home page")
+    }} className={classes.root}>
       <CardActionArea>
         <img className={classes.media} src={cardImage}></img>
         <CardContent>
@@ -50,14 +41,14 @@ const HomeCard = ({
           </Typography>
         </CardContent>
       </CardActionArea>
-      <CardActions>
-        <Button style={{ textAlign: "center" }} size="small" color="primary">
+      {/* <CardActions>
+        <Button style={{textAlign: "center"}} size="small" color="primary">
           Click
-        </Button>
+        </Button> */}
         {/* <Button size="small" color="primary">
           Learn more
         </Button> */}
-      </CardActions>
+      {/* </CardActions> */}
     </Card>
   );
 };
