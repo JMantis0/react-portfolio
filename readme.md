@@ -4,7 +4,8 @@
 
 ## Description
 
-Portfolio of Jesse Mazur, built with react and material ui
+Portfolio of Jesse Mazur, built with React and Material UI.
+A work in progress.
 
 ## Table of Contents
 * [Installation](#installation)
