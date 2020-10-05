@@ -11,25 +11,30 @@ import FolderSpecialIcon from '@material-ui/icons/FolderSpecial';
 import InfoIcon from '@material-ui/icons/Info';
 import DescriptionIcon from '@material-ui/icons/Description';
 import ContactMailIcon from '@material-ui/icons/ContactMail';
+import { useHistory } from "react-router-dom";
 
-const Footer = ({ classes }) => {
-  // const classes = useStyles();
-  const [value, setValue] = React.useState(0);
+const Footer = ({ classes, pageState, setPageState }) => {
+  const history = useHistory();
+
+  const handleChange = (event, newValue) => {
+    console.log("Footer Click")
+    setPageState(newValue);
+    history.push(newValue);
+  };
+  
   return (
     <AppBar className={classes.bottomBar}>
       <BottomNavigation
-        value={value}
-        onChange={(event, newValue) => {
-          setValue(newValue);
-        }}
+        value={pageState}
+        onChange={handleChange}
         showLabels
         className={classes.bottomNavigation}
       >
-        <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-        <BottomNavigationAction label="Portfolio" icon={<FolderSpecialIcon />} />
-        <BottomNavigationAction label="About" icon={<InfoIcon />} />
-        <BottomNavigationAction label="Resume" icon={<DescriptionIcon />} />
-        <BottomNavigationAction label="Contact" icon={<ContactMailIcon />} />
+        <BottomNavigationAction value="/" label="Home" icon={<HomeIcon />} />
+        <BottomNavigationAction value="/portfolio" label="Portfolio" icon={<FolderSpecialIcon />} />
+        <BottomNavigationAction value="/about" label="About" icon={<InfoIcon />} />
+        <BottomNavigationAction value="/resume" label="Resume" icon={<DescriptionIcon />} />
+        <BottomNavigationAction value="/contact" label="Contact" icon={<ContactMailIcon />} />
       </BottomNavigation>
     </AppBar>
   );
