@@ -145,7 +145,10 @@ function App() {
             <Resume />
           </Route>
           <Grid container justify="center">
-            <Footer classes={classes} />
+            <Footer 
+            setPageState={setPageState}
+            pageState={pageState}
+            classes={classes} />
           </Grid>
         </Router>
       </Grid>
