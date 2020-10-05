@@ -14,7 +14,7 @@ const About = () => {
         where he has been working for 4 years. He specializes in Air Operations
         as an Instructor, Trainer, and Operations Supervisor.
       </p>
-      <p>In his spare tim eHesse enjoys studying Piano and Chess, hiking, board games, and the occasional video game.</p>
+      <p>In his spare time Jesse enjoys studying Piano and Chess, hiking, board games, and the occasional video game.</p>
     </div>
   );
 };
