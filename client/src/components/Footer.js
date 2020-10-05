@@ -6,6 +6,11 @@ import RestoreIcon from "@material-ui/icons/Restore";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import LocationOnIcon from "@material-ui/icons/LocationOn";
 import AppBar from "@material-ui/core/AppBar";
+import HomeIcon from '@material-ui/icons/Home';
+import FolderSpecialIcon from '@material-ui/icons/FolderSpecial';
+import InfoIcon from '@material-ui/icons/Info';
+import DescriptionIcon from '@material-ui/icons/Description';
+import ContactMailIcon from '@material-ui/icons/ContactMail';
 
 const Footer = ({ classes }) => {
   // const classes = useStyles();
@@ -20,12 +25,11 @@ const Footer = ({ classes }) => {
         showLabels
         className={classes.bottomNavigation}
       >
-        <BottomNavigationAction
-          label="Recents"
-          icon={<RestoreIcon />}
-        />
-        <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-        <BottomNavigationAction label="Nearby" icon={<LocationOnIcon />} />
+        <BottomNavigationAction label="Home" icon={<HomeIcon />} />
+        <BottomNavigationAction label="Portfolio" icon={<FolderSpecialIcon />} />
+        <BottomNavigationAction label="About" icon={<InfoIcon />} />
+        <BottomNavigationAction label="Resume" icon={<DescriptionIcon />} />
+        <BottomNavigationAction label="Contact" icon={<ContactMailIcon />} />
       </BottomNavigation>
     </AppBar>
   );
