@@ -21,15 +21,24 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const HomeCard = ({ cardTitle, link, cardImage, description, setPageState }) => {
+const HomeCard = ({
+  cardTitle,
+  link,
+  cardImage,
+  description,
+  setPageState,
+}) => {
   const history = useHistory();
   const classes = useStyles();
   return (
-    <Card onClick={() => {
-      setPageState(link);
-      history.push(link);
-      console.log("cardClick on home page")
-    }} className={classes.root}>
+    <Card
+      onClick={() => {
+        setPageState(link);
+        history.push(link);
+        console.log("cardClick on home page");
+      }}
+      className={classes.root}
+    >
       <CardActionArea>
         <img className={classes.media} src={cardImage}></img>
         <CardContent>
@@ -42,7 +51,7 @@ const HomeCard = ({ cardTitle, link, cardImage, description, setPageState }) => 
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button style={{textAlign: "center"}} size="small" color="primary">
+        <Button style={{ textAlign: "center" }} size="small" color="primary">
           Click
         </Button>
         {/* <Button size="small" color="primary">
