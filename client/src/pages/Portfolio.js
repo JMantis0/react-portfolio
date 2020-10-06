@@ -108,7 +108,7 @@ const Portfolio = () => {
   return (
     <div>
       {/* Need to make the height of each project uniform */}
-      <Grid container justify="space-around" alignItems="center" spacing={5} onClick={() => {
+      <Grid container justify="space-around" alignItems="stretch" spacing={5} onClick={() => {
         console.log("click")
       }}>
         {Object.keys(projectData).map((key) => {
