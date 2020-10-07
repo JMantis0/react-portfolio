@@ -23,7 +23,10 @@ import Resume from "./pages/Resume";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 
+// Component definition
 function App() {
+
+  // pageState and setPageState are passed to components that link to other pages within the React Router
   const [pageState, setPageState] = useState("/");
 
   //  mainTheme supplies typography to theme consumers
@@ -37,7 +40,9 @@ function App() {
     spacing: 8,
   });
 
+  //  Styles
   const useStyles = makeStyles((theme) => ({
+    //  root is the main container and here is where I set its responsive behaviors
     root: {
       [theme.breakpoints.up("xs")]: {
         width: "95%",
@@ -52,6 +57,7 @@ function App() {
         margin: "0 auto 0 auto",
       },
     },
+    //  headerImage is the avatar-like circular photo in the header
     headerImage: {
       width: "100px",
       height: "100px",
@@ -62,6 +68,7 @@ function App() {
         left: "12%",
       },
     },
+    //  headerBanner is underneath the Appbar, above the pages.
     headerBanner: {
       [theme.breakpoints.down("xs")]: {
         margin: "35px 0 0 0",
@@ -75,7 +82,6 @@ function App() {
       fontSize: "20px",
     },
     appBar: {
-      // backgroundColor: "#eeeeee",
       padding: "2px 0 0 0",
       height: "100px",
       width: "100%",
@@ -88,24 +94,17 @@ function App() {
     lastTab: {
       marginRight: "20px",
       textTransform: "capitalize",
-      // color: "black",
       minWidth: "1px",
       width: "20%",
     },
     tab: {
       textTransform: "capitalize",
-      // color: "black",
       minWidth: "1px",
-      // [theme.breakpoints.down("xs")]: {
-      //   width:
-      // }
       width: "20%",
     },
     tabs: {
       width: "75%",
       margin: "0 0 0 15%",
-      // from 600 to 900, make width less and left margin greater.
-      //  Effectively move the tabs to the right as viewport increases
       [theme.breakpoints.between("960", "1280")]: {
         width: "70%",
         margin: "0 0 0 30%",
@@ -117,7 +116,6 @@ function App() {
     },
     tabsGrid: {},
     bottomBar: {
-      // backgroundColor: "#eeeeee",
       top: "auto",
       position: "static",
       bottom: 0,
@@ -128,7 +126,9 @@ function App() {
       // backgroundColor: "#eeeeee",
     },
   }));
+
   const classes = useStyles();
+  
   return (
     <ThemeProvider theme={mainTheme}>
       <Grid className={classes.root} container justify="center">
