@@ -1,27 +1,30 @@
+// React imports
 import React from "react";
 import clsx from "clsx";
+// react-router-dom imports
+import { useHistory } from "react-router-dom";
+//  MUI component imports
 import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
+import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
 import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
+import AccountCircleTwoToneIcon from "@material-ui/icons/AccountCircleTwoTone";
 import HomeTwoToneIcon from "@material-ui/icons/HomeTwoTone";
 import FolderSpecialTwoToneIcon from "@material-ui/icons/FolderSpecialTwoTone";
 import ContactMailTwoToneIcon from "@material-ui/icons/ContactMailTwoTone";
 import DescriptionTwoToneIcon from "@material-ui/icons/DescriptionTwoTone";
 import InfoTwoToneIcon from "@material-ui/icons/InfoTwoTone";
-import { useHistory } from "react-router-dom";
-
-// import IconButton from "@material-ui/core/IconButton";
+// MUI style import
+import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   list: {
-    width: 250,
+    width: 200,
   },
   fullList: {
     width: "auto",
@@ -69,6 +72,9 @@ export default function DrawerSnippet({ setPageState }) {
       <List>
         {["Jesse Mazur"].map((text, index) => (
           <ListItem button key={text}>
+            <ListItemIcon>
+              <AccountCircleTwoToneIcon />
+            </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
         ))}
