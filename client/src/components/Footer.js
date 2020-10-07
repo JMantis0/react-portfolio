@@ -1,4 +1,7 @@
+// React imports
 import React from "react";
+
+// MUI imports
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import AppBar from "@material-ui/core/AppBar";
@@ -7,6 +10,8 @@ import FolderSpecialIcon from "@material-ui/icons/FolderSpecial";
 import InfoIcon from "@material-ui/icons/Info";
 import DescriptionIcon from "@material-ui/icons/Description";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
+
+// React router dom imports
 import { useHistory } from "react-router-dom";
 
 const Footer = ({ classes, pageState, setPageState }) => {
