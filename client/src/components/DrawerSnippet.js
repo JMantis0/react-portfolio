@@ -5,7 +5,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
 import List from "@material-ui/core/List";
-// import Divider from "@material-ui/core/Divider";
+import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -67,6 +67,14 @@ export default function DrawerSnippet({ setPageState }) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
+        {["Jesse Mazur"].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
+      <List>
         {["Home", "Portfolio", "About", "Resume", "Contact"].map(
           (text, index) => (
             <ListItem
@@ -95,15 +103,6 @@ export default function DrawerSnippet({ setPageState }) {
           )
         )}
       </List>
-      {/* <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List> */}
     </div>
   );
 
