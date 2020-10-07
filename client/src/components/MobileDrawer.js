@@ -31,7 +31,7 @@ const useStyles = makeStyles({
   },
 });
 
-export default function DrawerSnippet({ setPageState }) {
+export default function MobileDrawer({ setPageState }) {
   const classes = useStyles();
   const [state, setState] = React.useState({
     top: false,

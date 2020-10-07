@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Hidden from "@material-ui/core/Hidden";
-import DrawerSnippet from "./DrawerSnippet";
+import MobileDrawer from "./MobileDrawer";
 import { makeStyles } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 
@@ -41,7 +41,7 @@ const Header = ({ classes, setPageState, pageState }) => {
             <Grid container justify="flex-end">
               <Grid item style={{ width: "100%" }}>
                 <Hidden smUp>
-                  <DrawerSnippet
+                  <MobileDrawer
                     setPageState={setPageState}
                     id="DrawerSnippet"
                   />
