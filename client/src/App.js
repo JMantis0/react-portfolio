@@ -35,7 +35,7 @@ function App() {
       type: "dark",
     },
     typography: {
-      fontFamily: "Courier New"
+      fontFamily: "'Kumbh Sans', sans-serif;"
     },
     spacing: 8,
   });
@@ -128,7 +128,7 @@ function App() {
   }));
 
   const classes = useStyles();
-  
+
   return (
     <ThemeProvider theme={mainTheme}>
       <Grid className={classes.root} container justify="center">
