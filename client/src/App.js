@@ -1,28 +1,38 @@
-import React, { useState, useEffect } from "react";
+// React imports
+import React, { useState } from "react";
+
+// MUI imports
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Grid from "@material-ui/core/Grid";
 import {
   makeStyles,
-  // useTheme,
   createMuiTheme,
   ThemeProvider,
 } from "@material-ui/core/styles";
-// import useMediaQuery from "@material-ui/core/useMediaQuery";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Grid from "@material-ui/core/Grid";
+
+//  React Router Dom imports
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+// custom component imports
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+// page imports
 import Home from "./pages/Home";
 import Resume from "./pages/Resume";
-import Footer from "./components/Footer";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
-import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
 
 function App() {
   const [pageState, setPageState] = useState("/");
 
-  //  mainTheme supplies typogrophy to theme consumers
+  //  mainTheme supplies typography to theme consumers
   const mainTheme = createMuiTheme({
     palette: {
       type: "dark",
+    },
+    typography: {
+      fontFamily: "Courier New"
     },
     spacing: 8,
   });
@@ -145,10 +155,11 @@ function App() {
             <Resume />
           </Route>
           <Grid container justify="center">
-            <Footer 
-            setPageState={setPageState}
-            pageState={pageState}
-            classes={classes} />
+            <Footer
+              setPageState={setPageState}
+              pageState={pageState}
+              classes={classes}
+            />
           </Grid>
         </Router>
       </Grid>

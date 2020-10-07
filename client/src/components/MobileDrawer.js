@@ -22,6 +22,7 @@ import InfoTwoToneIcon from "@material-ui/icons/InfoTwoTone";
 // MUI style import
 import { makeStyles } from "@material-ui/core/styles";
 
+//  Styles
 const useStyles = makeStyles({
   list: {
     width: 200,
@@ -31,21 +32,18 @@ const useStyles = makeStyles({
   },
 });
 
-export default function MobileDrawer({ setPageState }) {
+//  Component definition
+const MobileDrawer = ({ setPageState }) => {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
     right: false,
   });
 
+  //  used to navigate within the BrowserRouter
   const history = useHistory();
 
+  //  function for opening/closing the drawer
   const toggleDrawer = (anchor, open) => (event) => {
-    //  Console logs to help me understand the drawer function
-    console.log("The anchor is : ", anchor);
-    console.log(`The ${anchor} anchor is ${open ? "" : "not"} open`);
     if (
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
@@ -54,12 +52,9 @@ export default function MobileDrawer({ setPageState }) {
     }
 
     setState({ ...state, [anchor]: open });
-  };
+  }
 
-  const handleDrawerItemClick = (event, value) => {
-    console.log("DrawerItemClick", value);
-  };
-
+  //  define the list that appears inside the drawer
   const list = (anchor) => (
     <div
       className={clsx(classes.list, {
@@ -137,3 +132,5 @@ export default function MobileDrawer({ setPageState }) {
     </div>
   );
 }
+
+export default MobileDrawer;
