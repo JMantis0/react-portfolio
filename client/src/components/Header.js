@@ -26,6 +26,7 @@ const Header = ({ classes, setPageState, pageState, setSlideDirection }) => {
     "/about": 3,
     "/resume": 4,
     "/contact": 5,
+    "/item": 6,
   };
 
   const handleChange = (event, newValue) => {

@@ -184,7 +184,7 @@ function App() {
               mountOnEnter
               unmountOnExit
             >
-              <div style={{width: "100%"}}>
+              <div style={{ width: "100%" }}>
                 <Resume />
               </div>
             </Slide>
@@ -206,6 +206,18 @@ function App() {
               classes={classes}
             />
           </Grid>
+          <Route exact path="/item">
+            <Slide
+              direction={slideDirection}
+              in={true}
+              mountOnEnter
+              unmountOnExit
+            >
+              <div>
+                <ProjectPage />
+              </div>
+            </Slide>
+          </Route>
         </Router>
       </Grid>
     </ThemeProvider>
