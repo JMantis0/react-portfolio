@@ -13,15 +13,33 @@ import { useHistory } from "react-router-dom";
 
 // }));
 
-const Header = ({ classes, setPageState, pageState }) => {
+const Header = ({ classes, setPageState, pageState, setSlideDirection }) => {
   const history = useHistory();
 
   //  When the pageState changes, history.push sets the route
 
   //  use setPageState prop from App.js to route.
 
+  const orderMapper = {
+    "/": 1,
+    "/portfolio": 2,
+    "/about": 3,
+    "/resume": 4,
+    "/contact": 5,
+  };
+
   const handleChange = (event, newValue) => {
+    if (orderMapper[newValue] < orderMapper[pageState]) {
+      setSlideDirection("right");
+    } else if (orderMapper[newValue] > orderMapper[pageState]) {
+      setSlideDirection("left");
+    }
+    console.log("pageState is: ", pageState);
+    console.log("newValue is: ", newValue);
     setPageState(newValue);
+    console.log("pageState set to: ", pageState);
+
+    //  Add code that transitions previous page out and makes history.push wait for it to finish first
     history.push(newValue);
   };
 

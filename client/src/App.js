@@ -9,6 +9,7 @@ import {
   createMuiTheme,
   ThemeProvider,
 } from "@material-ui/core/styles";
+import Slide from "@material-ui/core/Slide";
 
 //  React Router Dom imports
 import { BrowserRouter as Router, Route } from "react-router-dom";
@@ -25,9 +26,9 @@ import About from "./pages/About";
 
 // Component definition
 function App() {
-
   // pageState and setPageState are passed to components that link to other pages within the React Router
   const [pageState, setPageState] = useState("/");
+  const [slideDirection, setSlideDirection] = useState("right");
 
   //  mainTheme supplies typography to theme consumers
   const mainTheme = createMuiTheme({
@@ -35,7 +36,7 @@ function App() {
       type: "dark",
     },
     typography: {
-      fontFamily: "'Kumbh Sans', sans-serif;"
+      fontFamily: "'Kumbh Sans', sans-serif;",
     },
     spacing: 8,
   });
@@ -136,23 +137,67 @@ function App() {
         <Router>
           <Header
             setPageState={setPageState}
+            setSlideDirection={setSlideDirection}
             pageState={pageState}
             classes={classes}
           />
           <Route exact path="/">
-            <Home setPageState={setPageState} pageState={pageState} />
+            <Slide
+              direction={slideDirection}
+              in={true}
+              mountOnEnter
+              unmountOnExit
+            >
+              <div>
+                <Home setPageState={setPageState} pageState={pageState} />
+              </div>
+            </Slide>
           </Route>
           <Route exact path="/portfolio">
-            <Portfolio />
+            <Slide
+              direction={slideDirection}
+              in={true}
+              mountOnEnter
+              unmountOnExit
+            >
+              <div>
+                <Portfolio />
+              </div>
+            </Slide>
           </Route>
           <Route exact path="/about">
-            <About />
-          </Route>
-          <Route exact path="/contact">
-            Contact
+            <Slide
+              direction={slideDirection}
+              in={true}
+              mountOnEnter
+              unmountOnExit
+            >
+              <div>
+                <About />
+              </div>
+            </Slide>
           </Route>
           <Route exact path="/resume">
-            <Resume />
+            <Slide
+              direction={slideDirection}
+              in={true}
+              mountOnEnter
+              unmountOnExit
+            >
+              <div style={{width: "100%"}}>
+                <Resume />
+              </div>
+            </Slide>
+          </Route>
+          <Route exact path="/contact">
+            <Slide
+              direction={slideDirection}
+              in={true}
+              mountOnEnter
+              unmountOnExit
+            >
+              <div>Contact</div>
+            </Slide>
           </Route>
           <Grid container justify="center">
             <Footer

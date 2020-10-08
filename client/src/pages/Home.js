@@ -32,21 +32,21 @@ const useStyles = makeStyles((theme) => ({
 const Home = ({ setPageState }) => {
   const classes = useStyles();
   return (
-    <Grid container className={classes.homeContainer} justify="space-around">
-      {Object.keys(homeCardData).map((key) => {
-        return (
-          <Grid key={key} xs={3} style={{ textAlign: "center" }} item>
-            <HomeCard
-              setPageState={setPageState}
-              cardTitle={homeCardData[key].cardTitle}
-              link={homeCardData[key].link}
-              cardImage={homeCardData[key].cardImage}
-              description={homeCardData[key].description}
-            />
-          </Grid>
-        );
-      })}
-    </Grid>
+      <Grid container className={classes.homeContainer} justify="space-around">
+        {Object.keys(homeCardData).map((key) => {
+          return (
+            <Grid key={key} xs={3} style={{ textAlign: "center" }} item>
+              <HomeCard
+                setPageState={setPageState}
+                cardTitle={homeCardData[key].cardTitle}
+                link={homeCardData[key].link}
+                cardImage={homeCardData[key].cardImage}
+                description={homeCardData[key].description}
+              />
+            </Grid>
+          );
+        })}
+      </Grid>
   );
 };
 

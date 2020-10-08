@@ -2,7 +2,6 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Project from "../components/Project";
 // import Modal from "@material-ui/core/Modal";
-import Slide from "@material-ui/core/Slide";
 
 //  Portfolio contains a grid setup that displays Projects
 
@@ -110,7 +109,6 @@ const Portfolio = () => {
   return (
     <div>
       {/* Need to make the height of each project uniform */}
-      <Slide direction="up" in={true} mountOnEnter unmountOnExit>
         <Grid
           container
           justify="space-around"
@@ -134,7 +132,6 @@ const Portfolio = () => {
             );
           })}
         </Grid>
-      </Slide>
     </div>
   );
 };
