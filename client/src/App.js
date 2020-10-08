@@ -23,6 +23,7 @@ import Home from "./pages/Home";
 import Resume from "./pages/Resume";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
+import ProjectPage from "./pages/ProjectPage";
 
 // Component definition
 function App() {
@@ -96,12 +97,12 @@ function App() {
       marginRight: "20px",
       textTransform: "capitalize",
       minWidth: "1px",
-      width: "20%",
+      width: "16.666%",
     },
     tab: {
       textTransform: "capitalize",
       minWidth: "1px",
-      width: "20%",
+      width: "16.666%",
     },
     tabs: {
       width: "75%",

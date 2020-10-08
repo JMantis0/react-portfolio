@@ -86,9 +86,15 @@ const Header = ({ classes, setPageState, pageState, setSlideDirection }) => {
                       label="Resume"
                     />
                     <Tab
-                      className={classes.lastTab}
+                      className={classes.tab}
                       value="/contact"
                       label="Contact"
+                    />
+                    <Tab
+                      className={classes.lastTab}
+                      value="/item"
+                      // eventually label should be a state variable that displays the name of the currently selected project
+                      label="Item"
                     />
                   </Tabs>
                 </Hidden>
