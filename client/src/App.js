@@ -41,6 +41,7 @@ function App() {
     repoLink: null,
     liveLink: null,
   });
+  const [slidingIn, setSlidingIn] = useState(true);
 
   //  mainTheme supplies typography to theme consumers
   const mainTheme = createMuiTheme({
@@ -148,6 +149,7 @@ function App() {
         <CssBaseline />
         <Router>
           <Header
+          setSlidingIn={setSlidingIn}
             itemTabState={itemTabState}
             setPageState={setPageState}
             setSlideDirection={setSlideDirection}
@@ -157,7 +159,7 @@ function App() {
           <Route exact path="/">
             <Slide
               direction={slideDirection}
-              in={true}
+              in={slidingIn}
               mountOnEnter
               unmountOnExit
             >
@@ -169,7 +171,7 @@ function App() {
           <Route exact path="/portfolio">
             <Slide
               direction={slideDirection}
-              in={true}
+              in={slidingIn}
               mountOnEnter
               unmountOnExit
             >
@@ -187,7 +189,7 @@ function App() {
           <Route exact path="/about">
             <Slide
               direction={slideDirection}
-              in={true}
+              in={slidingIn}
               mountOnEnter
               unmountOnExit
             >
@@ -199,7 +201,7 @@ function App() {
           <Route exact path="/resume">
             <Slide
               direction={slideDirection}
-              in={true}
+              in={slidingIn}
               mountOnEnter
               unmountOnExit
             >
@@ -211,7 +213,7 @@ function App() {
           <Route exact path="/contact">
             <Slide
               direction={slideDirection}
-              in={true}
+              in={slidingIn}
               mountOnEnter
               unmountOnExit
             >
@@ -221,7 +223,7 @@ function App() {
           <Route exact path="/item">
             <Slide
               direction={slideDirection}
-              in={true}
+              in={slidingIn}
               mountOnEnter
               unmountOnExit
             >
@@ -232,6 +234,7 @@ function App() {
           </Route>
           <Grid container justify="center">
             <Footer
+              setSlidingIn={setSlidingIn}
               setSlideDirection={setSlideDirection}
               setPageState={setPageState}
               pageState={pageState}
