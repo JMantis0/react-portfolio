@@ -30,6 +30,17 @@ function App() {
   // pageState and setPageState are passed to components that link to other pages within the React Router
   const [pageState, setPageState] = useState("/");
   const [slideDirection, setSlideDirection] = useState("right");
+  const [itemTabState, setItemTabState] = useState("Item");
+  const [itemPageState, setItemPageState] = useState({
+    title: null,
+    description: null,
+    about: null,
+    mainPic: null,
+    secondPic: null,
+    thirdPic: null,
+    repoLink: null,
+    liveLink: null,
+  });
 
   //  mainTheme supplies typography to theme consumers
   const mainTheme = createMuiTheme({
@@ -137,6 +148,7 @@ function App() {
         <CssBaseline />
         <Router>
           <Header
+            itemTabState={itemTabState}
             setPageState={setPageState}
             setSlideDirection={setSlideDirection}
             pageState={pageState}
@@ -162,7 +174,12 @@ function App() {
               unmountOnExit
             >
               <div>
-                <Portfolio />
+                <Portfolio
+                  itemTabState={itemTabState}
+                  setItemTabState={setItemTabState}
+                  itemPageState={itemPageState}
+                  setItemPageState={setItemPageState}
+                />
               </div>
             </Slide>
           </Route>
@@ -200,13 +217,6 @@ function App() {
               <div>Contact</div>
             </Slide>
           </Route>
-          <Grid container justify="center">
-            <Footer
-              setPageState={setPageState}
-              pageState={pageState}
-              classes={classes}
-            />
-          </Grid>
           <Route exact path="/item">
             <Slide
               direction={slideDirection}
@@ -215,10 +225,17 @@ function App() {
               unmountOnExit
             >
               <div>
-                <ProjectPage />
+                <ProjectPage itemPageState={itemPageState} />
               </div>
             </Slide>
           </Route>
+          <Grid container justify="center">
+            <Footer
+              setPageState={setPageState}
+              pageState={pageState}
+              classes={classes}
+            />
+          </Grid>
         </Router>
       </Grid>
     </ThemeProvider>

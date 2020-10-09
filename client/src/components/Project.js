@@ -15,32 +15,51 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     height: 0,
-    paddingTop: "56.25%"
+    paddingTop: "56.25%",
   },
 }));
 
-const Project = ({ projectTitle, deployedLink, gitHubRepoLink, cardImage, description }) => {
+const Project = ({
+  setItemPageState,
+  itemPageState,
+  itemTabState,
+  setItemTabState,
+  projectTitle,
+  deployedLink,
+  gitHubRepoLink,
+  cardImage,
+  description,
+}) => {
   const classes = useStyles();
-// console.log(
-//   "projectTitle",
-//   projectTitle,
-//   "deployedLink",
-//   deployedLink,
-//   "gitHubRepoLink",
-//   gitHubRepoLink,
-//   "cardImage",
-//   cardImage,
-//   "typeOf cardImage",
-//   typeof cardImage,
-//   "description",
-//   description
-// )
+  // console.log(
+  //   "projectTitle",
+  //   projectTitle,
+  //   "deployedLink",
+  //   deployedLink,
+  //   "gitHubRepoLink",
+  //   gitHubRepoLink,
+  //   "cardImage",
+  //   cardImage,
+  //   "typeOf cardImage",
+  //   typeof cardImage,
+  //   "description",
+  //   description
+  // )
 
-//  Give project a large modal with links
-
+  //  Give project a large modal with links
 
   return (
-    <Card className={classes.root}>
+    <Card
+      className={classes.root}
+      onClick={() => {
+        console.log("click");
+        setItemTabState(projectTitle);
+        console.log("itemPageState: ", itemPageState)
+        setItemPageState({...itemPageState, 
+          title: projectTitle
+        })
+      }}
+    >
       <CardActionArea>
         <CardMedia
           className={classes.media}

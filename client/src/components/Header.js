@@ -13,7 +13,13 @@ import { useHistory } from "react-router-dom";
 
 // }));
 
-const Header = ({ classes, setPageState, pageState, setSlideDirection }) => {
+const Header = ({
+  classes,
+  setPageState,
+  pageState,
+  setSlideDirection,
+  itemTabState,
+}) => {
   const history = useHistory();
 
   //  When the pageState changes, history.push sets the route
@@ -51,7 +57,7 @@ const Header = ({ classes, setPageState, pageState, setSlideDirection }) => {
           <Grid xs={2} item>
             <img
               className={classes.headerImage}
-              src={require("../assets/biopic.PNG")}
+              // src={require("../assets/biopic.PNG")}
               alt="bio"
             ></img>
           </Grid>
@@ -94,7 +100,7 @@ const Header = ({ classes, setPageState, pageState, setSlideDirection }) => {
                       className={classes.lastTab}
                       value="/item"
                       // eventually label should be a state variable that displays the name of the currently selected project
-                      label="Item"
+                      label={itemTabState}
                     />
                   </Tabs>
                 </Hidden>
