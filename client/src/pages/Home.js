@@ -25,7 +25,7 @@ const homeCardData = {
 };
 const useStyles = makeStyles((theme) => ({
   homeContainer: {
-    margin: "150px 0 150px 0",
+    margin: "10px 0 150px 0",
   },
 }));
 

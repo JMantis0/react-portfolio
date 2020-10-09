@@ -156,6 +156,7 @@ function App() {
           setSlidingIn={setSlidingIn}
             itemTabState={itemTabState}
             setPageState={setPageState}
+            slideDirection={slideDirection}
             setSlideDirection={setSlideDirection}
             pageState={pageState}
             classes={classes}
