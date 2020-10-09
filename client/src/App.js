@@ -1,33 +1,66 @@
-import React, { useState, useEffect } from "react";
+// React imports
+import React, { useState } from "react";
+
+// MUI imports
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Grid from "@material-ui/core/Grid";
 import {
   makeStyles,
-  // useTheme,
   createMuiTheme,
   ThemeProvider,
 } from "@material-ui/core/styles";
-// import useMediaQuery from "@material-ui/core/useMediaQuery";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import Grid from "@material-ui/core/Grid";
+import Slide from "@material-ui/core/Slide";
+
+//  React Router Dom imports
+import { BrowserRouter as Router, Route } from "react-router-dom";
+
+// custom component imports
 import Header from "./components/Header";
+import Footer from "./components/Footer";
+
+// page imports
 import Home from "./pages/Home";
 import Resume from "./pages/Resume";
-import Footer from "./components/Footer";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
-import { BrowserRouter as Router, Route, useHistory } from "react-router-dom";
+import ProjectPage from "./pages/ProjectPage";
 
+
+// Component definition
 function App() {
+  
+  // pageState and setPageState are passed to components that link to other pages within the React Router
   const [pageState, setPageState] = useState("/");
+  const [slideDirection, setSlideDirection] = useState("right");
+  const [itemTabState, setItemTabState] = useState("Item");
+  const [itemPageState, setItemPageState] = useState({
+    title: null,
+    description: null,
+    about: null,
+    mainPic: null,
+    secondPic: null,
+    thirdPic: null,
+    repoLink: null,
+    liveLink: null,
+  });
+  const [slidingIn, setSlidingIn] = useState(true);
 
-  //  mainTheme supplies typogrophy to theme consumers
+  const gotoPage = () => {
+  }
+
+  //  mainTheme supplies typography to theme consumers
   const mainTheme = createMuiTheme({
     palette: {
       type: "dark",
     },
+    typography: {
+      fontFamily: "'Kumbh Sans', sans-serif;",
+    },
     spacing: 8,
   });
-
+  //  Styles
   const useStyles = makeStyles((theme) => ({
+    //  root is the main container and here is where I set its responsive behaviors
     root: {
       [theme.breakpoints.up("xs")]: {
         width: "95%",
@@ -42,6 +75,7 @@ function App() {
         margin: "0 auto 0 auto",
       },
     },
+    //  headerImage is the avatar-like circular photo in the header
     headerImage: {
       width: "100px",
       height: "100px",
@@ -52,6 +86,7 @@ function App() {
         left: "12%",
       },
     },
+    //  headerBanner is underneath the Appbar, above the pages.
     headerBanner: {
       [theme.breakpoints.down("xs")]: {
         margin: "35px 0 0 0",
@@ -65,7 +100,6 @@ function App() {
       fontSize: "20px",
     },
     appBar: {
-      // backgroundColor: "#eeeeee",
       padding: "2px 0 0 0",
       height: "100px",
       width: "100%",
@@ -78,24 +112,17 @@ function App() {
     lastTab: {
       marginRight: "20px",
       textTransform: "capitalize",
-      // color: "black",
       minWidth: "1px",
-      width: "20%",
+      width: "16.666%",
     },
     tab: {
       textTransform: "capitalize",
-      // color: "black",
       minWidth: "1px",
-      // [theme.breakpoints.down("xs")]: {
-      //   width:
-      // }
-      width: "20%",
+      width: "16.666%",
     },
     tabs: {
       width: "75%",
       margin: "0 0 0 15%",
-      // from 600 to 900, make width less and left margin greater.
-      //  Effectively move the tabs to the right as viewport increases
       [theme.breakpoints.between("960", "1280")]: {
         width: "70%",
         margin: "0 0 0 30%",
@@ -107,7 +134,6 @@ function App() {
     },
     tabsGrid: {},
     bottomBar: {
-      // backgroundColor: "#eeeeee",
       top: "auto",
       position: "static",
       bottom: 0,
@@ -119,36 +145,111 @@ function App() {
     },
   }));
   const classes = useStyles();
+
   return (
     <ThemeProvider theme={mainTheme}>
       <Grid className={classes.root} container justify="center">
         <CssBaseline />
         <Router>
+          {/* HEADER COMPONENT */}
           <Header
+          setSlidingIn={setSlidingIn}
+            itemTabState={itemTabState}
             setPageState={setPageState}
+            setSlideDirection={setSlideDirection}
             pageState={pageState}
             classes={classes}
           />
           <Route exact path="/">
-            <Home setPageState={setPageState} pageState={pageState} />
+            <Slide
+              direction={slideDirection}
+              in={slidingIn}
+              mountOnEnter
+              unmountOnExit
+              
+            >
+              <div>
+                {/* HOME "PAGE" */}
+                <Home setPageState={setPageState} pageState={pageState} />
+              </div>
+            </Slide>
           </Route>
           <Route exact path="/portfolio">
-            <Portfolio />
+            <Slide
+              direction={slideDirection}
+              in={slidingIn}
+              mountOnEnter
+              unmountOnExit
+            >
+              <div>
+              {/* PORTFOLIO "PAGE" */}
+                <Portfolio
+                  setPageState={setPageState}
+                  itemTabState={itemTabState}
+                  setItemTabState={setItemTabState}
+                  itemPageState={itemPageState}
+                  setItemPageState={setItemPageState}
+                />
+              </div>
+            </Slide>
           </Route>
           <Route exact path="/about">
-            <About />
-          </Route>
-          <Route exact path="/contact">
-            Contact
+            <Slide
+              direction={slideDirection}
+              in={slidingIn}
+              mountOnEnter
+              unmountOnExit
+            >
+              <div>
+                {/* ABOUT "PAGE" */}
+                <About />
+              </div>
+            </Slide>
           </Route>
           <Route exact path="/resume">
-            <Resume />
+            <Slide
+              direction={slideDirection}
+              in={slidingIn}
+              mountOnEnter
+              unmountOnExit
+            >
+              <div style={{ width: "100%" }}>
+                <Resume />
+              </div>
+            </Slide>
+          </Route>
+          <Route exact path="/contact">
+            <Slide
+              direction={slideDirection}
+              in={slidingIn}
+              mountOnEnter
+              unmountOnExit
+            >
+              {/* CONTACT "PAGE" */}
+              <div>Contact</div>
+            </Slide>
+          </Route>
+          <Route exact path="/item">
+            <Slide
+              direction={slideDirection}
+              in={slidingIn}
+              mountOnEnter
+              unmountOnExit
+            >
+              <div>
+                {/* PROJECTPAGE "PAGE" */}  
+                <ProjectPage itemPageState={itemPageState} />
+              </div>
+            </Slide>
           </Route>
           <Grid container justify="center">
-            <Footer 
-            setPageState={setPageState}
-            pageState={pageState}
-            classes={classes} />
+            <Footer
+              setSlidingIn={setSlidingIn}
+              setSlideDirection={setSlideDirection}
+              setPageState={setPageState}
+              pageState={pageState}
+              classes={classes}
+            />
           </Grid>
         </Router>
       </Grid>

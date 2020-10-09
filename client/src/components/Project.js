@@ -7,6 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,32 +16,58 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     height: 0,
-    paddingTop: "56.25%"
+    paddingTop: "56.25%",
   },
 }));
 
-const Project = ({ projectTitle, deployedLink, gitHubRepoLink, cardImage, description }) => {
+const Project = ({
+  setPageState,
+  setItemPageState,
+  itemPageState,
+  itemTabState,
+  setItemTabState,
+  projectTitle,
+  deployedLink,
+  gitHubRepoLink,
+  cardImage,
+  description,
+}) => {
+  const history = useHistory();
   const classes = useStyles();
-// console.log(
-//   "projectTitle",
-//   projectTitle,
-//   "deployedLink",
-//   deployedLink,
-//   "gitHubRepoLink",
-//   gitHubRepoLink,
-//   "cardImage",
-//   cardImage,
-//   "typeOf cardImage",
-//   typeof cardImage,
-//   "description",
-//   description
-// )
+  // console.log(
+  //   "projectTitle",
+  //   projectTitle,
+  //   "deployedLink",
+  //   deployedLink,
+  //   "gitHubRepoLink",
+  //   gitHubRepoLink,
+  //   "cardImage",
+  //   cardImage,
+  //   "typeOf cardImage",
+  //   typeof cardImage,
+  //   "description",
+  //   description
+  // )
 
-//  Give project a large modal with links
+  //  Give project a large modal with links
 
+  const handleClick = () => {
+    console.log("click");
+    setItemTabState(projectTitle);
+    console.log("itemPageState: ", itemPageState);
+    console.log("projectTitle: ", projectTitle);
+    setItemPageState({ ...itemPageState, title: projectTitle });
+    setPageState("/item");
+    history.push("/item");
+  };
 
   return (
-    <Card className={classes.root}>
+    <Card
+      className={classes.root}
+      onClick={() => {
+        handleClick();
+      }}
+    >
       <CardActionArea>
         <CardMedia
           className={classes.media}

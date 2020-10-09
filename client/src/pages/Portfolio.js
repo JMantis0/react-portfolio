@@ -1,6 +1,7 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Project from "../components/Project";
+// import Modal from "@material-ui/core/Modal";
 
 //  Portfolio contains a grid setup that displays Projects
 
@@ -100,7 +101,7 @@ const projectData = {
   },
 };
 
-const Portfolio = () => {
+const Portfolio = ({ setPageState, itemPageState, setItemPageState, setItemTabState, itemTabState }) => {
   // console.log("Object.keys(projectData)", Object.keys(projectData));
   // Object.keys(projectData).forEach((key) =>
   //   console.log(projectData[key].deployedLink)
@@ -108,13 +109,17 @@ const Portfolio = () => {
   return (
     <div>
       {/* Need to make the height of each project uniform */}
-      <Grid container justify="space-around" alignItems="stretch" spacing={5} onClick={() => {
-        console.log("click")
-      }}>
+      <Grid container justify="space-around" alignItems="stretch" spacing={5}>
         {Object.keys(projectData).map((key) => {
           return (
             <Grid item xs={10} sm={6} md={4} lg={4} xl={4} key={key}>
               <Project
+                setPageState={setPageState}
+                itemTabState={itemTabState}
+                setItemTabState={setItemTabState}
+                //  setItemPageState updates ProjectPage.js
+                setItemPageState={setItemPageState}
+                itemPageState={itemPageState}
                 projectTitle={projectData[key].title}
                 deployedLink={projectData[key].deployedLink}
                 gitHubRepoLink={projectData[key].gitHubRepoLink}

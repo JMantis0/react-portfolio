@@ -1,48 +1,49 @@
+// React imports
 import React from "react";
 import clsx from "clsx";
+// react-router-dom imports
+import { useHistory } from "react-router-dom";
+//  MUI component imports
 import Grid from "@material-ui/core/Grid";
-import { makeStyles } from "@material-ui/core/styles";
-import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
+import Drawer from "@material-ui/core/Drawer";
 import List from "@material-ui/core/List";
-// import Divider from "@material-ui/core/Divider";
+import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import MenuIcon from "@material-ui/icons/Menu";
+import AccountCircleTwoToneIcon from "@material-ui/icons/AccountCircleTwoTone";
 import HomeTwoToneIcon from "@material-ui/icons/HomeTwoTone";
 import FolderSpecialTwoToneIcon from "@material-ui/icons/FolderSpecialTwoTone";
 import ContactMailTwoToneIcon from "@material-ui/icons/ContactMailTwoTone";
 import DescriptionTwoToneIcon from "@material-ui/icons/DescriptionTwoTone";
 import InfoTwoToneIcon from "@material-ui/icons/InfoTwoTone";
-import { useHistory } from "react-router-dom";
+// MUI style import
+import { makeStyles } from "@material-ui/core/styles";
 
-// import IconButton from "@material-ui/core/IconButton";
-
+//  Styles
 const useStyles = makeStyles({
   list: {
-    width: 250,
+    width: 200,
   },
   fullList: {
     width: "auto",
   },
 });
 
-export default function DrawerSnippet({ setPageState }) {
+//  Component definition
+const MobileDrawer = ({ setPageState }) => {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    top: false,
-    left: false,
-    bottom: false,
     right: false,
   });
 
+  //  used to navigate within the BrowserRouter
   const history = useHistory();
 
+  //  function for opening/closing the drawer
   const toggleDrawer = (anchor, open) => (event) => {
-    //  Console logs to help me understand the drawer function
-    console.log("The anchor is : ", anchor);
-    console.log(`The ${anchor} anchor is ${open ? "" : "not"} open`);
     if (
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
@@ -51,12 +52,9 @@ export default function DrawerSnippet({ setPageState }) {
     }
 
     setState({ ...state, [anchor]: open });
-  };
+  }
 
-  const handleDrawerItemClick = (event, value) => {
-    console.log("DrawerItemClick", value);
-  };
-
+  //  define the list that appears inside the drawer
   const list = (anchor) => (
     <div
       className={clsx(classes.list, {
@@ -66,6 +64,17 @@ export default function DrawerSnippet({ setPageState }) {
       onClick={toggleDrawer(anchor, false)}
       onKeyDown={toggleDrawer(anchor, false)}
     >
+      <List>
+        {["Jesse Mazur"].map((text, index) => (
+          <ListItem button key={text}>
+            <ListItemIcon>
+              <AccountCircleTwoToneIcon />
+            </ListItemIcon>
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      <Divider />
       <List>
         {["Home", "Portfolio", "About", "Resume", "Contact"].map(
           (text, index) => (
@@ -95,15 +104,6 @@ export default function DrawerSnippet({ setPageState }) {
           )
         )}
       </List>
-      {/* <Divider />
-      <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List> */}
     </div>
   );
 
@@ -132,3 +132,5 @@ export default function DrawerSnippet({ setPageState }) {
     </div>
   );
 }
+
+export default MobileDrawer;

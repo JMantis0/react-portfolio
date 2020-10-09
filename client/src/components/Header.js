@@ -5,23 +5,48 @@ import Grid from "@material-ui/core/Grid";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Hidden from "@material-ui/core/Hidden";
-import DrawerSnippet from "./DrawerSnippet";
+import MobileDrawer from "./MobileDrawer";
 import { makeStyles } from "@material-ui/core/styles";
-import { useHistory } from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 // const useStyles = makeStyles((theme) => ({
 
 // }));
 
-const Header = ({ classes, setPageState, pageState }) => {
-  const history = useHistory();
+const Header = ({
+  classes,
+  setPageState,
+  setSlidingIn,
+  pageState,
+  setSlideDirection,
+  itemTabState,
+}) => {
 
   //  When the pageState changes, history.push sets the route
-
+const history = useHistory();
   //  use setPageState prop from App.js to route.
 
+  const orderMapper = {
+    "/": 1,
+    "/portfolio": 2,
+    "/about": 3,
+    "/resume": 4,
+    "/contact": 5,
+    "/item": 6,
+  };
+
   const handleChange = (event, newValue) => {
+    if (orderMapper[newValue] < orderMapper[pageState]) {
+      setSlideDirection("right");
+    } else if (orderMapper[newValue] > orderMapper[pageState]) {
+      setSlideDirection("left");
+    }
+    console.log("pageState is: ", pageState);
+    console.log("newValue is: ", newValue);
     setPageState(newValue);
+    console.log("pageState set to: ", pageState);
+
+    //  Add code that transitions previous page out and makes history.push wait for it to finish first
     history.push(newValue);
   };
 
@@ -32,7 +57,7 @@ const Header = ({ classes, setPageState, pageState }) => {
           <Grid xs={2} item>
             <img
               className={classes.headerImage}
-              src={require("../assets/biopic.PNG")}
+              // src={require("../assets/biopic.PNG")}
               alt="bio"
             ></img>
           </Grid>
@@ -41,7 +66,7 @@ const Header = ({ classes, setPageState, pageState }) => {
             <Grid container justify="flex-end">
               <Grid item style={{ width: "100%" }}>
                 <Hidden smUp>
-                  <DrawerSnippet
+                  <MobileDrawer
                     setPageState={setPageState}
                     id="DrawerSnippet"
                   />
@@ -67,9 +92,15 @@ const Header = ({ classes, setPageState, pageState }) => {
                       label="Resume"
                     />
                     <Tab
-                      className={classes.lastTab}
+                      className={classes.tab}
                       value="/contact"
                       label="Contact"
+                    />
+                    <Tab
+                      className={classes.lastTab}
+                      value="/item"
+                      // eventually label should be a state variable that displays the name of the currently selected project
+                      label={itemTabState}
                     />
                   </Tabs>
                 </Hidden>
