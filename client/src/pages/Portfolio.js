@@ -101,7 +101,7 @@ const projectData = {
   },
 };
 
-const Portfolio = ({ itemPageState, setItemPageState, setItemTabState, itemTabState }) => {
+const Portfolio = ({ setPageState, itemPageState, setItemPageState, setItemTabState, itemTabState }) => {
   // console.log("Object.keys(projectData)", Object.keys(projectData));
   // Object.keys(projectData).forEach((key) =>
   //   console.log(projectData[key].deployedLink)
@@ -114,6 +114,7 @@ const Portfolio = ({ itemPageState, setItemPageState, setItemTabState, itemTabSt
           return (
             <Grid item xs={10} sm={6} md={4} lg={4} xl={4} key={key}>
               <Project
+              setPageState={setPageState}
                 itemTabState={itemTabState}
                 setItemTabState={setItemTabState}
                 //  setItemPageState updates ProjectPage.js

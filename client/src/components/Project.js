@@ -7,6 +7,7 @@ import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Project = ({
+  setPageState,
   setItemPageState,
   itemPageState,
   itemTabState,
@@ -30,6 +32,7 @@ const Project = ({
   cardImage,
   description,
 }) => {
+  const history = useHistory();
   const classes = useStyles();
   // console.log(
   //   "projectTitle",
@@ -55,9 +58,13 @@ const Project = ({
         console.log("click");
         setItemTabState(projectTitle);
         console.log("itemPageState: ", itemPageState)
+        console.log("projectTitle: ", projectTitle)
         setItemPageState({...itemPageState, 
           title: projectTitle
-        })
+        });
+        setPageState("/item");
+        history.push("/item");
+
       }}
     >
       <CardActionArea>

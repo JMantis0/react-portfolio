@@ -175,6 +175,7 @@ function App() {
             >
               <div>
                 <Portfolio
+                  setPageState={setPageState}
                   itemTabState={itemTabState}
                   setItemTabState={setItemTabState}
                   itemPageState={itemPageState}
