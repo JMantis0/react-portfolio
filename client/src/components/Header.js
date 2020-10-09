@@ -7,7 +7,7 @@ import Tab from "@material-ui/core/Tab";
 import Hidden from "@material-ui/core/Hidden";
 import MobileDrawer from "./MobileDrawer";
 import { makeStyles } from "@material-ui/core/styles";
-import {useHistory} from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 // const useStyles = makeStyles((theme) => ({
 
@@ -15,15 +15,15 @@ import {useHistory} from "react-router-dom";
 
 const Header = ({
   classes,
+  slideDirection,
   setPageState,
   setSlidingIn,
   pageState,
   setSlideDirection,
   itemTabState,
 }) => {
-
   //  When the pageState changes, history.push sets the route
-const history = useHistory();
+  const history = useHistory();
   //  use setPageState prop from App.js to route.
 
   const orderMapper = {
@@ -35,19 +35,26 @@ const history = useHistory();
     "/item": 6,
   };
 
+  //  Handle change switches the page provided by BrowserRouter with the appropriate animations
   const handleChange = (event, newValue) => {
-    if (orderMapper[newValue] < orderMapper[pageState]) {
-      setSlideDirection("right");
-    } else if (orderMapper[newValue] > orderMapper[pageState]) {
-      setSlideDirection("left");
-    }
-    console.log("pageState is: ", pageState);
-    console.log("newValue is: ", newValue);
-    setPageState(newValue);
-    console.log("pageState set to: ", pageState);
 
-    //  Add code that transitions previous page out and makes history.push wait for it to finish first
-    history.push(newValue);
+    if (orderMapper[newValue] < orderMapper[pageState]) {
+      setSlideDirection("left");
+    } else if (orderMapper[newValue] > orderMapper[pageState]) {
+      setSlideDirection("right");
+    }
+    setSlidingIn(false);
+    setPageState(newValue);
+
+    setTimeout(() => {
+      if (orderMapper[newValue] < orderMapper[pageState]) {
+        setSlideDirection("right");
+      } else if (orderMapper[newValue] > orderMapper[pageState]) {
+        setSlideDirection("left");
+      }
+      setSlidingIn(true);
+      history.push(newValue);
+    }, 250);
   };
 
   return (
@@ -57,7 +64,7 @@ const history = useHistory();
           <Grid xs={2} item>
             <img
               className={classes.headerImage}
-              src={require("../asse ts/biopic.PNG")}
+              src={require("../assets/biopic.PNG")}
               alt="bio"
             ></img>
           </Grid>
