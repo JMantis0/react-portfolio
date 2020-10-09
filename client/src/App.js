@@ -232,6 +232,7 @@ function App() {
           </Route>
           <Grid container justify="center">
             <Footer
+              setSlideDirection={setSlideDirection}
               setPageState={setPageState}
               pageState={pageState}
               classes={classes}

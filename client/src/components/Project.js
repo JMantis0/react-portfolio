@@ -51,20 +51,21 @@ const Project = ({
 
   //  Give project a large modal with links
 
+  const handleClick = () => {
+    console.log("click");
+    setItemTabState(projectTitle);
+    console.log("itemPageState: ", itemPageState);
+    console.log("projectTitle: ", projectTitle);
+    setItemPageState({ ...itemPageState, title: projectTitle });
+    setPageState("/item");
+    history.push("/item");
+  };
+
   return (
     <Card
       className={classes.root}
       onClick={() => {
-        console.log("click");
-        setItemTabState(projectTitle);
-        console.log("itemPageState: ", itemPageState)
-        console.log("projectTitle: ", projectTitle)
-        setItemPageState({...itemPageState, 
-          title: projectTitle
-        });
-        setPageState("/item");
-        history.push("/item");
-
+        handleClick();
       }}
     >
       <CardActionArea>

@@ -114,7 +114,7 @@ const Portfolio = ({ setPageState, itemPageState, setItemPageState, setItemTabSt
           return (
             <Grid item xs={10} sm={6} md={4} lg={4} xl={4} key={key}>
               <Project
-              setPageState={setPageState}
+                setPageState={setPageState}
                 itemTabState={itemTabState}
                 setItemTabState={setItemTabState}
                 //  setItemPageState updates ProjectPage.js
