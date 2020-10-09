@@ -57,7 +57,7 @@ const history = useHistory();
           <Grid xs={2} item>
             <img
               className={classes.headerImage}
-              // src={require("../assets/biopic.PNG")}
+              src={require("../asse ts/biopic.PNG")}
               alt="bio"
             ></img>
           </Grid>
