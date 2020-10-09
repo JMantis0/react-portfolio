@@ -25,8 +25,10 @@ import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import ProjectPage from "./pages/ProjectPage";
 
+
 // Component definition
 function App() {
+  
   // pageState and setPageState are passed to components that link to other pages within the React Router
   const [pageState, setPageState] = useState("/");
   const [slideDirection, setSlideDirection] = useState("right");
@@ -43,6 +45,9 @@ function App() {
   });
   const [slidingIn, setSlidingIn] = useState(true);
 
+  const gotoPage = () => {
+  }
+
   //  mainTheme supplies typography to theme consumers
   const mainTheme = createMuiTheme({
     palette: {
@@ -53,7 +58,6 @@ function App() {
     },
     spacing: 8,
   });
-
   //  Styles
   const useStyles = makeStyles((theme) => ({
     //  root is the main container and here is where I set its responsive behaviors
@@ -140,7 +144,6 @@ function App() {
       // backgroundColor: "#eeeeee",
     },
   }));
-
   const classes = useStyles();
 
   return (
@@ -148,6 +151,7 @@ function App() {
       <Grid className={classes.root} container justify="center">
         <CssBaseline />
         <Router>
+          {/* HEADER COMPONENT */}
           <Header
           setSlidingIn={setSlidingIn}
             itemTabState={itemTabState}
@@ -162,8 +166,10 @@ function App() {
               in={slidingIn}
               mountOnEnter
               unmountOnExit
+              
             >
               <div>
+                {/* HOME "PAGE" */}
                 <Home setPageState={setPageState} pageState={pageState} />
               </div>
             </Slide>
@@ -176,6 +182,7 @@ function App() {
               unmountOnExit
             >
               <div>
+              {/* PORTFOLIO "PAGE" */}
                 <Portfolio
                   setPageState={setPageState}
                   itemTabState={itemTabState}
@@ -194,6 +201,7 @@ function App() {
               unmountOnExit
             >
               <div>
+                {/* ABOUT "PAGE" */}
                 <About />
               </div>
             </Slide>
@@ -217,6 +225,7 @@ function App() {
               mountOnEnter
               unmountOnExit
             >
+              {/* CONTACT "PAGE" */}
               <div>Contact</div>
             </Slide>
           </Route>
@@ -228,6 +237,7 @@ function App() {
               unmountOnExit
             >
               <div>
+                {/* PROJECTPAGE "PAGE" */}  
                 <ProjectPage itemPageState={itemPageState} />
               </div>
             </Slide>

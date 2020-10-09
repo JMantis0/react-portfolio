@@ -7,7 +7,7 @@ import Tab from "@material-ui/core/Tab";
 import Hidden from "@material-ui/core/Hidden";
 import MobileDrawer from "./MobileDrawer";
 import { makeStyles } from "@material-ui/core/styles";
-import { useHistory } from "react-router-dom";
+import {useHistory} from "react-router-dom";
 
 // const useStyles = makeStyles((theme) => ({
 
@@ -16,14 +16,14 @@ import { useHistory } from "react-router-dom";
 const Header = ({
   classes,
   setPageState,
+  setSlidingIn,
   pageState,
   setSlideDirection,
   itemTabState,
 }) => {
-  const history = useHistory();
 
   //  When the pageState changes, history.push sets the route
-
+const history = useHistory();
   //  use setPageState prop from App.js to route.
 
   const orderMapper = {

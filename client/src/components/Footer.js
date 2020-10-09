@@ -14,7 +14,7 @@ import ContactMailIcon from "@material-ui/icons/ContactMail";
 // React router dom imports
 import { useHistory } from "react-router-dom";
 
-const Footer = ({ setSlideDirection,classes, pageState, setPageState }) => {
+const Footer = ({ setSlidingIn, setSlideDirection,classes, pageState, setPageState }) => {
   const history = useHistory();
   const orderMapper = {
     "/": 1,
@@ -26,6 +26,7 @@ const Footer = ({ setSlideDirection,classes, pageState, setPageState }) => {
   };
 
   const handleChange = (event, newValue) => {
+    setSlidingIn(false);
     if (orderMapper[newValue] < orderMapper[pageState]) {
       setSlideDirection("right");
     } else if (orderMapper[newValue] > orderMapper[pageState]) {
@@ -37,7 +38,7 @@ const Footer = ({ setSlideDirection,classes, pageState, setPageState }) => {
     console.log("pageState set to: ", pageState);
 
     //  Add code that transitions previous page out and makes history.push wait for it to finish first
-    history.push(newValue);
+    // history.push(newValue);
   };
   return (
     <AppBar className={classes.bottomBar}>
