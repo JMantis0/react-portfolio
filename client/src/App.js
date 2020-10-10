@@ -25,10 +25,8 @@ import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
 import ProjectPage from "./pages/ProjectPage";
 
-
 // Component definition
 function App() {
-  
   // pageState and setPageState are passed to components that link to other pages within the React Router
   const [pageState, setPageState] = useState("/");
   const [slideDirection, setSlideDirection] = useState("right");
@@ -45,8 +43,7 @@ function App() {
   });
   const [slidingIn, setSlidingIn] = useState(true);
 
-  const gotoPage = () => {
-  }
+  const gotoPage = () => {};
 
   //  mainTheme supplies typography to theme consumers
   const mainTheme = createMuiTheme({
@@ -153,7 +150,7 @@ function App() {
         <Router>
           {/* HEADER COMPONENT */}
           <Header
-          setSlidingIn={setSlidingIn}
+            setSlidingIn={setSlidingIn}
             itemTabState={itemTabState}
             setPageState={setPageState}
             slideDirection={slideDirection}
@@ -167,11 +164,15 @@ function App() {
               in={slidingIn}
               mountOnEnter
               unmountOnExit
-              
             >
               <div>
                 {/* HOME "PAGE" */}
-                <Home setPageState={setPageState} pageState={pageState} />
+                <Home
+                  setSlidingIn={setSlidingIn}
+                  setSlideDirection={setSlideDirection}
+                  setPageState={setPageState}
+                  pageState={pageState}
+                />
               </div>
             </Slide>
           </Route>
@@ -183,7 +184,7 @@ function App() {
               unmountOnExit
             >
               <div>
-              {/* PORTFOLIO "PAGE" */}
+                {/* PORTFOLIO "PAGE" */}
                 <Portfolio
                   setPageState={setPageState}
                   itemTabState={itemTabState}
@@ -238,7 +239,7 @@ function App() {
               unmountOnExit
             >
               <div>
-                {/* PROJECTPAGE "PAGE" */}  
+                {/* PROJECTPAGE "PAGE" */}
                 <ProjectPage itemPageState={itemPageState} />
               </div>
             </Slide>

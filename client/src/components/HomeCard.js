@@ -21,15 +21,36 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const HomeCard = ({ cardTitle, link, cardImage, description, setPageState }) => {
+const HomeCard = ({
+  setSlideDirection,
+  setSlidingIn,
+  cardTitle,
+  link,
+  cardImage,
+  description,
+  setPageState,
+}) => {
   const history = useHistory();
   const classes = useStyles();
-  return (
-    <Card onClick={() => {
-      setPageState(link);
+
+  const handleChange = () => {
+    setSlideDirection("right");
+    setPageState(link);
+    setSlidingIn(false);
+    setTimeout(() => {
+      setSlideDirection("left");
+      setSlidingIn(true);
       history.push(link);
-      console.log("cardClick on home page")
-    }} className={classes.root}>
+    }, 250);
+  };
+
+  return (
+    <Card
+      onClick={() => {
+        handleChange();
+      }}
+      className={classes.root}
+    >
       <CardActionArea>
         <img className={classes.media} src={cardImage}></img>
         <CardContent>
@@ -45,7 +66,7 @@ const HomeCard = ({ cardTitle, link, cardImage, description, setPageState }) => 
         <Button style={{textAlign: "center"}} size="small" color="primary">
           Click
         </Button> */}
-        {/* <Button size="small" color="primary">
+      {/* <Button size="small" color="primary">
           Learn more
         </Button> */}
       {/* </CardActions> */}
