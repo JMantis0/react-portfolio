@@ -26,19 +26,24 @@ const Footer = ({ setSlidingIn, setSlideDirection,classes, pageState, setPageSta
   };
 
   const handleChange = (event, newValue) => {
-    setSlidingIn(false);
-    if (orderMapper[newValue] < orderMapper[pageState]) {
-      setSlideDirection("right");
-    } else if (orderMapper[newValue] > orderMapper[pageState]) {
-      setSlideDirection("left");
-    }
-    console.log("pageState is: ", pageState);
-    console.log("newValue is: ", newValue);
-    setPageState(newValue);
-    console.log("pageState set to: ", pageState);
 
-    //  Add code that transitions previous page out and makes history.push wait for it to finish first
-    // history.push(newValue);
+    if (orderMapper[newValue] < orderMapper[pageState]) {
+      setSlideDirection("left");
+    } else if (orderMapper[newValue] > orderMapper[pageState]) {
+      setSlideDirection("right");
+    }
+    setSlidingIn(false);
+    setPageState(newValue);
+
+    setTimeout(() => {
+      if (orderMapper[newValue] < orderMapper[pageState]) {
+        setSlideDirection("right");
+      } else if (orderMapper[newValue] > orderMapper[pageState]) {
+        setSlideDirection("left");
+      }
+      setSlidingIn(true);
+      history.push(newValue);
+    }, 250);
   };
   return (
     <AppBar className={classes.bottomBar}>
