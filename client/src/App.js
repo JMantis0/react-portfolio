@@ -62,6 +62,7 @@ function App() {
       [theme.breakpoints.up("xs")]: {
         width: "95%",
         margin: "0 0 0 2.5%",
+        overflow: "hidden",
       },
       [theme.breakpoints.up("sm")]: {
         width: "90%",
