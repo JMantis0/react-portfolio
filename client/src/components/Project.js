@@ -26,6 +26,8 @@ const Project = ({
   itemPageState,
   itemTabState,
   brief,
+  setSlideDirection,
+  setSlidingIn,
   setItemTabState,
   projectTitle,
   deployedLink,
@@ -54,6 +56,8 @@ const Project = ({
 
   const handleClick = () => {
     console.log("click");
+    setSlideDirection("right");
+    setSlidingIn(false);
     setItemTabState(projectTitle);
     console.log("itemPageState: ", itemPageState);
     console.log("projectTitle: ", projectTitle);
@@ -64,10 +68,14 @@ const Project = ({
       mainPic: cardImage,
       description: description,
       repoLink: gitHubRepoLink,
-      liveLink: deployedLink
+      liveLink: deployedLink,
     });
-    setPageState("/item");
-    history.push("/item");
+    setTimeout(() => {
+      setSlideDirection("left");
+      setSlidingIn(true);
+      setPageState("/item");
+      history.push("/item");
+    }, 250);
   };
 
   return (

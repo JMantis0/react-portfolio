@@ -188,6 +188,8 @@ function App() {
               <div>
                 {/* PORTFOLIO "PAGE" */}
                 <Portfolio
+                  setSlideDirection={setSlideDirection}
+                  setSlidingIn={setSlidingIn}
                   setPageState={setPageState}
                   itemTabState={itemTabState}
                   setItemTabState={setItemTabState}
