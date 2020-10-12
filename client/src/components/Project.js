@@ -25,6 +25,7 @@ const Project = ({
   setItemPageState,
   itemPageState,
   itemTabState,
+  brief,
   setItemTabState,
   projectTitle,
   deployedLink,
@@ -56,7 +57,15 @@ const Project = ({
     setItemTabState(projectTitle);
     console.log("itemPageState: ", itemPageState);
     console.log("projectTitle: ", projectTitle);
-    setItemPageState({ ...itemPageState, title: projectTitle });
+    setItemPageState({
+      ...itemPageState,
+      title: projectTitle,
+      brief: brief,
+      mainPic: cardImage,
+      description: description,
+      repoLink: gitHubRepoLink,
+      liveLink: deployedLink
+    });
     setPageState("/item");
     history.push("/item");
   };

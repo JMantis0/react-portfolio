@@ -18,6 +18,9 @@ import Project from "../components/Project";
 const projectData = {
   javaScriptQuiz: {
     title: "JavaScript Quiz",
+    brief: "The Depth of Knowledge: Javascript application is designed to provide coding students a timed quiz on JavaScript fundamentals that stores high scores so that they can gauge their progress compared to other students.",
+    techs: ["JavaScript", "jQuery", "HTML", "CSS selectors", "Media Queries", "Local Storage", "Data Attributes", "Bootstrap Framework", "Embedded Audios"],
+    devComments: "This website is one of my first using jQuery.  ",
     deployedLink:
       "https://jmantis0.github.io/depth-of-knowledge-javascript-edition/",
     gitHubRepoLink:
@@ -120,6 +123,7 @@ const Portfolio = ({ setPageState, itemPageState, setItemPageState, setItemTabSt
                 //  setItemPageState updates ProjectPage.js
                 setItemPageState={setItemPageState}
                 itemPageState={itemPageState}
+                brief={projectData[key].brief}
                 projectTitle={projectData[key].title}
                 deployedLink={projectData[key].deployedLink}
                 gitHubRepoLink={projectData[key].gitHubRepoLink}

@@ -33,6 +33,7 @@ function App() {
   const [itemTabState, setItemTabState] = useState("Item");
   const [itemPageState, setItemPageState] = useState({
     title: null,
+    breif: null,
     description: null,
     about: null,
     mainPic: null,
