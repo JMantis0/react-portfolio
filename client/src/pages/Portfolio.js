@@ -20,7 +20,7 @@ const projectData = {
     title: "JavaScript Quiz",
     brief: "The Depth of Knowledge: Javascript application is designed to provide coding students a timed quiz on JavaScript fundamentals that stores high scores so that they can gauge their progress compared to other students.",
     techs: ["JavaScript", "jQuery", "HTML", "CSS selectors", "Media Queries", "Local Storage", "Data Attributes", "Bootstrap Framework", "Embedded Audios"],
-    devComments: "This website is one of my first using jQuery.  ",
+    devComments: "This is one of the very first sites I made from scratch without boiler plate code.  I learned how to use the jQuery API (event listeners and addClass/removeClass) in combination with CSS selectors to create an interactive interface that changes colors to provide the user with useful feedback as she takse the quiz.",
     deployedLink:
       "https://jmantis0.github.io/depth-of-knowledge-javascript-edition/",
     gitHubRepoLink:
@@ -31,6 +31,7 @@ const projectData = {
   },
   weatherDashBoard: {
     title: "Weather Dashboard",
+    brief: "",
     deployedLink: "https://jmantis0.github.io/weather-dashboard/",
     gitHubRepoLink: "http://github.com/JMantis0/weather-dashboard",
     cardImage: "/assets/images/w-dashboard.png",

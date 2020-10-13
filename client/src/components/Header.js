@@ -6,7 +6,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Hidden from "@material-ui/core/Hidden";
 import MobileDrawer from "./MobileDrawer";
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 
 // const useStyles = makeStyles((theme) => ({
@@ -64,7 +64,7 @@ const Header = ({
           <Grid xs={2} item>
             <img
               className={classes.headerImage}
-              src={require("../assets/biopic.PNG")}
+              // src={require("../assets/biopic.PNG")}
               alt="bio"
             ></img>
           </Grid>
@@ -121,10 +121,12 @@ const Header = ({
           <Typography variant="h4" align="center">
             <p className={classes.bannerParagraph}>
               Burgeoning Web Designer & Developer based in Seattle
-              <Hidden smUp>
+              {/* I want this to appear at 735 and smaller and to disappear at 736 and Larger  */}
+              <Hidden only={["xs","stf"]}>
                 <span>.</span>
               </Hidden>
-              <Hidden xsDown>
+              {/* I want this to appear at 736px and larger, and to disappear at 735 and smaller */}
+              <Hidden only="736">
                 <span>, Washington.</span>
               </Hidden>
             </p>

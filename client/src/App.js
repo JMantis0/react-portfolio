@@ -54,6 +54,11 @@ function App() {
     typography: {
       fontFamily: "'Kumbh Sans', sans-serif;",
     },
+    // breakpoints: {
+    //   values:{
+    //     stf: 735
+    //   }
+    // },
     spacing: 8,
   });
   //  Styles
@@ -191,10 +196,10 @@ function App() {
                   setSlideDirection={setSlideDirection}
                   setSlidingIn={setSlidingIn}
                   setPageState={setPageState}
-                  itemTabState={itemTabState}
                   setItemTabState={setItemTabState}
-                  itemPageState={itemPageState}
                   setItemPageState={setItemPageState}
+                  itemTabState={itemTabState}
+                  itemPageState={itemPageState}
                 />
               </div>
             </Slide>
