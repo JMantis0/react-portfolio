@@ -14,8 +14,7 @@ import { useHistory } from "react-router-dom";
 // }));
 
 const Header = ({
-  classes,
-  slideDirection,
+  // classes,
   setPageState,
   setSlidingIn,
   pageState,
@@ -25,6 +24,74 @@ const Header = ({
   //  When the pageState changes, history.push sets the route
   const history = useHistory();
   //  use setPageState prop from App.js to route.
+
+  const useStyles = makeStyles((theme) => ({
+    //  headerBanner is underneath the Appbar, above the pages.
+    headerBanner: {
+      [theme.breakpoints.down("xs")]: {
+        margin: "35px 0 0 0",
+      },
+      marginTop: "35px",
+      marginBottom: "35px",
+      width: "100%",
+    },
+    //  headerImage is the avatar-like circular photo in the header
+    headerImage: {
+      width: "100px",
+      height: "100px",
+      position: "absolute",
+      top: "15px",
+      left: "10%",
+      [theme.breakpoints.up("1300")]: {
+        left: "12%",
+      },
+    },
+    appBar: {
+      padding: "2px 0 0 0",
+      height: "100px",
+      width: "100%",
+      minWidth: "10px",
+    },
+    tabsGridItem: {
+      marginTop: "50px",
+      width: "100%",
+    },
+    lastTab: {
+      marginRight: "20px",
+      textTransform: "capitalize",
+      minWidth: "1px",
+      width: "16.666%",
+    },
+    tab: {
+      textTransform: "capitalize",
+      minWidth: "1px",
+      width: "16.666%",
+    },
+    bannerParagraph: {
+      margin: 0,
+      fontSize: "20px",
+    },
+    tabs: {
+      width: "75%",
+      margin: "0 0 0 15%",
+      [theme.breakpoints.between("960", "1280")]: {
+        width: "70%",
+        margin: "0 0 0 30%",
+      },
+      [theme.breakpoints.between("1280", "1920")]: {
+        width: "50%",
+        margin: "0 0 0 50%",
+      },
+    },
+    hiddenAtX: {
+      display: "static",
+      [theme.breakpoints.between("0", "320")]: {
+        display: "none",
+      },
+    },
+  }));
+
+  const classes = useStyles();
 
   const orderMapper = {
     "/": 1,
@@ -37,7 +104,6 @@ const Header = ({
 
   //  Handle change switches the page provided by BrowserRouter with the appropriate animations
   const handleChange = (event, newValue) => {
-
     if (orderMapper[newValue] < orderMapper[pageState]) {
       setSlideDirection("left");
     } else if (orderMapper[newValue] > orderMapper[pageState]) {
@@ -120,18 +186,21 @@ const Header = ({
         <Grid className={classes.headerBanner} item>
           <Typography variant="h4" align="center">
             <p className={classes.bannerParagraph}>
-              Burgeoning Web Designer & Developer based in Seattle
-              {/* I want this to appear at 735 and smaller and to disappear at 736 and Larger  */}
+              {/* Burgeoning  */}
+              Web<span className={classes.hiddenAtX}>Designer &</span> Developer
+              based in Seattle
+              <Hidden only="xs">Designer &</Hidden>
+              {/* I want this to appear at 735 and smaller and to disappear at 736 and Larger 
               <Hidden only={["xs","stf"]}>
-                <span>.</span>
-              </Hidden>
+                {/* <span>.</span> */}
+              {/* </Hidden> */}
               {/* I want this to appear at 736px and larger, and to disappear at 735 and smaller */}
-              <Hidden only="736">
-                <span>, Washington.</span>
-              </Hidden>
+              {/* <Hidden only="736"> */}
+              {/* <span>, Washington.</span> */}
+              {/* </Hidden> */}
             </p>
             <p className={classes.bannerParagraph}>
-              Experienced in designing & developing MERN applications.
+              {/* Experienced in designing & developing MERN applications. */}
             </p>
           </Typography>
         </Grid>

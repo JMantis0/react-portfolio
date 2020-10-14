@@ -52,6 +52,11 @@ const ProjectPage = ({ itemPageState }) => {
         <Grid item xs={12} md={6}>
           <h1>About the application</h1>
           <p>{itemPageState.description}</p>
+          <ol>
+            {itemPageState.techs.map(tech => {
+              return <li>{tech}</li>
+            })}
+          </ol>
         </Grid>
         <Grid item xs={12} md={6}>
           <h1>Images</h1>
