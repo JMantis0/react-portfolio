@@ -33,6 +33,8 @@ function App() {
   const [itemTabState, setItemTabState] = useState("Item");
   const [itemPageState, setItemPageState] = useState({
     title: null,
+    brief: null,
+    techs: null,
     description: null,
     about: null,
     mainPic: null,
@@ -53,6 +55,11 @@ function App() {
     typography: {
       fontFamily: "'Kumbh Sans', sans-serif;",
     },
+    // breakpoints: {
+    //   values:{
+    //     stf: 735
+    //   }
+    // },
     spacing: 8,
   });
   //  Styles
@@ -73,63 +80,8 @@ function App() {
         margin: "0 auto 0 auto",
       },
     },
-    //  headerImage is the avatar-like circular photo in the header
-    headerImage: {
-      width: "100px",
-      height: "100px",
-      position: "absolute",
-      top: "15px",
-      left: "10%",
-      [theme.breakpoints.up("1300")]: {
-        left: "12%",
-      },
-    },
-    //  headerBanner is underneath the Appbar, above the pages.
-    headerBanner: {
-      [theme.breakpoints.down("xs")]: {
-        margin: "35px 0 0 0",
-      },
-      marginTop: "35px",
-      marginBottom: "35px",
-      width: "100%",
-    },
-    bannerParagraph: {
-      margin: 0,
-      fontSize: "20px",
-    },
-    appBar: {
-      padding: "2px 0 0 0",
-      height: "100px",
-      width: "100%",
-      minWidth: "10px",
-    },
-    tabsGridItem: {
-      marginTop: "50px",
-      width: "100%",
-    },
-    lastTab: {
-      marginRight: "20px",
-      textTransform: "capitalize",
-      minWidth: "1px",
-      width: "16.666%",
-    },
-    tab: {
-      textTransform: "capitalize",
-      minWidth: "1px",
-      width: "16.666%",
-    },
-    tabs: {
-      width: "75%",
-      margin: "0 0 0 15%",
-      [theme.breakpoints.between("960", "1280")]: {
-        width: "70%",
-        margin: "0 0 0 30%",
-      },
-      [theme.breakpoints.between("1280", "1920")]: {
-        width: "50%",
-        margin: "0 0 0 50%",
-      },
-    },
+    
+    
     tabsGrid: {},
     bottomBar: {
       top: "auto",
@@ -187,11 +139,13 @@ function App() {
               <div>
                 {/* PORTFOLIO "PAGE" */}
                 <Portfolio
+                  setSlideDirection={setSlideDirection}
+                  setSlidingIn={setSlidingIn}
                   setPageState={setPageState}
-                  itemTabState={itemTabState}
                   setItemTabState={setItemTabState}
-                  itemPageState={itemPageState}
                   setItemPageState={setItemPageState}
+                  itemTabState={itemTabState}
+                  itemPageState={itemPageState}
                 />
               </div>
             </Slide>

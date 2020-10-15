@@ -18,6 +18,21 @@ import Project from "../components/Project";
 const projectData = {
   javaScriptQuiz: {
     title: "JavaScript Quiz",
+    brief:
+      "The Depth of Knowledge: Javascript application is designed to provide coding students a timed quiz on JavaScript fundamentals that stores high scores so that they can gauge their progress compared to other students.",
+    techs: [
+      "JavaScript",
+      "jQuery",
+      "HTML",
+      "CSS selectors",
+      "Media Queries",
+      "Local Storage",
+      "Data Attributes",
+      "Bootstrap Framework",
+      "Embedded Audios",
+    ],
+    devComments:
+      "This is one of the very first sites I made from scratch without boiler plate code.  I learned how to use the jQuery API (event listeners and addClass/removeClass) in combination with CSS selectors to create an interactive interface that changes colors to provide the user with useful feedback as she takse the quiz.",
     deployedLink:
       "https://jmantis0.github.io/depth-of-knowledge-javascript-edition/",
     gitHubRepoLink:
@@ -26,8 +41,49 @@ const projectData = {
     description:
       "Interactive browser based application featuring jQuery DOM manipulation, dynamic CSS, Bootstrap Framework, data-attributes, and local storage.",
   },
+
+  // ## User Story
+
+  // ```
+  // AS A traveler
+  // I WANT to see the weather outlook for multiple cities
+  // SO THAT I can plan a trip accordingly
+  // ```
+
+  // ## Acceptance Criteria
+
+  // ```
+  // GIVEN a weather dashboard with form inputs
+  // WHEN I search for a city
+  // THEN I am presented with current and future conditions for that city and that city is added to the search history
+  // WHEN I view current weather conditions for that city
+  // THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
+  // WHEN I view the UV index
+  // THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
+  // WHEN I view future weather conditions for that city
+  // THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
+  // WHEN I click on a city in the search history
+  // THEN I am again presented with current and future conditions for that city
+  // WHEN I open the weather dashboard
+  // THEN I am presented with the last searched city forecast
+  // ```
+
   weatherDashBoard: {
     title: "Weather Dashboard",
+    brief:
+      "The Weather Dashboard is designed to provide travelers a weather outlook for multiple cities so that they can plan their trips accordingly.",
+    techs: [
+      "Dynamically generated HTML",
+      "JavaScript",
+      "jQuery",
+      "Server-side API",
+      "CSS selectors",
+      "Media Queries",
+      "Local Storage",
+      "Data Attributes",
+      "Bootstrap Framework",
+      "Embedded Audios",
+    ],
     deployedLink: "https://jmantis0.github.io/weather-dashboard/",
     gitHubRepoLink: "http://github.com/JMantis0/weather-dashboard",
     cardImage: "/assets/images/w-dashboard.png",
@@ -36,6 +92,13 @@ const projectData = {
   },
   euroTranslationMap: {
     title: "European Translation Map",
+    brief:
+      "This web application provides travelers and language enthusiasts alike a tool that translates words from english into several European languages and displays the translations according to their geographic location.",
+    techs: [
+      "Systran Translate API",
+      "TomTom Maps API",
+      "Zurb Foundation Framework",
+    ],
     deployedLink: "https://progharrison234.github.io/european-translation-map/",
     gitHubRepoLink:
       "https://github.com/ProgHarrison234/european-translation-map",
@@ -45,6 +108,7 @@ const projectData = {
   },
   workDayScheduler: {
     title: "Work Day Scheduler",
+    brief: "The Work Day Scheduler provides employees and entrepren",
     deployedLink: "https://jmantis0.githubio/work-day-scheduler",
     gitHubRepoLink: "https://github.com/JMantis0/work-day-scheduler",
     cardImage: "/assets/images/wd-scheduler.JPG",
@@ -101,7 +165,15 @@ const projectData = {
   },
 };
 
-const Portfolio = ({ setPageState, itemPageState, setItemPageState, setItemTabState, itemTabState }) => {
+const Portfolio = ({
+  setPageState,
+  itemPageState,
+  setItemPageState,
+  setItemTabState,
+  itemTabState,
+  setSlideDirection,
+  setSlidingIn,
+}) => {
   // console.log("Object.keys(projectData)", Object.keys(projectData));
   // Object.keys(projectData).forEach((key) =>
   //   console.log(projectData[key].deployedLink)
@@ -114,12 +186,15 @@ const Portfolio = ({ setPageState, itemPageState, setItemPageState, setItemTabSt
           return (
             <Grid item xs={10} sm={6} md={4} lg={4} xl={4} key={key}>
               <Project
+                setSlideDirection={setSlideDirection}
+                setSlidingIn={setSlidingIn}
                 setPageState={setPageState}
                 itemTabState={itemTabState}
                 setItemTabState={setItemTabState}
-                //  setItemPageState updates ProjectPage.js
                 setItemPageState={setItemPageState}
                 itemPageState={itemPageState}
+                brief={projectData[key].brief}
+                techs={projectData[key].techs}
                 projectTitle={projectData[key].title}
                 deployedLink={projectData[key].deployedLink}
                 gitHubRepoLink={projectData[key].gitHubRepoLink}
