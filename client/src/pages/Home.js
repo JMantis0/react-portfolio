@@ -14,7 +14,7 @@ const homeCardData = {
     cardTitle: "About",
     link: "/about",
     cardImage: "/assets/images/about-icon.png",
-    description: "Click to learn about Jesse",
+    description: "Learn about Jesse",
   },
   resume: {
     cardTitle: "Resume",
