@@ -12,7 +12,7 @@ const useStyles = makeStyles((theme) => ({
     width: "90%",
     margin: "0 0 0 5%",
   },
-  center: {
+  centerText: {
     textAlign: "center",
   },
 }));
@@ -25,15 +25,15 @@ const ProjectPage = ({ itemPageState }) => {
   return (
     <div>
       <Grid container justify="space-around" alignItems="center">
-        <Grid className={classes.center} item xs={12}>
+        <Grid className={classes.centerText} item xs={12}>
           <h1>{itemPageState.title}</h1>
         </Grid>
-        <Grid className={classes.center} xs={6} item>
+        <Grid className={classes.centerText} xs={6} item>
           <Link variant="h5" target="_blank" href={itemPageState.liveLink}>
             Live Link
           </Link>
         </Grid>
-        <Grid className={classes.center} xs={6} item>
+        <Grid className={classes.centerText} xs={6} item>
           <Link variant="h5" target="_blank" href={itemPageState.repoLink}>
             Repo Link
           </Link>
@@ -53,7 +53,7 @@ const ProjectPage = ({ itemPageState }) => {
           <h1>About the application</h1>
           <p>{itemPageState.description}</p>
           <ol>
-            {itemPageState.techs.map(tech => {
+            {(itemPageState.techs === null) ? null : itemPageState.techs.map(tech => {
               return <li>{tech}</li>
             })}
           </ol>
