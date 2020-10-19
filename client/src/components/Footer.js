@@ -10,6 +10,7 @@ import FolderSpecialIcon from "@material-ui/icons/FolderSpecial";
 import InfoIcon from "@material-ui/icons/Info";
 import DescriptionIcon from "@material-ui/icons/Description";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
+import GitHubIcon from '@material-ui/icons/GitHub';
 
 // React router dom imports
 import { useHistory } from "react-router-dom";
@@ -77,6 +78,15 @@ const Footer = ({ setSlidingIn, setSlideDirection,classes, pageState, setPageSta
           icon={<ContactMailIcon />}
         />
       </BottomNavigation>
+      <BottomNavigation 
+      className="secondBottom">
+        <BottomNavigationAction
+          value="/portfolio"
+          label="Portfolio"
+          icon={<GitHubIcon />}
+        />
+        </BottomNavigation>
+
     </AppBar>
   );
 };

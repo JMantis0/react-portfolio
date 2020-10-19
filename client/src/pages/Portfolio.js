@@ -175,6 +175,7 @@ const projectData = {
   employeeManagementCLI: {
     title: "Development Team Roster CLI",
     brief: "This Node command line interface application provides managers a tool to quickly draft development teams and generate web pages that display the roster and basic contact information of the team's members.",
+    techs: ["HTML", "CSS", "Node.js", "chalk", "inquirer"],
     deployedLink: "",
     gitHubRepoLink: "https://github.com/JMantis0/Employee-Manager_CLI",
     cardImage: "/assets/images/cli.JPG",
@@ -196,7 +197,7 @@ const projectData = {
     title: "Readme Generator",
     brief:
       "This Command Line Interface application aids developers in easily create good readme.md files for their GitHub repositories.",
-    techs: ["Node", "fs (file system)", "npm inquirer"],
+    techs: ["Node", "fs file system", "npm inquirer"],
     deployedLink: "",
     gitHubRepoLink: "https://github.com/JMantis0/readme-generator",
     cardImage: "/assets/images/readme-generator.JPG",
