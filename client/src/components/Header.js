@@ -48,7 +48,7 @@ const Header = ({
     },
     appBar: {
       padding: "2px 0 0 0",
-      height: "100px",
+      // height: "100px",
       width: "100%",
       minWidth: "10px",
     },
