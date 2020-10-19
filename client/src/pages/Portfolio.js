@@ -16,6 +16,20 @@ import Project from "../components/Project";
 // Image
 //  Link?
 const projectData = {
+  reactEmployeeDirectory: {
+    title: "React Employee Directory",
+    brief:
+      "The Employee Directory is designed to allow members of management to view and filter their company's entire staff of employees at once so that they have quick access to their information.",
+    techs: [
+      "React",
+      "React Hooks",
+      "Stateful Components",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "React-Bootstrap framework",
+    ],
+  },
   javaScriptQuiz: {
     title: "JavaScript Quiz",
     brief:
@@ -73,11 +87,11 @@ const projectData = {
     brief:
       "The Weather Dashboard is designed to provide travelers a weather outlook for multiple cities so that they can plan their trips accordingly.",
     techs: [
-      "Dynamically generated HTML",
+      "HTML",
+      "CSS",
       "JavaScript",
       "jQuery",
       "Server-side API",
-      "CSS selectors",
       "Media Queries",
       "Local Storage",
       "Data Attributes",
@@ -95,9 +109,15 @@ const projectData = {
     brief:
       "This web application provides travelers and language enthusiasts alike a tool that translates words from english into several European languages and displays the translations according to their geographic location.",
     techs: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "jQuery",
+      "Mobile Responsive",
       "Systran Translate API",
       "TomTom Maps API",
       "Zurb Foundation Framework",
+      "font awesome"
     ],
     deployedLink: "https://progharrison234.github.io/european-translation-map/",
     gitHubRepoLink:
@@ -108,7 +128,18 @@ const projectData = {
   },
   workDayScheduler: {
     title: "Work Day Scheduler",
-    brief: "The Work Day Scheduler provides employees and entrepren",
+    brief:
+      "The Work Day Scheduler provides employees with a busy schedule a tool to add important events to a daily planner, so that they can manage their time and tasks more effectively.",
+    techs: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "jQuery",
+      "moment.js",
+      "Bootstrap",
+      "Local Storage",
+      "Mobile Responsive Design",
+    ],
     deployedLink: "https://jmantis0.githubio/work-day-scheduler",
     gitHubRepoLink: "https://github.com/JMantis0/work-day-scheduler",
     cardImage: "/assets/images/wd-scheduler.JPG",
@@ -117,6 +148,24 @@ const projectData = {
   },
   budgetTracker: {
     title: "Budget Tracker",
+    brief:
+      "The Budget Tracker is a fullstack progressive web application that allows users to track their withdrawals and deposits with or without an internet connection.",
+    techs: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "jQuery",
+      "Progressive Web Applications",
+      "service-worker.js",
+      "IndexedDB",
+      "File and Data Caching",
+      "MongoDB",
+      "Mongoose",
+      "Express",
+      "Bootstrap",
+      "chart.js",
+      "asynchronous functions",
+    ],
     deployedLink: "https://jbudget-tracker.herokuapp.com/",
     gitHubRepoLink: "https://github.com/JMantis0/budget-tracker",
     cardImage: "/assets/images/budget-tracker.JPG",
@@ -125,6 +174,8 @@ const projectData = {
   },
   employeeManagementCLI: {
     title: "Development Team Roster CLI",
+    brief: "This Node command line interface application provides managers a tool to quickly draft development teams and generate web pages that display the roster and basic contact information of the team's members.",
+    techs: ["HTML", "CSS", "Node.js", "chalk", "inquirer"],
     deployedLink: "",
     gitHubRepoLink: "https://github.com/JMantis0/Employee-Manager_CLI",
     cardImage: "/assets/images/cli.JPG",
@@ -132,7 +183,10 @@ const projectData = {
       "Employee Management App that allows users to quickly draft development teams and generate a website of its roster, featuring Javascript Classes, npm inquirer, and html writing technologies",
   },
   employeeManagementSystem: {
-    title: "Employee Database Manager",
+    title: "Employee Management System",
+    brief:
+      "This command line application is a tool for business owners that allows them to view and manage the departments, roles, and employees in their company so that they can organize and plan their business",
+    techs: ["Node, MySQL, npm chalk, npm inquirer"],
     deployedLink: "",
     gitHubRepoLink: "https://hithub.com/Jmantis0/Employee-Management-System",
     cardImage: "/assets/images/emp-dbs-system.JPG",
@@ -141,6 +195,9 @@ const projectData = {
   },
   readmeGenerator: {
     title: "Readme Generator",
+    brief:
+      "This Command Line Interface application aids developers in easily create good readme.md files for their GitHub repositories.",
+    techs: ["Node", "fs file system", "npm inquirer"],
     deployedLink: "",
     gitHubRepoLink: "https://github.com/JMantis0/readme-generator",
     cardImage: "/assets/images/readme-generator.JPG",
@@ -148,7 +205,20 @@ const projectData = {
       "Command line node application that aids developers in generating quality readme files for GitHub Repositories",
   },
   brewR: {
-    title: "brewR",
+    title: "BrewR",
+    brief:
+      "The BrewR full stack web application is a place where craft beer afficianados and amatuers alike can create accounts, search and save their favorite breweries, and blog about their brew experiences.",
+    techs: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "jQuery",
+      "MySQL",
+      "sequelize",
+      "passport",
+      "express",
+      "particle.js",
+    ],
     deployedLink: "https://brewrs.herokuapp.com/",
     gitHubRepoLink: "https://github.com/JMantis0/brewR",
     cardImage: "/assets/images/brewrs.JPG",
@@ -157,6 +227,20 @@ const projectData = {
   },
   eatDaBurger: {
     title: "Eat - Da - Burger",
+    brief:
+      "Eat-Da-Burger is a full stack resaurant application that lets users input the names of burgers they'd like to eat.  When a user submits a burger, the app displays it on the left hand side of the page -- waiting to be devoured.  Each burger in the waiting area also has a 'Devour' button.  When clicked the burger will move to the right side of the page.",
+    techs: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "jQuery",
+      "Bootstrap",
+      "MySQL",
+      "sequelize",
+      "express",
+      "express-handlebars",
+      "MVC",
+    ],
     deployedLink: "https://secret-scrubland-53219.herokuapp.com/",
     gitHubRepoLink: "https://github.com/JMantis0/Eat-Da-Burger",
     cardImage: "/assets/images/burger.gif",
