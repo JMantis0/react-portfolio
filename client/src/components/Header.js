@@ -28,9 +28,9 @@ const Header = ({
   const useStyles = makeStyles((theme) => ({
     //  headerBanner is underneath the Appbar, above the pages.
     headerBanner: {
-      [theme.breakpoints.down("xs")]: {
-        margin: "35px 0 0 0",
-      },
+    //   [theme.breakpoints.down("xs")]: {
+    //     margin: "35px 0 0 0",
+    //   },
       marginTop: "35px",
       marginBottom: "35px",
       width: "100%",
@@ -48,7 +48,7 @@ const Header = ({
     },
     appBar: {
       padding: "2px 0 0 0",
-      height: "100px",
+      // height: "100px",
       width: "100%",
       minWidth: "10px",
     },
@@ -83,9 +83,45 @@ const Header = ({
         margin: "0 0 0 50%",
       },
     },
-    hiddenAtX: {
+    hiddenBelow460: {
       display: "static",
-      [theme.breakpoints.between("0", "320")]: {
+      [theme.breakpoints.between("0", "460")]: {
+        display: "none",
+      },
+    },
+    hiddenBelow510: {
+      display: "static",
+      [theme.breakpoints.down("510")]: {
+        display: "none",
+      },
+    },
+    hiddenAbove510: {
+      display: "static",
+      [theme.breakpoints.up("510")]: {
+        display: "none",
+      },
+    },
+    hiddenBelow580: {
+      display: "static",
+      [theme.breakpoints.down("580")]: {
+        display: "none",
+      },
+    },
+    hiddenBelow570: {
+      display: "static",
+      [theme.breakpoints.down("570")]: {
+        display: "none",
+      },
+    },
+    hiddenAbove345: {
+      display: "static",
+      [theme.breakpoints.up("345")]: {
+        display: "none",
+      },
+    },
+    hiddenBelow345: {
+      display: "static",
+      [theme.breakpoints.down("345")]: {
         display: "none",
       },
     },
@@ -187,20 +223,25 @@ const Header = ({
           <Typography variant="h4" align="center">
             <p className={classes.bannerParagraph}>
               {/* Burgeoning  */}
-              Web<span className={classes.hiddenAtX}>Designer &</span> Developer
-              based in Seattle
-              <Hidden only="xs">Designer &</Hidden>
-              {/* I want this to appear at 735 and smaller and to disappear at 736 and Larger 
-              <Hidden only={["xs","stf"]}>
-                {/* <span>.</span> */}
-              {/* </Hidden> */}
-              {/* I want this to appear at 736px and larger, and to disappear at 735 and smaller */}
-              {/* <Hidden only="736"> */}
-              {/* <span>, Washington.</span> */}
-              {/* </Hidden> */}
+              {"Web Developer "}
+              <span className={classes.hiddenBelow460}>{"& Designer "}</span>
+              {" based in Seattle"}
+              <span className={classes.hiddenBelow570}>{", Washington"}</span>
+              {"."}
             </p>
             <p className={classes.bannerParagraph}>
-              {/* Experienced in designing & developing MERN applications. */}
+              <span
+              // className={classes.hiddenBelow540}
+              >
+                {"Experienced in "}
+              </span>
+              <span className={classes.hiddenBelow510}>{"developing"}</span>
+              <span className={classes.hiddenBelow580}>{" & designing "}</span>
+              <span>{" MERN "}</span>
+              <span className={classes.hiddenAbove345}>{"apps."}</span>
+              <span className={classes.hiddenBelow345}>
+                {"applications."}
+              </span>
             </p>
           </Typography>
         </Grid>
