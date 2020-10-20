@@ -83,9 +83,45 @@ const Header = ({
         margin: "0 0 0 50%",
       },
     },
-    hiddenAtX: {
+    hiddenBelow450: {
       display: "static",
-      [theme.breakpoints.between("0", "320")]: {
+      [theme.breakpoints.between("0", "450")]: {
+        display: "none",
+      },
+    },
+    hiddenBelow500: {
+      display: "static",
+      [theme.breakpoints.down("500")]: {
+        display: "none",
+      },
+    },
+    hiddenAbove500: {
+      display: "static",
+      [theme.breakpoints.up("500")]: {
+        display: "none",
+      },
+    },
+    hiddenBelow555: {
+      display: "static",
+      [theme.breakpoints.down("555")]: {
+        display: "none",
+      },
+    },
+    hiddenBelow550: {
+      display: "static",
+      [theme.breakpoints.down("550")]: {
+        display: "none",
+      },
+    },
+    hiddenAbove330: {
+      display: "static",
+      [theme.breakpoints.up("330")]: {
+        display: "none",
+      },
+    },
+    hiddenBelow330: {
+      display: "static",
+      [theme.breakpoints.down("330")]: {
         display: "none",
       },
     },
@@ -187,20 +223,24 @@ const Header = ({
           <Typography variant="h4" align="center">
             <p className={classes.bannerParagraph}>
               {/* Burgeoning  */}
-              Web<span className={classes.hiddenAtX}>Designer &</span> Developer
-              based in Seattle
-              <Hidden only="xs">Designer &</Hidden>
-              {/* I want this to appear at 735 and smaller and to disappear at 736 and Larger 
-              <Hidden only={["xs","stf"]}>
-                {/* <span>.</span> */}
-              {/* </Hidden> */}
-              {/* I want this to appear at 736px and larger, and to disappear at 735 and smaller */}
-              {/* <Hidden only="736"> */}
-              {/* <span>, Washington.</span> */}
-              {/* </Hidden> */}
+              {"Web Developer "}
+              <span className={classes.hiddenBelow450}>{"& Designer "}</span>
+              {" based in Seattle"}
+              <span className={classes.hiddenBelow550}>{", Washington"}</span>
+              {"."}
             </p>
             <p className={classes.bannerParagraph}>
-              {/* Experienced in designing & developing MERN applications. */}
+              <span
+              // className={classes.hiddenBelow540}
+              >
+                {"Experienced in "}
+              </span>
+              <span className={classes.hiddenBelow500}>{"developing"}</span>
+              <span className={classes.hiddenBelow555}>{" & designing "}</span>
+              <span className={classes.hiddenAbove330}>{" MERN apps."}</span>
+              <span className={classes.hiddenBelow330}>
+                {" MERN applications."}
+              </span>
             </p>
           </Typography>
         </Grid>
