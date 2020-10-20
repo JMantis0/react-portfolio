@@ -113,7 +113,7 @@ const projectData = {
       "CSS",
       "JavaScript",
       "jQuery",
-      "Mobile Responsive",
+      "Responsive",
       "Systran Translate API",
       "TomTom Maps API",
       "Zurb Foundation Framework",
@@ -138,13 +138,11 @@ const projectData = {
       "moment.js",
       "Bootstrap",
       "Local Storage",
-      "Mobile Responsive Design",
+      "Responsive",
     ],
     deployedLink: "https://jmantis0.githubio/work-day-scheduler",
     gitHubRepoLink: "https://github.com/JMantis0/work-day-scheduler",
     cardImage: "/assets/images/wd-scheduler.JPG",
-    description:
-      "Task management scheduler application featuring mobile responsive design, dynamic appearance, data storage, css animations, and sound.",
   },
   budgetTracker: {
     title: "Budget Tracker",

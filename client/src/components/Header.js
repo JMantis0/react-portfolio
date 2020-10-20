@@ -28,9 +28,9 @@ const Header = ({
   const useStyles = makeStyles((theme) => ({
     //  headerBanner is underneath the Appbar, above the pages.
     headerBanner: {
-      [theme.breakpoints.down("xs")]: {
-        margin: "35px 0 0 0",
-      },
+    //   [theme.breakpoints.down("xs")]: {
+    //     margin: "35px 0 0 0",
+    //   },
       marginTop: "35px",
       marginBottom: "35px",
       width: "100%",
@@ -83,45 +83,45 @@ const Header = ({
         margin: "0 0 0 50%",
       },
     },
-    hiddenBelow450: {
+    hiddenBelow460: {
       display: "static",
-      [theme.breakpoints.between("0", "450")]: {
+      [theme.breakpoints.between("0", "460")]: {
         display: "none",
       },
     },
-    hiddenBelow500: {
+    hiddenBelow510: {
       display: "static",
-      [theme.breakpoints.down("500")]: {
+      [theme.breakpoints.down("510")]: {
         display: "none",
       },
     },
-    hiddenAbove500: {
+    hiddenAbove510: {
       display: "static",
-      [theme.breakpoints.up("500")]: {
+      [theme.breakpoints.up("510")]: {
         display: "none",
       },
     },
-    hiddenBelow555: {
+    hiddenBelow580: {
       display: "static",
-      [theme.breakpoints.down("555")]: {
+      [theme.breakpoints.down("580")]: {
         display: "none",
       },
     },
-    hiddenBelow550: {
+    hiddenBelow570: {
       display: "static",
-      [theme.breakpoints.down("550")]: {
+      [theme.breakpoints.down("570")]: {
         display: "none",
       },
     },
-    hiddenAbove330: {
+    hiddenAbove345: {
       display: "static",
-      [theme.breakpoints.up("330")]: {
+      [theme.breakpoints.up("345")]: {
         display: "none",
       },
     },
-    hiddenBelow330: {
+    hiddenBelow345: {
       display: "static",
-      [theme.breakpoints.down("330")]: {
+      [theme.breakpoints.down("345")]: {
         display: "none",
       },
     },
@@ -224,9 +224,9 @@ const Header = ({
             <p className={classes.bannerParagraph}>
               {/* Burgeoning  */}
               {"Web Developer "}
-              <span className={classes.hiddenBelow450}>{"& Designer "}</span>
+              <span className={classes.hiddenBelow460}>{"& Designer "}</span>
               {" based in Seattle"}
-              <span className={classes.hiddenBelow550}>{", Washington"}</span>
+              <span className={classes.hiddenBelow570}>{", Washington"}</span>
               {"."}
             </p>
             <p className={classes.bannerParagraph}>
@@ -235,11 +235,12 @@ const Header = ({
               >
                 {"Experienced in "}
               </span>
-              <span className={classes.hiddenBelow500}>{"developing"}</span>
-              <span className={classes.hiddenBelow555}>{" & designing "}</span>
-              <span className={classes.hiddenAbove330}>{" MERN apps."}</span>
-              <span className={classes.hiddenBelow330}>
-                {" MERN applications."}
+              <span className={classes.hiddenBelow510}>{"developing"}</span>
+              <span className={classes.hiddenBelow580}>{" & designing "}</span>
+              <span>{" MERN "}</span>
+              <span className={classes.hiddenAbove345}>{"apps."}</span>
+              <span className={classes.hiddenBelow345}>
+                {"applications."}
               </span>
             </p>
           </Typography>
