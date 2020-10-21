@@ -23,6 +23,7 @@ import Home from "./pages/Home";
 import Resume from "./pages/Resume";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import ProjectPage from "./pages/ProjectPage";
 
 // Component definition
@@ -80,8 +81,7 @@ function App() {
         margin: "0 auto 0 auto",
       },
     },
-    
-    
+
     tabsGrid: {},
     bottomBar: {
       top: "auto",
@@ -183,7 +183,9 @@ function App() {
               unmountOnExit
             >
               {/* CONTACT "PAGE" */}
-              <div>Contact</div>
+              <div>
+                <Contact />
+              </div>
             </Slide>
           </Route>
           <Route exact path="/item">
