@@ -185,7 +185,7 @@ function App() {
             >
               {/* CONTACT "PAGE" */}
               <div>
-                <Contact />
+                <Contact heme={mainTheme}/>
               </div>
             </Slide>
           </Route>
