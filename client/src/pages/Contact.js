@@ -2,6 +2,7 @@
 import React from "react";
 
 // MUI imports
+import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
@@ -32,6 +33,16 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const testClick = () => {
+  fetch("/api/test")
+    .then((response) => {
+      console.log("response", response);
+    })
+    .catch((error) => {
+      console.log("There was an error: ", error);
+    });
+};
+
 const Contact = ({ heme }) => {
   const classes = useStyles();
   console.log(heme);
@@ -39,41 +50,63 @@ const Contact = ({ heme }) => {
     <Grid className={classes.contactContainer} container>
       <Box className={classes.box}>
         <Grid item xs={12}>
-          {/* <form> */}
-          {/* <div>Question? Inquire below:</div> */}
-          <Grid container justify="space-around">
-            <Grid item xs={10}>
-              <Box mb={5}>
-                <Typography variant="h3">
-                  Have a question or comment?
-                </Typography>
-                <Typography variant="h4">
-                  Fill out this form to leave me a message!)
-                </Typography>
-              </Box>
+          <form>
+            {/* <div>Question? Inquire below:</div> */}
+            <Grid container justify="space-around">
+              <Grid item xs={10}>
+                <Box mb={5}>
+                  <Typography variant="h3">
+                    Have a question or comment?
+                  </Typography>
+                  <Typography variant="h4">
+                    Fill out this form to leave me a message!)
+                  </Typography>
+                </Box>
+              </Grid>
+              <Grid item xs={10}>
+                <TextField
+                  className={classes.textField}
+                  label="Your name"
+                  variant="filled"
+                />
+              </Grid>
+              <Grid item xs={10}>
+                {/* <Box m={2}> */}
+                <TextField
+                  className={classes.textField}
+                  label="Email"
+                  variant="filled"
+                />
+                {/* </Box> */}
+              </Grid>
+              <Grid m="2px" item xs={10}>
+                <TextField
+                  className={classes.textField}
+                  label="Phone"
+                  variant="filled"
+                />
+              </Grid>
+              <Grid item xs={10}>
+                <TextField
+                  className={classes.textField}
+                  multiline
+                  rows={4}
+                  label="Message"
+                  variant="filled"
+                />
+              </Grid>
+              <Grid item xs={10}>
+                <Button
+                  variant="contained"
+                  onClick={() => {
+                    testClick();
+                  }}
+                >
+                  Submit
+                </Button>
+              </Grid>
             </Grid>
-            <Grid item xs={10}>
-              <TextField className={classes.textField} label="Your name"variant="filled" />
-            </Grid>
-            <Grid item xs={10}>
-              {/* <Box m={2}> */}
-              <TextField className={classes.textField} label="Email" variant="filled"/>
-              {/* </Box> */}
-            </Grid>
-            <Grid m="2px" item xs={10}>
-              <TextField className={classes.textField} label="Phone" variant="filled"/>
-            </Grid>
-            <Grid item xs={10}>
-              <TextField
-                className={classes.textField}
-                multiline
-                rows={4}
-                label="Message"
-                variant="filled"
-              />
-            </Grid>
-          </Grid>
-          {/* </form> */}
+          </form>
         </Grid>
       </Box>
     </Grid>
