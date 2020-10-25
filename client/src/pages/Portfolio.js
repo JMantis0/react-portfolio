@@ -1,20 +1,9 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Project from "../components/Project";
-// import Modal from "@material-ui/core/Modal";
 
-//  Portfolio contains a grid setup that displays Projects
+import { makeStyles } from "@material-ui/core/styles";
 
-//Pick which projects to feature
-// Brewr
-// European translation map
-// Budget-tracker
-// React-Employee Directory]
-
-//I'd like this to cause a modal to pop up when clicked on.  otherwise
-//  has a screenshot with a banner
-// Image
-//  Link?
 const projectData = {
   reactEmployeeDirectory: {
     title: "React Employee Directory",
@@ -29,6 +18,7 @@ const projectData = {
       "JavaScript",
       "React-Bootstrap framework",
     ],
+    cardImage: "/assets/images/directory.gif",
   },
   javaScriptQuiz: {
     title: "JavaScript Quiz",
@@ -55,33 +45,6 @@ const projectData = {
     description:
       "Interactive browser based application featuring jQuery DOM manipulation, dynamic CSS, Bootstrap Framework, data-attributes, and local storage.",
   },
-
-  // ## User Story
-
-  // ```
-  // AS A traveler
-  // I WANT to see the weather outlook for multiple cities
-  // SO THAT I can plan a trip accordingly
-  // ```
-
-  // ## Acceptance Criteria
-
-  // ```
-  // GIVEN a weather dashboard with form inputs
-  // WHEN I search for a city
-  // THEN I am presented with current and future conditions for that city and that city is added to the search history
-  // WHEN I view current weather conditions for that city
-  // THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-  // WHEN I view the UV index
-  // THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-  // WHEN I view future weather conditions for that city
-  // THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
-  // WHEN I click on a city in the search history
-  // THEN I am again presented with current and future conditions for that city
-  // WHEN I open the weather dashboard
-  // THEN I am presented with the last searched city forecast
-  // ```
-
   weatherDashBoard: {
     title: "Weather Dashboard",
     brief:
@@ -117,7 +80,7 @@ const projectData = {
       "Systran Translate API",
       "TomTom Maps API",
       "Zurb Foundation Framework",
-      "font awesome"
+      "font awesome",
     ],
     deployedLink: "https://progharrison234.github.io/european-translation-map/",
     gitHubRepoLink:
@@ -172,7 +135,8 @@ const projectData = {
   },
   employeeManagementCLI: {
     title: "Development Team Roster CLI",
-    brief: "This Node command line interface application provides managers a tool to quickly draft development teams and generate web pages that display the roster and basic contact information of the team's members.",
+    brief:
+      "This Node command line interface application provides managers a tool to quickly draft development teams and generate web pages that display the roster and basic contact information of the team's members.",
     techs: ["HTML", "CSS", "Node.js", "chalk", "inquirer"],
     deployedLink: "",
     gitHubRepoLink: "https://github.com/JMantis0/Employee-Manager_CLI",
@@ -247,6 +211,12 @@ const projectData = {
   },
 };
 
+const useStyles = makeStyles((mainTheme) => ({
+  root: {
+    marginBottom: "50px",
+  },
+}));
+
 const Portfolio = ({
   setPageState,
   itemPageState,
@@ -256,14 +226,17 @@ const Portfolio = ({
   setSlideDirection,
   setSlidingIn,
 }) => {
-  // console.log("Object.keys(projectData)", Object.keys(projectData));
-  // Object.keys(projectData).forEach((key) =>
-  //   console.log(projectData[key].deployedLink)
-  // );
+  const classes = useStyles();
   return (
     <div>
       {/* Need to make the height of each project uniform */}
-      <Grid container justify="space-around" alignItems="stretch" spacing={5}>
+      <Grid
+        container
+        className={classes.root}
+        justify="space-around"
+        alignItems="stretch"
+        spacing={5}
+      >
         {Object.keys(projectData).map((key) => {
           return (
             <Grid item xs={10} sm={6} md={4} lg={4} xl={4} key={key}>

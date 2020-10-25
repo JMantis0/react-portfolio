@@ -25,7 +25,7 @@ const Header = ({
   const history = useHistory();
   //  use setPageState prop from App.js to route.
 
-  const useStyles = makeStyles((theme) => ({
+  const useStyles = makeStyles((mainTheme) => ({
     //  headerBanner is underneath the Appbar, above the pages.
     headerBanner: {
     //   [theme.breakpoints.down("xs")]: {
@@ -42,11 +42,12 @@ const Header = ({
       position: "absolute",
       top: "15px",
       left: "10%",
-      [theme.breakpoints.up("1300")]: {
+      [mainTheme.breakpoints.up("1300")]: {
         left: "12%",
       },
     },
     appBar: {
+      backgroundColor: mainTheme.palette.background.paper,
       padding: "2px 0 0 0",
       // height: "100px",
       width: "100%",
@@ -57,7 +58,7 @@ const Header = ({
       width: "100%",
     },
     lastTab: {
-      marginRight: "20px",
+      // marginRight: "20px",
       textTransform: "capitalize",
       minWidth: "1px",
       width: "16.666%",
@@ -74,54 +75,54 @@ const Header = ({
     tabs: {
       width: "75%",
       margin: "0 0 0 15%",
-      [theme.breakpoints.between("960", "1280")]: {
+      [mainTheme.breakpoints.between("960", "1280")]: {
         width: "70%",
         margin: "0 0 0 30%",
       },
-      [theme.breakpoints.between("1280", "1920")]: {
+      [mainTheme.breakpoints.between("1280", "1920")]: {
         width: "50%",
         margin: "0 0 0 50%",
       },
     },
     hiddenBelow460: {
       display: "static",
-      [theme.breakpoints.between("0", "460")]: {
+      [mainTheme.breakpoints.between("0", "460")]: {
         display: "none",
       },
     },
     hiddenBelow510: {
       display: "static",
-      [theme.breakpoints.down("510")]: {
+      [mainTheme.breakpoints.down("510")]: {
         display: "none",
       },
     },
     hiddenAbove510: {
       display: "static",
-      [theme.breakpoints.up("510")]: {
+      [mainTheme.breakpoints.up("510")]: {
         display: "none",
       },
     },
     hiddenBelow580: {
       display: "static",
-      [theme.breakpoints.down("580")]: {
+      [mainTheme.breakpoints.down("580")]: {
         display: "none",
       },
     },
     hiddenBelow570: {
       display: "static",
-      [theme.breakpoints.down("570")]: {
+      [mainTheme.breakpoints.down("570")]: {
         display: "none",
       },
     },
     hiddenAbove345: {
       display: "static",
-      [theme.breakpoints.up("345")]: {
+      [mainTheme.breakpoints.up("345")]: {
         display: "none",
       },
     },
     hiddenBelow345: {
       display: "static",
-      [theme.breakpoints.down("345")]: {
+      [mainTheme.breakpoints.down("345")]: {
         display: "none",
       },
     },

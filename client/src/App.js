@@ -26,6 +26,12 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ProjectPage from "./pages/ProjectPage";
 
+const pink = "#F25CA2";
+const blue1 = "#0433BF";
+const blue2 = "#032CA6";
+const blue3 = "#021859";
+const aqua = "#0B9ED9";
+
 // Component definition
 function App() {
   // pageState and setPageState are passed to components that link to other pages within the React Router
@@ -52,6 +58,15 @@ function App() {
   const mainTheme = createMuiTheme({
     palette: {
       type: "dark",
+      border: pink,
+      background: {
+        paper: blue3,
+        default: aqua,
+      },
+      text: {
+        // primary: aqua,
+        secondary: pink,
+      },
     },
     typography: {
       fontFamily: "'Kumbh Sans', sans-serif;",
@@ -59,7 +74,7 @@ function App() {
     // breakpoints: {
     //   values:{
     //     stf: 735
-    //   }
+    // 
     // },
     spacing: 8,
   });
@@ -85,6 +100,7 @@ function App() {
     tabsGrid: {},
     bottomBar: {
       top: "auto",
+      // margin: "50px 0 0 0",
       position: "static",
       bottom: 0,
       boxShadow:
@@ -185,7 +201,7 @@ function App() {
             >
               {/* CONTACT "PAGE" */}
               <div>
-                <Contact heme={mainTheme}/>
+                <Contact heme={mainTheme} />
               </div>
             </Slide>
           </Route>

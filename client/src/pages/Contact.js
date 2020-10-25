@@ -4,6 +4,7 @@ import React from "react";
 // MUI imports
 import Button from "@material-ui/core/Button";
 import Box from "@material-ui/core/Box";
+import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
@@ -48,7 +49,7 @@ const Contact = ({ heme }) => {
   console.log(heme);
   return (
     <Grid className={classes.contactContainer} container>
-      <Box className={classes.box}>
+      <Paper className={classes.box}>
         <Grid item xs={12}>
           <form>
             {/* <div>Question? Inquire below:</div> */}
@@ -108,7 +109,7 @@ const Contact = ({ heme }) => {
             </Grid>
           </form>
         </Grid>
-      </Box>
+      </Paper>
     </Grid>
   );
 };
