@@ -93,9 +93,9 @@ const Project = ({
           <Typography gutterBottom variant="h5" component="h2">
             {projectTitle}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          {/* <Typography variant="body2" color="textSecondary" component="p">
             {description}
-          </Typography>
+          </Typography> */}
         </CardContent>
       </CardActionArea>
     </Card>
@@ -103,3 +103,4 @@ const Project = ({
 };
 
 export default Project;
+
