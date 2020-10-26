@@ -42,8 +42,6 @@ const projectData = {
     gitHubRepoLink:
       "https://github.com/JMantis0/depth-of-knowledge-javascript-edition",
     cardImage: "/assets/images/javascript-quiz.jpg",
-    description:
-      "Interactive browser based application featuring jQuery DOM manipulation, dynamic CSS, Bootstrap Framework, data-attributes, and local storage.",
   },
   weatherDashBoard: {
     title: "Weather Dashboard",
@@ -64,8 +62,6 @@ const projectData = {
     deployedLink: "https://jmantis0.github.io/weather-dashboard/",
     gitHubRepoLink: "http://github.com/JMantis0/weather-dashboard",
     cardImage: "/assets/images/w-dashboard.png",
-    description:
-      "Browser based weather forecast application featuring data called from the OpenWeatherMaps api.",
   },
   euroTranslationMap: {
     title: "European Translation Map",
@@ -86,8 +82,6 @@ const projectData = {
     gitHubRepoLink:
       "https://github.com/ProgHarrison234/european-translation-map",
     cardImage: "/assets/images/eurotrans.gif",
-    description:
-      "This web application provides travelers and language enthusiasts alike a tool that translates words from english into several European languages and displays the translations according to their geographic location.",
   },
   workDayScheduler: {
     title: "Work Day Scheduler",
@@ -130,8 +124,6 @@ const projectData = {
     deployedLink: "https://jbudget-tracker.herokuapp.com/",
     gitHubRepoLink: "https://github.com/JMantis0/budget-tracker",
     cardImage: "/assets/images/budget-tracker.JPG",
-    description:
-      "Full Stack progressive web application.  MongoDB, Sequelize, IndexedDB, PWA (look at other things)",
   },
   employeeManagementCLI: {
     title: "Development Team Roster CLI",
@@ -141,8 +133,6 @@ const projectData = {
     deployedLink: "",
     gitHubRepoLink: "https://github.com/JMantis0/Employee-Manager_CLI",
     cardImage: "/assets/images/cli.JPG",
-    description:
-      "Employee Management App that allows users to quickly draft development teams and generate a website of its roster, featuring Javascript Classes, npm inquirer, and html writing technologies",
   },
   employeeManagementSystem: {
     title: "Employee Management System",
@@ -152,8 +142,6 @@ const projectData = {
     deployedLink: "",
     gitHubRepoLink: "https://hithub.com/Jmantis0/Employee-Management-System",
     cardImage: "/assets/images/emp-dbs-system.JPG",
-    description:
-      "Command Line Employee Database Manager and information interface featuring crud functionality with a MySQL database",
   },
   readmeGenerator: {
     title: "Readme Generator",
@@ -163,8 +151,6 @@ const projectData = {
     deployedLink: "",
     gitHubRepoLink: "https://github.com/JMantis0/readme-generator",
     cardImage: "/assets/images/readme-generator.JPG",
-    description:
-      "Command line node application that aids developers in generating quality readme files for GitHub Repositories",
   },
   brewR: {
     title: "BrewR",
@@ -184,8 +170,6 @@ const projectData = {
     deployedLink: "https://brewrs.herokuapp.com/",
     gitHubRepoLink: "https://github.com/JMantis0/brewR",
     cardImage: "/assets/images/brewrs.JPG",
-    description:
-      "Full stack website craft beer afficianados and amateurs alike can create accounts, search breweries, save their favorites, and post to their own blog.",
   },
   eatDaBurger: {
     title: "Eat - Da - Burger",
@@ -206,8 +190,6 @@ const projectData = {
     deployedLink: "https://secret-scrubland-53219.herokuapp.com/",
     gitHubRepoLink: "https://github.com/JMantis0/Eat-Da-Burger",
     cardImage: "/assets/images/burger.gif",
-    description:
-      "A fun full-stack MVC app that allows user to create and consume burgers, featuring mobile first design, MySQL, jQuery, and express-handlebars.",
   },
 };
 

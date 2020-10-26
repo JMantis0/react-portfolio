@@ -26,6 +26,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ProjectPage from "./pages/ProjectPage";
 
+// Color scheme from adobe site color.adobe.com/explore
 const pink = "#F25CA2";
 const blue1 = "#0433BF";
 const blue2 = "#032CA6";
@@ -37,18 +38,26 @@ function App() {
   // pageState and setPageState are passed to components that link to other pages within the React Router
   const [pageState, setPageState] = useState("/");
   const [slideDirection, setSlideDirection] = useState("right");
-  const [itemTabState, setItemTabState] = useState("Item");
+  const [itemTabState, setItemTabState] = useState("Weather Dashboard");
   const [itemPageState, setItemPageState] = useState({
-    title: null,
-    brief: null,
-    techs: null,
-    description: null,
-    about: null,
-    mainPic: null,
-    secondPic: null,
-    thirdPic: null,
-    repoLink: null,
-    liveLink: null,
+    title: "Weather Dashboard",
+    brief:
+      "The Weather Dashboard is designed to provide travelers a weather outlook for multiple cities so that they can plan their trips accordingly.",
+    techs: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "jQuery",
+      "Server-side API",
+      "Media Queries",
+      "Local Storage",
+      "Data Attributes",
+      "Bootstrap Framework",
+      "Embedded Audios",
+    ],
+    mainPic: "/assets/images/w-dashboard.png",
+    repoLink: "http://github.com/JMantis0/weather-dashboard",
+    liveLink: "https://jmantis0.github.io/weather-dashboard/",
   });
   const [slidingIn, setSlidingIn] = useState(true);
 
@@ -71,11 +80,6 @@ function App() {
     typography: {
       fontFamily: "'Kumbh Sans', sans-serif;",
     },
-    // breakpoints: {
-    //   values:{
-    //     stf: 735
-    // 
-    // },
     spacing: 8,
   });
   //  Styles
@@ -201,7 +205,7 @@ function App() {
             >
               {/* CONTACT "PAGE" */}
               <div>
-                <Contact heme={mainTheme} />
+                <Contact />
               </div>
             </Slide>
           </Route>
@@ -214,7 +218,12 @@ function App() {
             >
               <div>
                 {/* PROJECTPAGE "PAGE" */}
-                <ProjectPage itemPageState={itemPageState} />
+                <ProjectPage
+                  itemPageState={itemPageState}
+                  setSlideDirection={setSlideDirection}
+                  setSlidingIn={setSlidingIn}
+                  setPageState={setPageState}
+                />
               </div>
             </Slide>
           </Route>

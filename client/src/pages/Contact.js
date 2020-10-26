@@ -44,9 +44,8 @@ const testClick = () => {
     });
 };
 
-const Contact = ({ heme }) => {
+const Contact = () => {
   const classes = useStyles();
-  console.log(heme);
   return (
     <Grid className={classes.contactContainer} container>
       <Paper className={classes.box}>

@@ -9,9 +9,6 @@ import MobileDrawer from "./MobileDrawer";
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 
-// const useStyles = makeStyles((theme) => ({
-
-// }));
 
 const Header = ({
   // classes,
