@@ -138,7 +138,7 @@ const projectData = {
     title: "Employee Management System",
     brief:
       "This command line application is a tool for business owners that allows them to view and manage the departments, roles, and employees in their company so that they can organize and plan their business",
-    techs: ["Node, MySQL, npm chalk, npm inquirer"],
+    techs: ["Node", "MySQL", "npm chalk", "npm inquirer"],
     deployedLink: "",
     gitHubRepoLink: "https://hithub.com/Jmantis0/Employee-Management-System",
     cardImage: "/assets/images/emp-dbs-system.JPG",

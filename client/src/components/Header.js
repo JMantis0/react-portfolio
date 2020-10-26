@@ -9,7 +9,6 @@ import MobileDrawer from "./MobileDrawer";
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 
-
 const Header = ({
   // classes,
   setPageState,
@@ -25,9 +24,9 @@ const Header = ({
   const useStyles = makeStyles((mainTheme) => ({
     //  headerBanner is underneath the Appbar, above the pages.
     headerBanner: {
-    //   [theme.breakpoints.down("xs")]: {
-    //     margin: "35px 0 0 0",
-    //   },
+      //   [theme.breakpoints.down("xs")]: {
+      //     margin: "35px 0 0 0",
+      //   },
       marginTop: "35px",
       marginBottom: "35px",
       width: "100%",
@@ -184,6 +183,7 @@ const Header = ({
                     onChange={handleChange}
                     aria-label="header navigation tabs"
                     id="<Tabs>"
+                    indicatorColor={"none"}
                     className={classes.tabs}
                   >
                     <Tab className={classes.tab} value="/" label="Home" />
@@ -237,9 +237,7 @@ const Header = ({
               <span className={classes.hiddenBelow580}>{" & designing "}</span>
               <span>{" MERN "}</span>
               <span className={classes.hiddenAbove345}>{"apps."}</span>
-              <span className={classes.hiddenBelow345}>
-                {"applications."}
-              </span>
+              <span className={classes.hiddenBelow345}>{"applications."}</span>
             </p>
           </Typography>
         </Grid>

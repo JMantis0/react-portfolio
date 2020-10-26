@@ -44,21 +44,6 @@ const Project = ({
   const history = useHistory();
   const classes = useStyles();
 
-  // console.log(
-  //   "projectTitle",
-  //   projectTitle,
-  //   "deployedLink",
-  //   deployedLink,
-  //   "gitHubRepoLink",
-  //   gitHubRepoLink,
-  //   "cardImage",
-  //   cardImage,
-  //   "typeOf cardImage",
-  //   typeof cardImage,
-  //   "description",
-  //   description
-  // )
-
   //  Give project a large modal with links
 
   const handleClick = () => {
