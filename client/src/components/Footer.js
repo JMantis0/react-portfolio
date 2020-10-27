@@ -2,20 +2,50 @@
 import React from "react";
 
 // MUI imports
+import Grid from "@material-ui/core/Grid";
 import BottomNavigation from "@material-ui/core/BottomNavigation";
 import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import AppBar from "@material-ui/core/AppBar";
 import HomeIcon from "@material-ui/icons/Home";
 import FolderSpecialIcon from "@material-ui/icons/FolderSpecial";
+import Button from "@material-ui/core/Button";
+
 import InfoIcon from "@material-ui/icons/Info";
+import FacebookIcon from "@material-ui/icons/Facebook";
 import DescriptionIcon from "@material-ui/icons/Description";
 import ContactMailIcon from "@material-ui/icons/ContactMail";
-import GitHubIcon from '@material-ui/icons/GitHub';
+import GitHubIcon from "@material-ui/icons/GitHub";
+import LinkedInIcon from "@material-ui/icons/LinkedIn";
+
+import { makeStyles } from "@material-ui/core/styles";
 
 // React router dom imports
 import { useHistory } from "react-router-dom";
 
-const Footer = ({ setSlidingIn, setSlideDirection,classes, pageState, setPageState }) => {
+const Footer = ({
+  setSlidingIn,
+  setSlideDirection,
+  pageState,
+  setPageState,
+}) => {
+  const useStyles = makeStyles((mainTheme) => ({
+    root: {},
+    otherLinks: {},
+    bottomBar: {
+      top: "auto",
+      position: "static",
+      bottom: 0,
+      boxShadow:
+        "0px -2px 4px -1px rgba(0,0,0,0.2), 0px -4px 5px 0px rgba(0,0,0,0.14), 0px -1px 10px 0px rgba(0,0,0,0.12)",
+    },
+    bottomNavigation: {
+      // backgroundColor: "#eeeeee",
+    },
+    footerContainer: {
+      backgroundColor: mainTheme.palette.background.paper,
+    },
+  }));
+  const classes = useStyles();
   const history = useHistory();
   const orderMapper = {
     "/": 1,
@@ -27,7 +57,6 @@ const Footer = ({ setSlidingIn, setSlideDirection,classes, pageState, setPageSta
   };
 
   const handleChange = (event, newValue) => {
-
     if (orderMapper[newValue] < orderMapper[pageState]) {
       setSlideDirection("left");
     } else if (orderMapper[newValue] > orderMapper[pageState]) {
@@ -47,47 +76,61 @@ const Footer = ({ setSlidingIn, setSlideDirection,classes, pageState, setPageSta
     }, 250);
   };
   return (
-    <AppBar className={classes.bottomBar}>
-      <BottomNavigation
-        value={pageState}
-        onChange={(event, value) => {
-          handleChange(event, value);
-        }}
-        showLabels
-        className={classes.bottomNavigation}
-      >
-        <BottomNavigationAction value="/" label="Home" icon={<HomeIcon />} />
-        <BottomNavigationAction
-          value="/portfolio"
-          label="Portfolio"
-          icon={<FolderSpecialIcon />}
-        />
-        <BottomNavigationAction
-          value="/about"
-          label="About"
-          icon={<InfoIcon />}
-        />
-        <BottomNavigationAction
-          value="/resume"
-          label="Resume"
-          icon={<DescriptionIcon />}
-        />
-        <BottomNavigationAction
-          value="/contact"
-          label="Contact"
-          icon={<ContactMailIcon />}
-        />
-      </BottomNavigation>
-      <BottomNavigation 
-      className="secondBottom">
-        <BottomNavigationAction
-          value="/portfolio"
-          label="Portfolio"
-          icon={<GitHubIcon />}
-        />
-        </BottomNavigation>
-
-    </AppBar>
+    <Grid container className={classes.footerContainer} justify="space-around">
+      <Grid item xs={12}>
+        <AppBar className={classes.bottomBar}>
+          <BottomNavigation
+            value={pageState}
+            onChange={(event, value) => {
+              handleChange(event, value);
+            }}
+            showLabels
+            className={classes.bottomNavigation}
+          >
+            <BottomNavigationAction
+              value="/"
+              label="Home"
+              icon={<HomeIcon />}
+            />
+            <BottomNavigationAction
+              value="/portfolio"
+              label="Portfolio"
+              icon={<FolderSpecialIcon />}
+            />
+            <BottomNavigationAction
+              value="/about"
+              label="About"
+              icon={<InfoIcon />}
+            />
+            <BottomNavigationAction
+              value="/resume"
+              label="Resume"
+              icon={<DescriptionIcon />}
+            />
+            <BottomNavigationAction
+              value="/contact"
+              label="Contact"
+              icon={<ContactMailIcon />}
+            />
+          </BottomNavigation>
+        </AppBar>
+      </Grid>
+      <Grid xs={4} item>
+        <Button>
+          Github <GitHubIcon />
+        </Button>
+      </Grid>
+      <Grid xs={4} item>
+        <Button>
+          LinkedIn <LinkedInIcon />
+        </Button>
+      </Grid>
+      <Grid xs={4} item>
+        <Button>
+          Facebook <FacebookIcon />
+        </Button>
+      </Grid>
+    </Grid>
   );
 };
 
