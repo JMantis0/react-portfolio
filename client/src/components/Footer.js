@@ -43,6 +43,9 @@ const Footer = ({
     },
     footerContainer: {
       backgroundColor: mainTheme.palette.background.paper,
+      "& *": {
+        textAlign: "center",
+      },
     },
   }));
   const classes = useStyles();
@@ -116,17 +119,17 @@ const Footer = ({
         </AppBar>
       </Grid>
       <Grid xs={4} item>
-        <Button>
+        <Button target="_blank" href="https://github.com/JMantis0/">
           Github <GitHubIcon />
         </Button>
       </Grid>
       <Grid xs={4} item>
-        <Button>
+        <Button target="_blank" href="https://www.linkedin.com/in/jesse-mazur/">
           LinkedIn <LinkedInIcon />
         </Button>
       </Grid>
       <Grid xs={4} item>
-        <Button>
+        <Button target="_blank" href="https://www.facebook.com/jesmaz/">
           Facebook <FacebookIcon />
         </Button>
       </Grid>
