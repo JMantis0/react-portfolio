@@ -26,6 +26,17 @@ const useStyles = makeStyles((mainTheme) => ({
   },
 }));
 
+const handleChange = () => {
+  setSlideDirection("left");
+  setSlidingIn(false);
+  setPageState("/portfolio");
+  setTimeout(() => {
+    setSlideDirection("right");
+    setSlidingIn(true);
+    history.push("/portfolio");
+  }, 250);
+}
+
 const ProjectPage = ({ itemPageState, setSlideDirection, setSlidingIn, setPageState }) => {
   const classes = useStyles();
   const history = useHistory();
@@ -59,14 +70,7 @@ const ProjectPage = ({ itemPageState, setSlideDirection, setSlidingIn, setPageSt
         <Grid item xs={4} sm={2}>
           <Button
             onClick={() => {
-              setSlideDirection("left");
-              setSlidingIn(false);
-              setPageState("/portfolio");
-              setTimeout(() => {
-                setSlideDirection("right");
-                setSlidingIn(true);
-                history.push("/portfolio");
-              }, 250);
+              handleChange();
             }}
             variant="contained"
           >
