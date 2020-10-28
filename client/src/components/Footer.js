@@ -45,6 +45,7 @@ const Footer = ({
       backgroundColor: mainTheme.palette.background.paper,
       "& *": {
         textAlign: "center",
+        textTransform: "capitalize",
       },
     },
   }));
@@ -118,19 +119,22 @@ const Footer = ({
           </BottomNavigation>
         </AppBar>
       </Grid>
-      <Grid xs={4} item>
+      <Grid xs={2} item>
         <Button target="_blank" href="https://github.com/JMantis0/">
-          Github <GitHubIcon />
+          {"GitHub "}
+          <GitHubIcon />
         </Button>
       </Grid>
-      <Grid xs={4} item>
+      <Grid xs={2} item>
         <Button target="_blank" href="https://www.linkedin.com/in/jesse-mazur/">
-          LinkedIn <LinkedInIcon />
+          {"LinkedIn "}
+          <LinkedInIcon />
         </Button>
       </Grid>
-      <Grid xs={4} item>
+      <Grid xs={2} item>
         <Button target="_blank" href="https://www.facebook.com/jesmaz/">
-          Facebook <FacebookIcon />
+          {"Facebook "}
+          <FacebookIcon />
         </Button>
       </Grid>
     </Grid>

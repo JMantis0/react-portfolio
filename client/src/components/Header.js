@@ -173,6 +173,7 @@ const Header = ({
               <Grid item style={{ width: "100%" }}>
                 <Hidden smUp>
                   <MobileDrawer
+                    itemTabState={itemTabState}
                     setPageState={setPageState}
                     id="DrawerSnippet"
                   />
