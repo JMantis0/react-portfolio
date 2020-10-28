@@ -24,22 +24,35 @@ const useStyles = makeStyles((mainTheme) => ({
   centerText: {
     textAlign: "center",
   },
+  goBackButton: {
+    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+    border: 0,
+    borderRadius: 3,
+    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+    color: "white",
+    height: 40,
+    padding: "0 30px",
+  },
 }));
 
-const handleChange = () => {
-  setSlideDirection("left");
-  setSlidingIn(false);
-  setPageState("/portfolio");
-  setTimeout(() => {
-    setSlideDirection("right");
-    setSlidingIn(true);
-    history.push("/portfolio");
-  }, 250);
-}
-
-const ProjectPage = ({ itemPageState, setSlideDirection, setSlidingIn, setPageState }) => {
+const ProjectPage = ({
+  itemPageState,
+  setSlideDirection,
+  setSlidingIn,
+  setPageState,
+}) => {
   const classes = useStyles();
   const history = useHistory();
+  const handleChange = () => {
+    setSlideDirection("left");
+    setSlidingIn(false);
+    setPageState("/portfolio");
+    setTimeout(() => {
+      setSlideDirection("right");
+      setSlidingIn(true);
+      history.push("/portfolio");
+    }, 250);
+  };
   return (
     <Paper className={classes.root}>
       {/* First Container */}
@@ -69,6 +82,7 @@ const ProjectPage = ({ itemPageState, setSlideDirection, setSlidingIn, setPageSt
         {/* Back to Portfolio Button */}
         <Grid item xs={4} sm={2}>
           <Button
+            className={classes.goBackButton}
             onClick={() => {
               handleChange();
             }}
