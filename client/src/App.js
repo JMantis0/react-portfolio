@@ -68,6 +68,13 @@ function App() {
     palette: {
       type: "dark",
       border: pink,
+      colors: {
+        pink: "#F25CA2",
+        blue1: "#0433BF",
+        blue2: "#032CA6",
+        blue3: "#021859",
+        aqua: "#0B9ED9",
+      },
       background: {
         paper: blue3,
         default: aqua,
@@ -102,7 +109,6 @@ function App() {
     },
 
     tabsGrid: {},
-    
   }));
   const classes = useStyles();
 

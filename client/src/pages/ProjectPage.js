@@ -24,8 +24,9 @@ const useStyles = makeStyles((mainTheme) => ({
   centerText: {
     textAlign: "center",
   },
-  goBackButton: {
-    background: "linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)",
+  pinkButton: {
+    textTransform: "capitalize",
+    background: `linear-gradient(45deg, ${mainTheme.palette.colors.pink} 30%, #FF8E53 90%)`,
     border: 0,
     borderRadius: 3,
     boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
@@ -56,33 +57,40 @@ const ProjectPage = ({
   return (
     <Paper className={classes.root}>
       {/* First Container */}
-      <Grid container justify="space-around" alignItems="center">
+      <Grid container style={{width:"95%"}} justify="space-around" alignItems="center">
         {/* Title of Project */}
-        <Grid className={classes.centerText} item xs={12} sm={6}>
+        <Grid className={classes.centerText} item xs={12} sm={4}>
           <h1>{itemPageState.title}</h1>
         </Grid>
         {/* Live Link Button */}
-        <Grid className={classes.centerText} xs={4} sm={2} item>
+        <Grid className={classes.centerText} xs={4} sm={1} item>
           <Button
             variant="contained"
             target="_blank"
             href={itemPageState.liveLink}
+            className={classes.pinkButton}
+            href={itemPageState.liveLink}
           >
-            <Link variant="h5" target="_blank" href={itemPageState.liveLink}>
-              Live Link
-            </Link>
+            Live Link
           </Button>
         </Grid>
         {/* GitHub Repository Button */}
-        <Grid className={classes.centerText} xs={4} sm={2} item>
-          <Link variant="h5" target="_blank" href={itemPageState.repoLink}>
+        <Grid className={classes.centerText} xs={4} sm={1} item>
+          <Button
+            variant="contained"
+            className={classes.pinkButton}
+            target="_blank"
+            href={itemPageState.repoLink}
+          >
             Repo Link
-          </Link>
+          </Button>
         </Grid>
         {/* Back to Portfolio Button */}
-        <Grid item xs={4} sm={2}>
+        <Grid className={classes.centerText} item xs={4} sm={1}>
           <Button
-            className={classes.goBackButton}
+            variant="contained"
+            // className={classes.pinkButton}
+            classes={[classes.pinkButton]}
             onClick={() => {
               handleChange();
             }}

@@ -163,7 +163,7 @@ const Header = ({
           <Grid xs={2} item>
             <img
               className={classes.headerImage}
-              // src={require("../assets/biopic.PNG")}
+              src={require("../assets/biopic.PNG")}
               alt="bio"
             ></img>
           </Grid>
