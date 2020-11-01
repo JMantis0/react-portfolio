@@ -75,6 +75,7 @@ function App() {
       },
       background: {
         paper: blue3,
+        paperSecond: blue2,
         default: aqua,
       },
       text: {
