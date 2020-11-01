@@ -9,10 +9,6 @@ import MobileDrawer from "./MobileDrawer";
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 
-// const useStyles = makeStyles((theme) => ({
-
-// }));
-
 const Header = ({
   // classes,
   setPageState,
@@ -25,12 +21,12 @@ const Header = ({
   const history = useHistory();
   //  use setPageState prop from App.js to route.
 
-  const useStyles = makeStyles((theme) => ({
+  const useStyles = makeStyles((mainTheme) => ({
     //  headerBanner is underneath the Appbar, above the pages.
     headerBanner: {
-    //   [theme.breakpoints.down("xs")]: {
-    //     margin: "35px 0 0 0",
-    //   },
+      //   [theme.breakpoints.down("xs")]: {
+      //     margin: "35px 0 0 0",
+      //   },
       marginTop: "35px",
       marginBottom: "35px",
       width: "100%",
@@ -42,11 +38,12 @@ const Header = ({
       position: "absolute",
       top: "15px",
       left: "10%",
-      [theme.breakpoints.up("1300")]: {
+      [mainTheme.breakpoints.up("1300")]: {
         left: "12%",
       },
     },
     appBar: {
+      backgroundColor: mainTheme.palette.background.paper,
       padding: "2px 0 0 0",
       // height: "100px",
       width: "100%",
@@ -57,7 +54,7 @@ const Header = ({
       width: "100%",
     },
     lastTab: {
-      marginRight: "20px",
+      // marginRight: "20px",
       textTransform: "capitalize",
       minWidth: "1px",
       width: "16.666%",
@@ -74,54 +71,54 @@ const Header = ({
     tabs: {
       width: "75%",
       margin: "0 0 0 15%",
-      [theme.breakpoints.between("960", "1280")]: {
+      [mainTheme.breakpoints.between("960", "1280")]: {
         width: "70%",
         margin: "0 0 0 30%",
       },
-      [theme.breakpoints.between("1280", "1920")]: {
+      [mainTheme.breakpoints.between("1280", "1920")]: {
         width: "50%",
         margin: "0 0 0 50%",
       },
     },
     hiddenBelow460: {
       display: "static",
-      [theme.breakpoints.between("0", "460")]: {
+      [mainTheme.breakpoints.between("0", "460")]: {
         display: "none",
       },
     },
     hiddenBelow510: {
       display: "static",
-      [theme.breakpoints.down("510")]: {
+      [mainTheme.breakpoints.down("510")]: {
         display: "none",
       },
     },
     hiddenAbove510: {
       display: "static",
-      [theme.breakpoints.up("510")]: {
+      [mainTheme.breakpoints.up("510")]: {
         display: "none",
       },
     },
     hiddenBelow580: {
       display: "static",
-      [theme.breakpoints.down("580")]: {
+      [mainTheme.breakpoints.down("580")]: {
         display: "none",
       },
     },
     hiddenBelow570: {
       display: "static",
-      [theme.breakpoints.down("570")]: {
+      [mainTheme.breakpoints.down("570")]: {
         display: "none",
       },
     },
     hiddenAbove345: {
       display: "static",
-      [theme.breakpoints.up("345")]: {
+      [mainTheme.breakpoints.up("345")]: {
         display: "none",
       },
     },
     hiddenBelow345: {
       display: "static",
-      [theme.breakpoints.down("345")]: {
+      [mainTheme.breakpoints.down("345")]: {
         display: "none",
       },
     },
@@ -166,7 +163,7 @@ const Header = ({
           <Grid xs={2} item>
             <img
               className={classes.headerImage}
-              // src={require("../assets/biopic.PNG")}
+              src={require("../assets/biopic.PNG")}
               alt="bio"
             ></img>
           </Grid>
@@ -176,6 +173,7 @@ const Header = ({
               <Grid item style={{ width: "100%" }}>
                 <Hidden smUp>
                   <MobileDrawer
+                    itemTabState={itemTabState}
                     setPageState={setPageState}
                     id="DrawerSnippet"
                   />
@@ -186,6 +184,7 @@ const Header = ({
                     onChange={handleChange}
                     aria-label="header navigation tabs"
                     id="<Tabs>"
+                    indicatorColor={"none"}
                     className={classes.tabs}
                   >
                     <Tab className={classes.tab} value="/" label="Home" />
@@ -239,9 +238,7 @@ const Header = ({
               <span className={classes.hiddenBelow580}>{" & designing "}</span>
               <span>{" MERN "}</span>
               <span className={classes.hiddenAbove345}>{"apps."}</span>
-              <span className={classes.hiddenBelow345}>
-                {"applications."}
-              </span>
+              <span className={classes.hiddenBelow345}>{"applications."}</span>
             </p>
           </Typography>
         </Grid>

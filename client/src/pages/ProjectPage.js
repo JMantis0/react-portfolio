@@ -4,10 +4,18 @@ import React from "react";
 // MUI Imports
 import Grid from "@material-ui/core/Grid";
 import Link from "@material-ui/core/Link";
+import Paper from "@material-ui/core/Paper";
+import Button from "@material-ui/core/Button";
 
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
+import { useHistory } from "react-router-dom";
+
+const useStyles = makeStyles((mainTheme) => ({
+  root: {
+    marginBottom: "50px",
+  },
+  button: {},
   mainImage: {
     maxWidth: "500px",
     width: "90%",
@@ -16,32 +24,80 @@ const useStyles = makeStyles((theme) => ({
   centerText: {
     textAlign: "center",
   },
+  pinkButton: {
+    textTransform: "capitalize",
+    background: `linear-gradient(45deg, ${mainTheme.palette.colors.pink} 30%, #FF8E53 90%)`,
+    border: 0,
+    borderRadius: 3,
+    boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
+    color: "white",
+    height: 40,
+    padding: "0 30px",
+  },
 }));
 
-const ProjectPage = ({ itemPageState }) => {
+const ProjectPage = ({
+  itemPageState,
+  setSlideDirection,
+  setSlidingIn,
+  setPageState,
+}) => {
   const classes = useStyles();
-  console.log(itemPageState);
-  console.log(itemPageState.repoLink);
-  console.log(itemPageState.liveLink);
+  const history = useHistory();
+  const handleChange = () => {
+    setSlideDirection("left");
+    setSlidingIn(false);
+    setPageState("/portfolio");
+    setTimeout(() => {
+      setSlideDirection("right");
+      setSlidingIn(true);
+      history.push("/portfolio");
+    }, 250);
+  };
   return (
-    <div>
+    <Paper className={classes.root}>
       {/* First Container */}
-      <Grid container justify="space-around" alignItems="center">
+      <Grid container style={{width:"95%"}} justify="space-around" alignItems="center">
         {/* Title of Project */}
-        <Grid className={classes.centerText} item xs={12}>
+        <Grid className={classes.centerText} item xs={12} sm={4}>
           <h1>{itemPageState.title}</h1>
         </Grid>
-        {/* Link to Deployed Site */}
-        <Grid className={classes.centerText} xs={6} item>
-          <Link variant="h5" target="_blank" href={itemPageState.liveLink}>
+        {/* Live Link Button */}
+        <Grid className={classes.centerText} xs={4} sm={1} item>
+          <Button
+            variant="contained"
+            target="_blank"
+            href={itemPageState.liveLink}
+            className={classes.pinkButton}
+            href={itemPageState.liveLink}
+          >
             Live Link
-          </Link>
+          </Button>
         </Grid>
-        {/* Link to GitHub Repository */}
-        <Grid className={classes.centerText} xs={6} item>
-          <Link variant="h5" target="_blank" href={itemPageState.repoLink}>
+        {/* GitHub Repository Button */}
+        <Grid className={classes.centerText} xs={4} sm={1} item>
+          <Button
+            variant="contained"
+            className={classes.pinkButton}
+            target="_blank"
+            href={itemPageState.repoLink}
+          >
             Repo Link
-          </Link>
+          </Button>
+        </Grid>
+        {/* Back to Portfolio Button */}
+        <Grid className={classes.centerText} item xs={4} sm={1}>
+          <Button
+            variant="contained"
+            // className={classes.pinkButton}
+            classes={[classes.pinkButton]}
+            onClick={() => {
+              handleChange();
+            }}
+            variant="contained"
+          >
+            Go Back
+          </Button>
         </Grid>
       </Grid>
       {/* Second Container */}
@@ -67,14 +123,8 @@ const ProjectPage = ({ itemPageState }) => {
                 })}
           </ul>
         </Grid>
-        {/* <Grid item xs={12} md={6}>
-          <h1>Images</h1>
-        </Grid>
-        <Grid>
-          <p>links</p>
-        </Grid> */}
       </Grid>
-    </div>
+    </Paper>
   );
 };
 

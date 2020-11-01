@@ -1,20 +1,9 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import Project from "../components/Project";
-// import Modal from "@material-ui/core/Modal";
 
-//  Portfolio contains a grid setup that displays Projects
+import { makeStyles } from "@material-ui/core/styles";
 
-//Pick which projects to feature
-// Brewr
-// European translation map
-// Budget-tracker
-// React-Employee Directory]
-
-//I'd like this to cause a modal to pop up when clicked on.  otherwise
-//  has a screenshot with a banner
-// Image
-//  Link?
 const projectData = {
   reactEmployeeDirectory: {
     title: "React Employee Directory",
@@ -29,6 +18,7 @@ const projectData = {
       "JavaScript",
       "React-Bootstrap framework",
     ],
+    cardImage: "/assets/images/directory.gif",
   },
   javaScriptQuiz: {
     title: "JavaScript Quiz",
@@ -52,36 +42,7 @@ const projectData = {
     gitHubRepoLink:
       "https://github.com/JMantis0/depth-of-knowledge-javascript-edition",
     cardImage: "/assets/images/javascript-quiz.jpg",
-    description:
-      "Interactive browser based application featuring jQuery DOM manipulation, dynamic CSS, Bootstrap Framework, data-attributes, and local storage.",
   },
-
-  // ## User Story
-
-  // ```
-  // AS A traveler
-  // I WANT to see the weather outlook for multiple cities
-  // SO THAT I can plan a trip accordingly
-  // ```
-
-  // ## Acceptance Criteria
-
-  // ```
-  // GIVEN a weather dashboard with form inputs
-  // WHEN I search for a city
-  // THEN I am presented with current and future conditions for that city and that city is added to the search history
-  // WHEN I view current weather conditions for that city
-  // THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-  // WHEN I view the UV index
-  // THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-  // WHEN I view future weather conditions for that city
-  // THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
-  // WHEN I click on a city in the search history
-  // THEN I am again presented with current and future conditions for that city
-  // WHEN I open the weather dashboard
-  // THEN I am presented with the last searched city forecast
-  // ```
-
   weatherDashBoard: {
     title: "Weather Dashboard",
     brief:
@@ -101,8 +62,6 @@ const projectData = {
     deployedLink: "https://jmantis0.github.io/weather-dashboard/",
     gitHubRepoLink: "http://github.com/JMantis0/weather-dashboard",
     cardImage: "/assets/images/w-dashboard.png",
-    description:
-      "Browser based weather forecast application featuring data called from the OpenWeatherMaps api.",
   },
   euroTranslationMap: {
     title: "European Translation Map",
@@ -117,14 +76,12 @@ const projectData = {
       "Systran Translate API",
       "TomTom Maps API",
       "Zurb Foundation Framework",
-      "font awesome"
+      "font awesome",
     ],
     deployedLink: "https://progharrison234.github.io/european-translation-map/",
     gitHubRepoLink:
       "https://github.com/ProgHarrison234/european-translation-map",
     cardImage: "/assets/images/eurotrans.gif",
-    description:
-      "This web application provides travelers and language enthusiasts alike a tool that translates words from english into several European languages and displays the translations according to their geographic location.",
   },
   workDayScheduler: {
     title: "Work Day Scheduler",
@@ -167,29 +124,24 @@ const projectData = {
     deployedLink: "https://jbudget-tracker.herokuapp.com/",
     gitHubRepoLink: "https://github.com/JMantis0/budget-tracker",
     cardImage: "/assets/images/budget-tracker.JPG",
-    description:
-      "Full Stack progressive web application.  MongoDB, Sequelize, IndexedDB, PWA (look at other things)",
   },
   employeeManagementCLI: {
     title: "Development Team Roster CLI",
-    brief: "This Node command line interface application provides managers a tool to quickly draft development teams and generate web pages that display the roster and basic contact information of the team's members.",
+    brief:
+      "This Node command line interface application provides managers a tool to quickly draft development teams and generate web pages that display the roster and basic contact information of the team's members.",
     techs: ["HTML", "CSS", "Node.js", "chalk", "inquirer"],
     deployedLink: "",
     gitHubRepoLink: "https://github.com/JMantis0/Employee-Manager_CLI",
     cardImage: "/assets/images/cli.JPG",
-    description:
-      "Employee Management App that allows users to quickly draft development teams and generate a website of its roster, featuring Javascript Classes, npm inquirer, and html writing technologies",
   },
   employeeManagementSystem: {
     title: "Employee Management System",
     brief:
       "This command line application is a tool for business owners that allows them to view and manage the departments, roles, and employees in their company so that they can organize and plan their business",
-    techs: ["Node, MySQL, npm chalk, npm inquirer"],
+    techs: ["Node", "MySQL", "npm chalk", "npm inquirer"],
     deployedLink: "",
     gitHubRepoLink: "https://hithub.com/Jmantis0/Employee-Management-System",
     cardImage: "/assets/images/emp-dbs-system.JPG",
-    description:
-      "Command Line Employee Database Manager and information interface featuring crud functionality with a MySQL database",
   },
   readmeGenerator: {
     title: "Readme Generator",
@@ -199,8 +151,6 @@ const projectData = {
     deployedLink: "",
     gitHubRepoLink: "https://github.com/JMantis0/readme-generator",
     cardImage: "/assets/images/readme-generator.JPG",
-    description:
-      "Command line node application that aids developers in generating quality readme files for GitHub Repositories",
   },
   brewR: {
     title: "BrewR",
@@ -220,8 +170,6 @@ const projectData = {
     deployedLink: "https://brewrs.herokuapp.com/",
     gitHubRepoLink: "https://github.com/JMantis0/brewR",
     cardImage: "/assets/images/brewrs.JPG",
-    description:
-      "Full stack website craft beer afficianados and amateurs alike can create accounts, search breweries, save their favorites, and post to their own blog.",
   },
   eatDaBurger: {
     title: "Eat - Da - Burger",
@@ -242,10 +190,14 @@ const projectData = {
     deployedLink: "https://secret-scrubland-53219.herokuapp.com/",
     gitHubRepoLink: "https://github.com/JMantis0/Eat-Da-Burger",
     cardImage: "/assets/images/burger.gif",
-    description:
-      "A fun full-stack MVC app that allows user to create and consume burgers, featuring mobile first design, MySQL, jQuery, and express-handlebars.",
   },
 };
+
+const useStyles = makeStyles((mainTheme) => ({
+  root: {
+    marginBottom: "50px",
+  },
+}));
 
 const Portfolio = ({
   setPageState,
@@ -256,14 +208,17 @@ const Portfolio = ({
   setSlideDirection,
   setSlidingIn,
 }) => {
-  // console.log("Object.keys(projectData)", Object.keys(projectData));
-  // Object.keys(projectData).forEach((key) =>
-  //   console.log(projectData[key].deployedLink)
-  // );
+  const classes = useStyles();
   return (
     <div>
       {/* Need to make the height of each project uniform */}
-      <Grid container justify="space-around" alignItems="stretch" spacing={5}>
+      <Grid
+        container
+        className={classes.root}
+        justify="space-around"
+        alignItems="stretch"
+        spacing={5}
+      >
         {Object.keys(projectData).map((key) => {
           return (
             <Grid item xs={10} sm={6} md={4} lg={4} xl={4} key={key}>

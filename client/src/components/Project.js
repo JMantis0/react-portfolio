@@ -7,7 +7,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import { useHistory } from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((mainTheme) => ({
   root: {
     // maxWidth: 345,
     // height: 500
@@ -15,6 +15,13 @@ const useStyles = makeStyles((theme) => ({
   media: {
     height: 0,
     paddingTop: "56.25%",
+  },
+  project: {
+    boxShadow: mainTheme.shadows[24],
+    border: `10px solid ${mainTheme.palette.border}`,
+  },
+  borderTop: {
+    borderTop: `10px solid ${mainTheme.palette.border}`,
   },
 }));
 
@@ -36,20 +43,6 @@ const Project = ({
 }) => {
   const history = useHistory();
   const classes = useStyles();
-  // console.log(
-  //   "projectTitle",
-  //   projectTitle,
-  //   "deployedLink",
-  //   deployedLink,
-  //   "gitHubRepoLink",
-  //   gitHubRepoLink,
-  //   "cardImage",
-  //   cardImage,
-  //   "typeOf cardImage",
-  //   typeof cardImage,
-  //   "description",
-  //   description
-  // )
 
   //  Give project a large modal with links
 
@@ -78,7 +71,7 @@ const Project = ({
 
   return (
     <Card
-      className={classes.root}
+      // className={classes.project}
       onClick={() => {
         handleClick();
       }}
@@ -89,13 +82,15 @@ const Project = ({
           image={cardImage}
           title={projectTitle}
         />
-        <CardContent>
+        <CardContent 
+        // className={classes.borderTop}
+        >
           <Typography gutterBottom variant="h5" component="h2">
             {projectTitle}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          {/* <Typography variant="body2" color="textSecondary" component="p">
             {description}
-          </Typography>
+          </Typography> */}
         </CardContent>
       </CardActionArea>
     </Card>

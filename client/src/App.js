@@ -23,25 +23,41 @@ import Home from "./pages/Home";
 import Resume from "./pages/Resume";
 import Portfolio from "./pages/Portfolio";
 import About from "./pages/About";
+import Contact from "./pages/Contact";
 import ProjectPage from "./pages/ProjectPage";
+
+// Color scheme from adobe site color.adobe.com/explore
+const pink = "#F25CA2";
+const blue1 = "#0433BF";
+const blue2 = "#032CA6";
+const blue3 = "#021859";
+const aqua = "#0B9ED9";
 
 // Component definition
 function App() {
   // pageState and setPageState are passed to components that link to other pages within the React Router
   const [pageState, setPageState] = useState("/");
   const [slideDirection, setSlideDirection] = useState("right");
-  const [itemTabState, setItemTabState] = useState("Item");
+  const [itemTabState, setItemTabState] = useState("Weather Dashboard");
   const [itemPageState, setItemPageState] = useState({
-    title: null,
-    brief: null,
-    techs: null,
-    description: null,
-    about: null,
-    mainPic: null,
-    secondPic: null,
-    thirdPic: null,
-    repoLink: null,
-    liveLink: null,
+    title: "Weather Dashboard",
+    brief:
+      "The Weather Dashboard is designed to provide travelers a weather outlook for multiple cities so that they can plan their trips accordingly.",
+    techs: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "jQuery",
+      "Server-side API",
+      "Media Queries",
+      "Local Storage",
+      "Data Attributes",
+      "Bootstrap Framework",
+      "Embedded Audios",
+    ],
+    mainPic: "/assets/images/w-dashboard.png",
+    repoLink: "http://github.com/JMantis0/weather-dashboard",
+    liveLink: "https://jmantis0.github.io/weather-dashboard/",
   });
   const [slidingIn, setSlidingIn] = useState(true);
 
@@ -51,15 +67,26 @@ function App() {
   const mainTheme = createMuiTheme({
     palette: {
       type: "dark",
+      border: pink,
+      colors: {
+        pink: "#F25CA2",
+        blue1: "#0433BF",
+        blue2: "#032CA6",
+        blue3: "#021859",
+        aqua: "#0B9ED9",
+      },
+      background: {
+        paper: blue3,
+        default: aqua,
+      },
+      text: {
+        // primary: aqua,
+        secondary: pink,
+      },
     },
     typography: {
       fontFamily: "'Kumbh Sans', sans-serif;",
     },
-    // breakpoints: {
-    //   values:{
-    //     stf: 735
-    //   }
-    // },
     spacing: 8,
   });
   //  Styles
@@ -80,19 +107,8 @@ function App() {
         margin: "0 auto 0 auto",
       },
     },
-    
-    
+
     tabsGrid: {},
-    bottomBar: {
-      top: "auto",
-      position: "static",
-      bottom: 0,
-      boxShadow:
-        "0px -2px 4px -1px rgba(0,0,0,0.2), 0px -4px 5px 0px rgba(0,0,0,0.14), 0px -1px 10px 0px rgba(0,0,0,0.12)",
-    },
-    bottomNavigation: {
-      // backgroundColor: "#eeeeee",
-    },
   }));
   const classes = useStyles();
 
@@ -177,13 +193,16 @@ function App() {
           </Route>
           <Route exact path="/contact">
             <Slide
+              id="xontactSlide"
               direction={slideDirection}
               in={slidingIn}
               mountOnEnter
               unmountOnExit
             >
               {/* CONTACT "PAGE" */}
-              <div>Contact</div>
+              <div>
+                <Contact />
+              </div>
             </Slide>
           </Route>
           <Route exact path="/item">
@@ -195,7 +214,12 @@ function App() {
             >
               <div>
                 {/* PROJECTPAGE "PAGE" */}
-                <ProjectPage itemPageState={itemPageState} />
+                <ProjectPage
+                  itemPageState={itemPageState}
+                  setSlideDirection={setSlideDirection}
+                  setSlidingIn={setSlidingIn}
+                  setPageState={setPageState}
+                />
               </div>
             </Slide>
           </Route>

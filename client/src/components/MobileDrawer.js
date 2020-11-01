@@ -19,6 +19,7 @@ import FolderSpecialTwoToneIcon from "@material-ui/icons/FolderSpecialTwoTone";
 import ContactMailTwoToneIcon from "@material-ui/icons/ContactMailTwoTone";
 import DescriptionTwoToneIcon from "@material-ui/icons/DescriptionTwoTone";
 import InfoTwoToneIcon from "@material-ui/icons/InfoTwoTone";
+import WebTwoToneIcon from "@material-ui/icons/WebTwoTone";
 // MUI style import
 import { makeStyles } from "@material-ui/core/styles";
 
@@ -33,7 +34,7 @@ const useStyles = makeStyles({
 });
 
 //  Component definition
-const MobileDrawer = ({ setPageState }) => {
+const MobileDrawer = ({ setPageState, itemTabState }) => {
   const classes = useStyles();
   const [state, setState] = React.useState({
     right: false,
@@ -52,8 +53,7 @@ const MobileDrawer = ({ setPageState }) => {
     }
 
     setState({ ...state, [anchor]: open });
-  }
-
+  };
   //  define the list that appears inside the drawer
   const list = (anchor) => (
     <div
@@ -76,7 +76,7 @@ const MobileDrawer = ({ setPageState }) => {
       </List>
       <Divider />
       <List>
-        {["Home", "Portfolio", "About", "Resume", "Contact"].map(
+        {["Home", "Portfolio", "About", "Resume", "Contact", itemTabState].map(
           (text, index) => (
             <ListItem
               button
@@ -85,6 +85,10 @@ const MobileDrawer = ({ setPageState }) => {
                 if (text === "Home") {
                   setPageState(`/`);
                   history.push(`/`);
+                }
+                if (text === itemTabState) {
+                  setPageState("/item");
+                  history.push("/item");
                 } else {
                   setPageState(`/${text.toLowerCase()}`);
                   history.push(`/${text.toLowerCase()}`);
@@ -97,6 +101,7 @@ const MobileDrawer = ({ setPageState }) => {
                 {text === "About" ? <InfoTwoToneIcon /> : null}
                 {text === "Resume" ? <DescriptionTwoToneIcon /> : null}
                 {text === "Contact" ? <ContactMailTwoToneIcon /> : null}
+                {text === itemTabState ? <WebTwoToneIcon /> : null}
               </ListItemIcon>
               {/* primary prop is what text on actual element button inside drawer*/}
               <ListItemText primary={text} />
@@ -131,6 +136,6 @@ const MobileDrawer = ({ setPageState }) => {
       </Grid>
     </div>
   );
-}
+};
 
 export default MobileDrawer;
