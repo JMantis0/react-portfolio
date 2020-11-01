@@ -34,6 +34,9 @@ const useStyles = makeStyles((mainTheme) => ({
     height: 40,
     padding: "0 30px",
   },
+  dog: {
+    fontSize: "100px",
+  },
 }));
 
 const ProjectPage = ({
@@ -57,7 +60,12 @@ const ProjectPage = ({
   return (
     <Paper className={classes.root}>
       {/* First Container */}
-      <Grid container style={{width:"95%"}} justify="space-around" alignItems="center">
+      <Grid
+        container
+        style={{ width: "95%" }}
+        justify="space-around"
+        alignItems="center"
+      >
         {/* Title of Project */}
         <Grid className={classes.centerText} item xs={12} sm={4}>
           <h1>{itemPageState.title}</h1>
@@ -90,7 +98,7 @@ const ProjectPage = ({
           <Button
             variant="contained"
             // className={classes.pinkButton}
-            classes={[classes.pinkButton]}
+            classes={{ root: classes.pinkButton }}
             onClick={() => {
               handleChange();
             }}
@@ -104,13 +112,12 @@ const ProjectPage = ({
       <Grid container>
         {/* Image for Project */}
         <Grid item xs={12} sm={9}>
+          <p>{itemPageState.brief}</p>
           <img
             className={classes.mainImage}
             alt="projectPic"
             src={itemPageState.mainPic}
           ></img>
-          <h1>Project Brief</h1>
-          <p>{itemPageState.brief}</p>
         </Grid>
         {/* Technologies used by Project */}
         <Grid item xs={12} sm={3}>

@@ -26,7 +26,6 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ProjectPage from "./pages/ProjectPage";
 
-
 // Component definition
 function App() {
   // pageState and setPageState are passed to components that link to other pages within the React Router
@@ -36,7 +35,7 @@ function App() {
   const [itemPageState, setItemPageState] = useState({
     title: "Weather Dashboard",
     brief:
-    "The Weather Dashboard is designed to provide travelers a weather outlook for multiple cities so that they can plan their trips accordingly.",
+      "The Weather Dashboard is designed to provide travelers a weather outlook for multiple cities so that they can plan their trips accordingly.",
     techs: [
       "HTML",
       "CSS",
@@ -47,14 +46,13 @@ function App() {
       "Local Storage",
       "Data Attributes",
       "Bootstrap Framework",
-      "Embedded Audios",
     ],
     mainPic: "/assets/images/w-dashboard.png",
     repoLink: "http://github.com/JMantis0/weather-dashboard",
     liveLink: "https://jmantis0.github.io/weather-dashboard/",
   });
   const [slidingIn, setSlidingIn] = useState(true);
-  
+
   const gotoPage = () => {};
   // Color scheme from adobe site color.adobe.com/explore
   const pink = "#F25CA2";
@@ -62,7 +60,7 @@ function App() {
   const blue2 = "#032CA6";
   const blue3 = "#021859";
   const aqua = "#0B9ED9";
-  
+
   //  mainTheme supplies typography to theme consumers
   const mainTheme = createMuiTheme({
     palette: {
