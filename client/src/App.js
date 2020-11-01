@@ -26,12 +26,6 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ProjectPage from "./pages/ProjectPage";
 
-// Color scheme from adobe site color.adobe.com/explore
-const pink = "#F25CA2";
-const blue1 = "#0433BF";
-const blue2 = "#032CA6";
-const blue3 = "#021859";
-const aqua = "#0B9ED9";
 
 // Component definition
 function App() {
@@ -42,7 +36,7 @@ function App() {
   const [itemPageState, setItemPageState] = useState({
     title: "Weather Dashboard",
     brief:
-      "The Weather Dashboard is designed to provide travelers a weather outlook for multiple cities so that they can plan their trips accordingly.",
+    "The Weather Dashboard is designed to provide travelers a weather outlook for multiple cities so that they can plan their trips accordingly.",
     techs: [
       "HTML",
       "CSS",
@@ -60,9 +54,15 @@ function App() {
     liveLink: "https://jmantis0.github.io/weather-dashboard/",
   });
   const [slidingIn, setSlidingIn] = useState(true);
-
+  
   const gotoPage = () => {};
-
+  // Color scheme from adobe site color.adobe.com/explore
+  const pink = "#F25CA2";
+  const blue1 = "#0433BF";
+  const blue2 = "#032CA6";
+  const blue3 = "#021859";
+  const aqua = "#0B9ED9";
+  
   //  mainTheme supplies typography to theme consumers
   const mainTheme = createMuiTheme({
     palette: {

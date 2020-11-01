@@ -35,13 +35,14 @@ const Footer = ({
       top: "auto",
       position: "static",
       bottom: 0,
-      boxShadow:
-        "0px -2px 4px -1px rgba(0,0,0,0.2), 0px -4px 5px 0px rgba(0,0,0,0.14), 0px -1px 10px 0px rgba(0,0,0,0.12)",
+      boxShadow: "none"
     },
     bottomNavigation: {
       // backgroundColor: "#eeeeee",
     },
     footerContainer: {
+      boxShadow:
+        "0px -2px 4px -1px rgba(0,0,0,0.2), 0px -4px 5px 0px rgba(0,0,0,0.14), 0px -1px 10px 0px rgba(0,0,0,0.12)",
       backgroundColor: mainTheme.palette.background.paper,
       "& *": {
         textAlign: "center",
@@ -80,62 +81,69 @@ const Footer = ({
     }, 250);
   };
   return (
-    <Grid container className={classes.footerContainer} justify="space-around">
-      <Grid item xs={12}>
-        <AppBar className={classes.bottomBar}>
-          <BottomNavigation
-            value={pageState}
-            onChange={(event, value) => {
-              handleChange(event, value);
-            }}
-            showLabels
-            className={classes.bottomNavigation}
+    <Grid container className={classes.footerContainer}>
+      <Grid container justify="center">
+        <Grid xs={2} item>
+          <Button target="_blank" href="https://github.com/JMantis0/">
+            {"GitHub "}
+            <GitHubIcon />
+          </Button>
+        </Grid>
+        <Grid xs={2} item>
+          <Button
+            target="_blank"
+            href="https://www.linkedin.com/in/jesse-mazur/"
           >
-            <BottomNavigationAction
-              value="/"
-              label="Home"
-              icon={<HomeIcon />}
-            />
-            <BottomNavigationAction
-              value="/portfolio"
-              label="Portfolio"
-              icon={<FolderSpecialIcon />}
-            />
-            <BottomNavigationAction
-              value="/about"
-              label="About"
-              icon={<InfoIcon />}
-            />
-            <BottomNavigationAction
-              value="/resume"
-              label="Resume"
-              icon={<DescriptionIcon />}
-            />
-            <BottomNavigationAction
-              value="/contact"
-              label="Contact"
-              icon={<ContactMailIcon />}
-            />
-          </BottomNavigation>
-        </AppBar>
+            {"LinkedIn "}
+            <LinkedInIcon />
+          </Button>
+        </Grid>
+        <Grid xs={2} item>
+          <Button target="_blank" href="https://www.facebook.com/jesmaz/">
+            {"Facebook "}
+            <FacebookIcon />
+          </Button>
+        </Grid>
       </Grid>
-      <Grid xs={2} item>
-        <Button target="_blank" href="https://github.com/JMantis0/">
-          {"GitHub "}
-          <GitHubIcon />
-        </Button>
-      </Grid>
-      <Grid xs={2} item>
-        <Button target="_blank" href="https://www.linkedin.com/in/jesse-mazur/">
-          {"LinkedIn "}
-          <LinkedInIcon />
-        </Button>
-      </Grid>
-      <Grid xs={2} item>
-        <Button target="_blank" href="https://www.facebook.com/jesmaz/">
-          {"Facebook "}
-          <FacebookIcon />
-        </Button>
+      <Grid container justify="space-around">
+        <Grid item xs={12}>
+          <AppBar className={classes.bottomBar}>
+            <BottomNavigation
+              value={pageState}
+              onChange={(event, value) => {
+                handleChange(event, value);
+              }}
+              showLabels
+              className={classes.bottomNavigation}
+            >
+              <BottomNavigationAction
+                value="/"
+                label="Home"
+                icon={<HomeIcon />}
+              />
+              <BottomNavigationAction
+                value="/portfolio"
+                label="Portfolio"
+                icon={<FolderSpecialIcon />}
+              />
+              <BottomNavigationAction
+                value="/about"
+                label="About"
+                icon={<InfoIcon />}
+              />
+              <BottomNavigationAction
+                value="/resume"
+                label="Resume"
+                icon={<DescriptionIcon />}
+              />
+              <BottomNavigationAction
+                value="/contact"
+                label="Contact"
+                icon={<ContactMailIcon />}
+              />
+            </BottomNavigation>
+          </AppBar>
+        </Grid>
       </Grid>
     </Grid>
   );
