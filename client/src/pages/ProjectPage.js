@@ -85,18 +85,18 @@ const ProjectPage = ({
           <Paper className={classes.secondPaper}>
             <h1 style={{ display: "inline" }}>{itemPageState.title}</h1>
             <div className={classes.horizontalLine}></div>
-            {/* <Button
-            variant="contained"
-            // className={classes.pinkButton}
-            classes={{ root: classes.pinkButton }}
-            // style={{ display: "inline" }}
-            onClick={() => {
-              handleClick();
-            }}
-            variant="contained"
-          >
-            Back to Porftolio
-          </Button> */}
+            <Button
+              variant="contained"
+              // className={classes.pinkButton}
+              classes={{ root: classes.pinkButton }}
+              // style={{ display: "inline" }}
+              onClick={() => {
+                handleClick();
+              }}
+              variant="contained"
+            >
+              Back to Portfolio
+            </Button>
             <p>{itemPageState.brief}</p>
           </Paper>
           <img

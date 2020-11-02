@@ -19,6 +19,10 @@ const projectData = {
       "React-Bootstrap framework",
     ],
     cardImage: "/assets/images/directory.gif",
+    deployedLink:
+    "https://jreact-employee-directory.herokuapp.com/",
+  gitHubRepoLink:
+    "https://github.com/JMantis0/react-employee-directory",
   },
   javaScriptQuiz: {
     title: "JavaScript Quiz",
