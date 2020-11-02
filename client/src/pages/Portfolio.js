@@ -57,7 +57,6 @@ const projectData = {
       "Local Storage",
       "Data Attributes",
       "Bootstrap Framework",
-      "Embedded Audios",
     ],
     deployedLink: "https://jmantis0.github.io/weather-dashboard/",
     gitHubRepoLink: "http://github.com/JMantis0/weather-dashboard",

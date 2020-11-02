@@ -54,30 +54,32 @@ const Header = ({
       width: "100%",
     },
     lastTab: {
-      // marginRight: "20px",
+      marginRight: "18px",
       textTransform: "capitalize",
       minWidth: "1px",
       width: "16.666%",
+      fontSize: "18px",
     },
     tab: {
       textTransform: "capitalize",
       minWidth: "1px",
       width: "16.666%",
+      fontSize: "18px",
     },
     bannerParagraph: {
       margin: 0,
-      fontSize: "20px",
+      fontSize: "24px",
     },
     tabs: {
       width: "75%",
       margin: "0 0 0 15%",
       [mainTheme.breakpoints.between("960", "1280")]: {
         width: "70%",
-        margin: "0 0 0 30%",
+        margin: "0 0 0 25%",
       },
       [mainTheme.breakpoints.between("1280", "1920")]: {
         width: "50%",
-        margin: "0 0 0 50%",
+        margin: "0 0 0 45%",
       },
     },
     hiddenBelow460: {
@@ -208,7 +210,7 @@ const Header = ({
                       className={classes.lastTab}
                       value="/item"
                       // eventually label should be a state variable that displays the name of the currently selected project
-                      label={itemTabState}
+                      label="Project"
                     />
                   </Tabs>
                 </Hidden>

@@ -26,13 +26,6 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import ProjectPage from "./pages/ProjectPage";
 
-// Color scheme from adobe site color.adobe.com/explore
-const pink = "#F25CA2";
-const blue1 = "#0433BF";
-const blue2 = "#032CA6";
-const blue3 = "#021859";
-const aqua = "#0B9ED9";
-
 // Component definition
 function App() {
   // pageState and setPageState are passed to components that link to other pages within the React Router
@@ -53,7 +46,6 @@ function App() {
       "Local Storage",
       "Data Attributes",
       "Bootstrap Framework",
-      "Embedded Audios",
     ],
     mainPic: "/assets/images/w-dashboard.png",
     repoLink: "http://github.com/JMantis0/weather-dashboard",
@@ -62,6 +54,12 @@ function App() {
   const [slidingIn, setSlidingIn] = useState(true);
 
   const gotoPage = () => {};
+  // Color scheme from adobe site color.adobe.com/explore
+  const pink = "#F25CA2";
+  const blue1 = "#0433BF";
+  const blue2 = "#032CA6";
+  const blue3 = "#021859";
+  const aqua = "#0B9ED9";
 
   //  mainTheme supplies typography to theme consumers
   const mainTheme = createMuiTheme({
@@ -77,6 +75,7 @@ function App() {
       },
       background: {
         paper: blue3,
+        paperSecond: blue2,
         default: aqua,
       },
       text: {
