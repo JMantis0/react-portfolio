@@ -1,3 +1,6 @@
+// import axios for RESTfulness
+import axios from "axios";
+
 // React Imports
 import React from "react";
 
@@ -35,7 +38,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const testClick = () => {
-  fetch("/api/test")
+  axios.get("/api/test")
     .then((response) => {
       console.log("response", response);
     })

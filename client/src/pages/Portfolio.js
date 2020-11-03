@@ -76,7 +76,7 @@ const projectData = {
       "JavaScript",
       "jQuery",
       "Responsive",
-      "Systran Translate API",
+      "MicrosoftAzure Text Translate API",
       "TomTom Maps API",
       "Zurb Foundation Framework",
       "font awesome",
