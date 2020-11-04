@@ -13,28 +13,4 @@ router.get("/test", (req, res) => {
   res.send(200);
 });
 
-// router.post("/analyze", (req, res) => {
-//   console.log(req.body.text);
-//   axios({
-//     method: "GET",
-//     url: "https://twinword-sentiment-analysis.p.rapidapi.com/analyze/",
-//     headers: {
-//       "content-type": "application/octet-stream",
-//       "x-rapidapi-host": "twinword-sentiment-analysis.p.rapidapi.com",
-//       "x-rapidapi-key": "26417dba96mshc908747af3c9234p1996ddjsnf25834dcd684",
-//       useQueryString: true,
-//     },
-//     params: {
-//       text: req.body.text,
-//     },
-//   })
-//     .then((response) => {
-//       console.log(response.data)
-//       res.json(response.data);
-//     })
-//     .catch((error) => {
-//       console.log(error);
-//     });
-// });
-
 module.exports = router;
