@@ -14,7 +14,7 @@ import Typography from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
 import { makesStyles, makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((mainTheme) => ({
   root: {},
   contactContainer: {
     width: "100%",
@@ -39,6 +39,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Contact = () => {
+  const classes = useStyles();
+  
   // Messages sent to back end to be stored in db expect a body in the form {name: STRING, email: STRING, phone: STRING, message: STRING }
   const [messageState, setMessageState] = useState({
     name: "none",
@@ -46,6 +48,8 @@ const Contact = () => {
     phone: "none",
     message: "none",
   });
+
+  const [emailIsValid, setEmailIsValid] = useState(false);
 
   const handleNameInputChange = (event) => {
     console.log(event);
@@ -65,6 +69,7 @@ const Contact = () => {
   };
 
   const handleSubmit = () => {
+    console.log("messageState", messageState);
     axios
       .get("/api/test")
       .then((response) => {
@@ -73,7 +78,6 @@ const Contact = () => {
       .catch((error) => {
         console.log("There was an error: ", error);
       });
-    console.log("messageState", messageState);
     axios
       .post("/api/saveMessage", {
         name: messageState.name,
@@ -89,7 +93,6 @@ const Contact = () => {
       });
   };
 
-  const classes = useStyles();
 
   return (
     <Grid className={classes.contactContainer} container>
@@ -146,11 +149,14 @@ const Contact = () => {
                   onChange={handleMessageInputChange}
                 />
                 <TextField
-                  error
+                  error={emailIsValid}
                   id="standard-error-helper-text"
                   label="Error"
                   defaultValue="Hello World"
                   helperText="Incorrect entry."
+                  onChange={() => {
+                    console.log("change");
+                  }}
                 />
               </Grid>
               <Grid item xs={10}>
