@@ -1,5 +1,6 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
+import Paper from "@material-ui/core/Paper";
 import Project from "../components/Project";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -19,10 +20,8 @@ const projectData = {
       "React-Bootstrap framework",
     ],
     cardImage: "/assets/images/directory.gif",
-    deployedLink:
-    "https://jreact-employee-directory.herokuapp.com/",
-  gitHubRepoLink:
-    "https://github.com/JMantis0/react-employee-directory",
+    deployedLink: "https://jreact-employee-directory.herokuapp.com/",
+    gitHubRepoLink: "https://github.com/JMantis0/react-employee-directory",
   },
   javaScriptQuiz: {
     title: "JavaScript Quiz",
@@ -200,6 +199,10 @@ const useStyles = makeStyles((mainTheme) => ({
   root: {
     marginBottom: "50px",
   },
+  outerPaper: {
+    backgroundColor: mainTheme.palette.background.paperSecond,
+    padding: "0 2.5%"
+  },
 }));
 
 const Portfolio = ({
@@ -213,7 +216,7 @@ const Portfolio = ({
 }) => {
   const classes = useStyles();
   return (
-    <div>
+    <Paper className={classes.outerPaper}>
       {/* Need to make the height of each project uniform */}
       <Grid
         container
@@ -245,7 +248,7 @@ const Portfolio = ({
           );
         })}
       </Grid>
-    </div>
+    </Paper>
   );
 };
 

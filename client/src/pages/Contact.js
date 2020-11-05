@@ -3,6 +3,7 @@ import axios from "axios";
 
 // React Imports
 import React from "react";
+import { useState, useRef } from "react";
 
 // MUI imports
 import Button from "@material-ui/core/Button";
@@ -37,18 +38,59 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const testClick = () => {
-  axios.get("/api/test")
-    .then((response) => {
-      console.log("response", response);
-    })
-    .catch((error) => {
-      console.log("There was an error: ", error);
-    });
-};
-
 const Contact = () => {
+  // Messages sent to back end to be stored in db expect a body in the form {name: STRING, email: STRING, phone: STRING, message: STRING }
+  const [messageState, setMessageState] = useState({
+    name: "none",
+    email: "none",
+    phone: "none",
+    message: "none",
+  });
+
+  const handleNameInputChange = (event) => {
+    console.log(event);
+    setMessageState({ ...messageState, name: event.target.value });
+  };
+  const handlePhoneInputChange = (event) => {
+    console.log(event);
+    setMessageState({ ...messageState, phone: event.target.value });
+  };
+  const handleEmailInputChange = (event) => {
+    console.log(event);
+    setMessageState({ ...messageState, email: event.target.value });
+  };
+  const handleMessageInputChange = (event) => {
+    console.log(event);
+    setMessageState({ ...messageState, message: event.target.value });
+  };
+
+  const handleSubmit = () => {
+    axios
+      .get("/api/test")
+      .then((response) => {
+        console.log("test route response", response);
+      })
+      .catch((error) => {
+        console.log("There was an error: ", error);
+      });
+    console.log("messageState", messageState);
+    axios
+      .post("/api/saveMessage", {
+        name: messageState.name,
+        email: messageState.email,
+        phone: messageState.phone,
+        message: messageState.message,
+      })
+      .then((response) => {
+        console.log("saveMessage route response", response);
+      })
+      .catch((err) => {
+        console.log("There was an error: ", err);
+      });
+  };
+
   const classes = useStyles();
+
   return (
     <Grid className={classes.contactContainer} container>
       <Paper className={classes.box}>
@@ -71,6 +113,7 @@ const Contact = () => {
                   className={classes.textField}
                   label="Your name"
                   variant="filled"
+                  onChange={handleNameInputChange}
                 />
               </Grid>
               <Grid item xs={10}>
@@ -79,6 +122,8 @@ const Contact = () => {
                   className={classes.textField}
                   label="Email"
                   variant="filled"
+                  helperText="Must be an email address"
+                  onChange={handleEmailInputChange}
                 />
                 {/* </Box> */}
               </Grid>
@@ -87,6 +132,7 @@ const Contact = () => {
                   className={classes.textField}
                   label="Phone"
                   variant="filled"
+                  onChange={handlePhoneInputChange}
                 />
               </Grid>
               <Grid item xs={10}>
@@ -94,15 +140,27 @@ const Contact = () => {
                   className={classes.textField}
                   multiline
                   rows={4}
+                  defaultValue=""
                   label="Message"
                   variant="filled"
+                  onChange={handleMessageInputChange}
+                />
+                <TextField
+                  error
+                  id="standard-error-helper-text"
+                  label="Error"
+                  defaultValue="Hello World"
+                  helperText="Incorrect entry."
                 />
               </Grid>
               <Grid item xs={10}>
                 <Button
+                  type="submit"
+                  value="Submit"
                   variant="contained"
-                  onClick={() => {
-                    testClick();
+                  onClick={(event) => {
+                    event.preventDefault();
+                    handleSubmit();
                   }}
                 >
                   Submit
