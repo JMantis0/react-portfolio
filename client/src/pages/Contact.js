@@ -98,6 +98,9 @@ const Contact = () => {
     <Grid className={classes.contactContainer} container>
       <Paper className={classes.box}>
         <Grid item xs={12}>
+          Contact methods:
+          Email: rootmazur@gmail.com
+          Phone/Text: (216)262.2023
           <form>
             {/* <div>Question? Inquire below:</div> */}
             <Grid container justify="space-around">
