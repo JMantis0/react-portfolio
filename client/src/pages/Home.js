@@ -2,6 +2,7 @@ import React from "react";
 import Grid from "@material-ui/core/Grid";
 import HomeCard from "../components/HomeCard";
 import { makeStyles } from "@material-ui/core/styles";
+import Paper from "@material-ui/core/Paper";
 
 const homeCardData = {
   portfolio: {
@@ -23,32 +24,39 @@ const homeCardData = {
     description: "View Resume",
   },
 };
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((mainTheme) => ({
   homeContainer: {
-    margin: "10px 0 150px 0",
+    // margin: "10px 0 150px 0",
+  },
+  outerPaper: {
+    backgroundColor: mainTheme.palette.background.paperSecond,
+    padding: "40px",
+    marginBottom: "120px",
   },
 }));
 
 const Home = ({ setPageState, setSlideDirection, setSlidingIn }) => {
   const classes = useStyles();
   return (
-    <Grid container className={classes.homeContainer} justify="space-around">
-      {Object.keys(homeCardData).map((key) => {
-        return (
-          <Grid key={key} xs={3} style={{ textAlign: "center" }} item>
-            <HomeCard
-              setSlidingIn={setSlidingIn}
-              setSlideDirection={setSlideDirection}
-              setPageState={setPageState}
-              cardTitle={homeCardData[key].cardTitle}
-              link={homeCardData[key].link}
-              cardImage={homeCardData[key].cardImage}
-              description={homeCardData[key].description}
-            />
-          </Grid>
-        );
-      })}
-    </Grid>
+    <Paper className={classes.outerPaper}>
+      <Grid container className={classes.homeContainer} justify="space-around">
+        {Object.keys(homeCardData).map((key) => {
+          return (
+            <Grid key={key} xs={3} style={{ textAlign: "center" }} item>
+              <HomeCard
+                setSlidingIn={setSlidingIn}
+                setSlideDirection={setSlideDirection}
+                setPageState={setPageState}
+                cardTitle={homeCardData[key].cardTitle}
+                link={homeCardData[key].link}
+                cardImage={homeCardData[key].cardImage}
+                description={homeCardData[key].description}
+              />
+            </Grid>
+          );
+        })}
+      </Grid>
+    </Paper>
   );
 };
 

@@ -41,6 +41,7 @@ const useStyles = makeStyles((mainTheme) => ({
     backgroundColor: mainTheme.palette.background.paperSecond,
     margin: "10px",
     padding: "10px",
+    boxShadow: `1px 1px 5px 5px ${mainTheme.palette.colors.pink}`
   },
   horizontalLine: {
     content: " ",
