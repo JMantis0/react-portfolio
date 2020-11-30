@@ -3,7 +3,6 @@ import React from "react";
 
 // MUI Imports
 import Grid from "@material-ui/core/Grid";
-import Link from "@material-ui/core/Link";
 import Paper from "@material-ui/core/Paper";
 import Button from "@material-ui/core/Button";
 
@@ -17,7 +16,7 @@ const useStyles = makeStyles((mainTheme) => ({
   },
   button: {},
   mainImage: {
-    // maxWidth: "500px",
+    // maxWidth: " 500px",
     width: "90%",
     margin: "0 0 0 5%",
   },

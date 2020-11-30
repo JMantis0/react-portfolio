@@ -31,7 +31,7 @@ router.post("/saveMessage", (req, res) => {
     })
     .catch((err) => {
       console.log("There was an error: ", err);
-      res.status(404).json(err);
+      res.json(err);
     });
 });
 
