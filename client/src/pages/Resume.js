@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Button from "@material-ui/core/Button";
+import Paper from "@material-ui/core/Paper";
 import { Document, Page } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import Grid from "@material-ui/core/Grid";
@@ -12,7 +12,7 @@ pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/$
 function Resume(props) {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
-  const useStyles = makeStyles({
+  const useStyles = makeStyles((mainTheme) => ({
     horizontalLine: {
       content: " ",
       display: "block",
@@ -22,7 +22,16 @@ function Resume(props) {
       height: "2px",
       marginBottom: "10px",
     },
-  });
+    root: {
+      backgroundColor: mainTheme.palette.background.paperSecond,
+      padding: "5%",
+      marginBottom: "50px",
+    },
+    inner: {
+      backgroundColor: mainTheme.palette.background.paper,
+      padding: "5%",
+    },
+  }));
   const classes = useStyles();
 
   function onDocumentLoadSuccess({ numPages }) {
@@ -32,40 +41,43 @@ function Resume(props) {
   const withSizeHOC = withSize();
 
   return (
-    <Grid id="resumeGridContainer" justify="center" container>
-      <Grid item id="resumeGridItem" style={{ width: "90%" }}>
-        <SizeMe
-          monitorWidth
-          refreshRate={128}
-          refreshMode={"debounce"}
-          render={({ size }) => (
-            <div>
-              {/* <div>My width is {size.width}px</div> */}
-              <Document file={resume} onLoadSuccess={onDocumentLoadSuccess}>
-                <Page
-                  width={size.width}
-                  className={classes.resume}
-                  scale={1}
-                  pageNumber={pageNumber}
-                />
-              </Document>
-              <div className={classes.horizontalLine}></div>
+    <Paper className={classes.root}>
+      <Paper className={classes.inner}>
+        <Grid id="resumeGridContainer" justify="center" container>
+          <Grid item id="resumeGridItem" style={{ width: "100%" }}>
+            <SizeMe
+              monitorWidth
+              refreshRate={128}
+              refreshMode={"debounce"}
+              render={({ size }) => (
+                <div>
+                  {/* <div>My width is {size.width}px</div> */}
+                  <Document file={resume} onLoadSuccess={onDocumentLoadSuccess}>
+                    <Page
+                      width={size.width}
+                      className={classes.resume}
+                      scale={1}
+                      pageNumber={pageNumber}
+                    />
+                  </Document>
+                  <div className={classes.horizontalLine}></div>
 
-              <Document file={resume} onLoadSuccess={onDocumentLoadSuccess}>
-                <Page
-                  width={size.width}
-                  className={classes.resume}
-                  scale={1}
-                  pageNumber={2}
-                />
-              </Document>
-            </div>
-          )}
-        />
-      </Grid>
-      <div className={classes.horizontalLine}></div>
-      
-    </Grid>
+                  <Document file={resume} onLoadSuccess={onDocumentLoadSuccess}>
+                    <Page
+                      width={size.width}
+                      className={classes.resume}
+                      scale={1}
+                      pageNumber={2}
+                    />
+                  </Document>
+                </div>
+              )}
+            />
+          </Grid>
+          <div className={classes.horizontalLine}></div>
+        </Grid>
+      </Paper>
+    </Paper>
   );
 }
 
