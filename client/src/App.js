@@ -199,7 +199,7 @@ function App() {
               unmountOnExit
             >
               {/* CONTACT "PAGE" */}
-              <div>
+              <div style={{ width: "100%" }}>
                 <Contact />
               </div>
             </Slide>
