@@ -63,7 +63,7 @@ const Header = ({
     tab: {
       textTransform: "capitalize",
       minWidth: "1px",
-      width: "16.666%",
+      width: "20%",
       fontSize: "18px",
     },
     bannerParagraph: {
@@ -205,12 +205,6 @@ const Header = ({
                       className={classes.tab}
                       value="/contact"
                       label="Contact"
-                    />
-                    <Tab
-                      className={classes.lastTab}
-                      value="/item"
-                      // eventually label should be a state variable that displays the name of the currently selected project
-                      label="Project"
                     />
                   </Tabs>
                 </Hidden>
