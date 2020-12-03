@@ -192,7 +192,7 @@ function App() {
           </Route>
           <Route exact path="/contact">
             <Slide
-              id="xontactSlide"
+              id="contactSlide"
               direction={slideDirection}
               in={slidingIn}
               mountOnEnter
