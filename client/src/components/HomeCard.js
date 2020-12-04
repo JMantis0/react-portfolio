@@ -8,7 +8,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import { useHistory } from "react-router-dom";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((mainTheme) => ({
   root: {
     // height: 275,
     padding: "40px 0 40px 0",
@@ -18,6 +18,22 @@ const useStyles = makeStyles((theme) => ({
   },
   media: {
     width: "35%",
+  },
+  cardTitle: {
+    [mainTheme.breakpoints.between("500", "600")]: {
+      fontSize: "4vw",
+    },
+    [mainTheme.breakpoints.between("0", "499")]: {
+      fontSize: "3.5vw",
+    },
+  },
+  cardSubTitle: {
+    [mainTheme.breakpoints.between("500", "600")]: {
+      fontSize: "3vw",
+    },
+    [mainTheme.breakpoints.between("0", "499")]: {
+      fontSize: "2.5vw",
+    },
   },
 }));
 
@@ -54,10 +70,20 @@ const HomeCard = ({
       <CardActionArea>
         <img className={classes.media} src={cardImage}></img>
         <CardContent>
-          <Typography gutterBottom variant="h5" component="h2">
+          <Typography
+            className={classes.cardTitle}
+            gutterBottom
+            variant="h5"
+            component="h2"
+          >
             {cardTitle}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography
+            className={classes.cardSubTitle}
+            variant="body2"
+            color="textSecondary"
+            component="p"
+          >
             {description}
           </Typography>
         </CardContent>

@@ -9,6 +9,7 @@ import AppBar from "@material-ui/core/AppBar";
 import HomeIcon from "@material-ui/icons/Home";
 import FolderSpecialIcon from "@material-ui/icons/FolderSpecial";
 import Button from "@material-ui/core/Button";
+import Paper from "@material-ui/core/Paper";
 
 import InfoIcon from "@material-ui/icons/Info";
 import FacebookIcon from "@material-ui/icons/Facebook";
@@ -29,7 +30,14 @@ const Footer = ({
   setPageState,
 }) => {
   const useStyles = makeStyles((mainTheme) => ({
-    root: {},
+    root: {
+      backgroundColor: mainTheme.palette.background.paperSecond,
+      padding: "5%",
+    },
+    inner: {
+      backgroundColor: mainTheme.palette.background.paper,
+      padding: "5%",
+    },
     otherLinks: {},
     bottomBar: {
       top: "auto",
@@ -41,7 +49,7 @@ const Footer = ({
       paddingTop: "20px",
     },
     footerContainer: {
-      // 
+      //
       paddingBottom: "40px",
       paddingTop: "40px",
       boxShadow:
@@ -86,29 +94,33 @@ const Footer = ({
     }, 250);
   };
   return (
-    <Grid container className={classes.footerContainer}>
-      <Grid container justify="center">
-        <Grid xs={2} item>
-          <Button target="_blank" href="https://github.com/JMantis0/">
-            {"GitHub "}
-            <GitHubIcon />
-          </Button>
-        </Grid>
-        <Grid xs={2} item>
-          <Button
-            target="_blank"
-            href="https://www.linkedin.com/in/jesse-mazur/"
-          >
-            {"LinkedIn "}
-            <LinkedInIcon />
-          </Button>
-        </Grid>
-        <Grid xs={2} item>
-          <Button target="_blank" href="https://www.facebook.com/jesmaz/">
-            {"Facebook "}
-            <FacebookIcon />
-          </Button>
-        </Grid>
+    <Grid container justify="center" className={classes.footerContainer}>
+      <Grid item xs={9}>
+        <Paper>
+          <Grid container justify="space-around">
+            <Grid xs={2} item>
+              <Button target="_blank" href="https://github.com/JMantis0/">
+                {"GitHub "}
+                <GitHubIcon />
+              </Button>
+            </Grid>
+            <Grid xs={2} item>
+              <Button
+                target="_blank"
+                href="https://www.linkedin.com/in/jesse-mazur/"
+              >
+                {"LinkedIn "}
+                <LinkedInIcon />
+              </Button>
+            </Grid>
+            <Grid xs={2} item>
+              <Button target="_blank" href="https://www.facebook.com/jesmaz/">
+                {"Facebook "}
+                <FacebookIcon />
+              </Button>
+            </Grid>
+          </Grid>
+        </Paper>
       </Grid>
       <Grid container justify="space-around">
         <Grid item xs={12}>

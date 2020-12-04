@@ -35,7 +35,7 @@ const Header = ({
     headerImage: {
       width: "100px",
       height: "100px",
-      position: "absolute",
+      position: "relative",
       top: "15px",
       left: "10%",
       [mainTheme.breakpoints.up("1300")]: {
