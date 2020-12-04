@@ -85,10 +85,6 @@ const MobileDrawer = ({ setPageState, itemTabState }) => {
                 if (text === "Home") {
                   setPageState(`/`);
                   history.push(`/`);
-                }
-                if (text === itemTabState) {
-                  setPageState("/item");
-                  history.push("/item");
                 } else {
                   setPageState(`/${text.toLowerCase()}`);
                   history.push(`/${text.toLowerCase()}`);
@@ -101,7 +97,6 @@ const MobileDrawer = ({ setPageState, itemTabState }) => {
                 {text === "About" ? <InfoTwoToneIcon /> : null}
                 {text === "Resume" ? <DescriptionTwoToneIcon /> : null}
                 {text === "Contact" ? <ContactMailTwoToneIcon /> : null}
-                {text === itemTabState ? <WebTwoToneIcon /> : null}
               </ListItemIcon>
               {/* primary prop is what text on actual element button inside drawer*/}
               <ListItemText primary={text} />
