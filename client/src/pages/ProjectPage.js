@@ -132,7 +132,7 @@ const ProjectPage = ({
           </Paper>
           {/* Back to Portfolio Button */}
           <Paper className={classes.secondPaper}>
-            <h2 style={{ display: "inline" }}>Technologies</h2>
+            <h2 style={{ display: "inline" }}>Technical Skills</h2>
             <div className={classes.horizontalLine}></div>
             <ul>
               {itemPageState.techs === null

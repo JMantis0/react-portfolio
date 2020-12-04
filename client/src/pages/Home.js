@@ -31,7 +31,7 @@ const useStyles = makeStyles((mainTheme) => ({
   outerPaper: {
     backgroundColor: mainTheme.palette.background.paperSecond,
     padding: "40px",
-    marginBottom: "120px",
+    marginBottom: "40px",
   },
 }));
 

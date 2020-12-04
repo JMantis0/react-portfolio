@@ -89,19 +89,19 @@ function App() {
     spacing: 8,
   });
   //  Styles
-  const useStyles = makeStyles((theme) => ({
+  const useStyles = makeStyles((mainTheme) => ({
     //  root is the main container and here is where I set its responsive behaviors
     root: {
-      [theme.breakpoints.up("xs")]: {
+      [mainTheme.breakpoints.up("xs")]: {
         width: "95%",
         margin: "0 0 0 2.5%",
         overflow: "hidden",
       },
-      [theme.breakpoints.up("620")]: {
+      [mainTheme.breakpoints.up("620")]: {
         width: "90%",
         margin: "0 0 0 5%",
       },
-      [theme.breakpoints.up("1300")]: {
+      [mainTheme.breakpoints.up("1300")]: {
         maxWidth: "1170px",
         margin: "0 auto 0 auto",
       },
@@ -192,7 +192,7 @@ function App() {
           </Route>
           <Route exact path="/contact">
             <Slide
-              id="xontactSlide"
+              id="contactSlide"
               direction={slideDirection}
               in={slidingIn}
               mountOnEnter

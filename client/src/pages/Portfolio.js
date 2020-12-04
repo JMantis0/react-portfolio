@@ -6,6 +6,27 @@ import Project from "../components/Project";
 import { makeStyles } from "@material-ui/core/styles";
 
 const projectData = {
+  metroApp: {
+    title: "Metro App",
+    brief:
+      "The Metro App provides management teams a tool that protects service commitments to customers by tracking and and updating the status of UPS package cars with a much greater accuracy and efficiency than traditional methods.",
+    techs: [
+      "Node",
+      "Express",
+      "MySQL",
+      "Sequelize",
+      "Axios",
+      "xlsx",
+      "React",
+      "Material UI",
+      "Indexed DB",
+      "Dexie",
+      "Moment.js",
+    ],
+    cardImage: "/assets/images/metroApp.JPG",
+    deployedLink: "https://metroappx.herokuapp.com/",
+    gitHubRepoLink: "https://github.com/JMantis0/metroApp",
+  },
   reactEmployeeDirectory: {
     title: "React Employee Directory",
     brief:
@@ -140,7 +161,7 @@ const projectData = {
     title: "Employee Management System",
     brief:
       "This command line application is a tool for business owners that allows them to view and manage the departments, roles, and employees in their company so that they can organize and plan their business",
-    techs: ["Node", "MySQL",  "SQL queries", "npm chalk", "npm inquirer"],
+    techs: ["Node", "MySQL", "SQL queries", "npm chalk", "npm inquirer"],
     deployedLink: "",
     gitHubRepoLink: "https://github.com/Jmantis0/Employee-Management-System",
     cardImage: "/assets/images/emp-dbs-system.JPG",
@@ -201,7 +222,7 @@ const useStyles = makeStyles((mainTheme) => ({
   },
   outerPaper: {
     backgroundColor: mainTheme.palette.background.paperSecond,
-    padding: "0 2.5%"
+    padding: "0 2.5%",
   },
 }));
 
