@@ -19,19 +19,24 @@ const About = () => {
     <Paper className={classes.root}>
       <Paper className={classes.inner}>
         <p>
-          Jesse Mazur is a new full-stack web developer. He recently completed
-          Trilogy's six-month Full Stack Web Development Boot Camp at The
-          University of Washington. He holds a Bachelor of Science in
-          Mathematics and Statistics from Miami University.
+          I am a Full Stack Web developer holding a Bachelor of Mathematics and
+          Statistics from Miami University. I recently earned a certificate in
+          Full Stack Web Development Boot Camp from the University of Washington
+          where I developed skills in:{" "}
         </p>
         <p>
-          Jesse currently works as an Operations Management Supervisor for UPS,
-          where he has been working for 4 years. He specializes in Air
-          Operations as an Instructor, Trainer, and Operations Supervisor.
+          JavaScript, Node.js, Express, React.js, CSS, HTML, responsive web
+          design, MySQL, Mongo DB, Progressive Web Applications,
+          service-workers, server-side API's, Web API's and more.
         </p>
         <p>
-          In his spare time Jesse enjoys studying Piano and Chess, hiking, board
-          games, and the occasional video game.
+          I currently works as an Hub Supervisor for UPS, overseeing Air
+          Operations and equipment administration.
+        </p>
+        <p>
+          In my spare time I enjoys studying piano and chess, hiking, board
+          games, weight training, skiing good books, and the occasional video
+          game.
         </p>
       </Paper>
     </Paper>

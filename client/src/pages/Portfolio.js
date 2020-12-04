@@ -120,61 +120,11 @@ const projectData = {
       "Local Storage",
       "Responsive",
     ],
-    deployedLink: "https://jmantis0.githubio/work-day-scheduler",
+    deployedLink: "https://jmantis0.github.io/work-day-scheduler",
     gitHubRepoLink: "https://github.com/JMantis0/work-day-scheduler",
     cardImage: "/assets/images/wd-scheduler.JPG",
   },
-  budgetTracker: {
-    title: "Budget Tracker",
-    brief:
-      "The Budget Tracker is a fullstack progressive web application that allows users to track their withdrawals and deposits with or without an internet connection.",
-    techs: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "jQuery",
-      "Progressive Web Applications",
-      "service-worker.js",
-      "IndexedDB",
-      "File and Data Caching",
-      "MongoDB",
-      "Mongoose",
-      "Express",
-      "Bootstrap",
-      "chart.js",
-      "asynchronous functions",
-    ],
-    deployedLink: "https://jbudget-tracker.herokuapp.com/",
-    gitHubRepoLink: "https://github.com/JMantis0/budget-tracker",
-    cardImage: "/assets/images/budget-tracker.JPG",
-  },
-  employeeManagementCLI: {
-    title: "Development Team Roster CLI",
-    brief:
-      "This Node command line interface application provides managers a tool to quickly draft development teams and generate web pages that display the roster and basic contact information of the team's members.",
-    techs: ["HTML", "CSS", "Node.js", "chalk", "inquirer"],
-    deployedLink: "",
-    gitHubRepoLink: "https://github.com/JMantis0/Employee-Manager_CLI",
-    cardImage: "/assets/images/cli.JPG",
-  },
-  employeeManagementSystem: {
-    title: "Employee Management System",
-    brief:
-      "This command line application is a tool for business owners that allows them to view and manage the departments, roles, and employees in their company so that they can organize and plan their business",
-    techs: ["Node", "MySQL", "SQL queries", "npm chalk", "npm inquirer"],
-    deployedLink: "",
-    gitHubRepoLink: "https://github.com/Jmantis0/Employee-Management-System",
-    cardImage: "/assets/images/emp-dbs-system.JPG",
-  },
-  readmeGenerator: {
-    title: "Readme Generator",
-    brief:
-      "This Command Line Interface application aids developers in easily create good readme.md files for their GitHub repositories.",
-    techs: ["Node", "fs file system", "npm inquirer"],
-    deployedLink: "",
-    gitHubRepoLink: "https://github.com/JMantis0/readme-generator",
-    cardImage: "/assets/images/readme-generator.JPG",
-  },
+ 
   brewR: {
     title: "BrewR",
     brief:

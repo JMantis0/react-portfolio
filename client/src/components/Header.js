@@ -205,6 +205,7 @@ const Header = ({
                       className={classes.tab}
                       value="/contact"
                       label="Contact"
+                      selected
                     />
                   </Tabs>
                 </Hidden>
