@@ -94,11 +94,11 @@ const ProjectPage = ({
           <Grid item xs={12} sm={8}>
             <Paper className={classes.secondPaper}>
               <h1 style={{ display: "inline" }}>{itemPageState.title}</h1>
-              <div className={classes.horizontalLine}></div>
               <Button
                 variant="contained"
                 // className={classes.pinkButton}
                 classes={{ root: classes.pinkButton }}
+                style={{ margin: "0 0 10px 10px" }}
                 // style={{ display: "inline" }}
                 onClick={() => {
                   handleClick();
@@ -107,6 +107,7 @@ const ProjectPage = ({
               >
                 Back to Portfolio
               </Button>
+              <div className={classes.horizontalLine}></div>
               <p>{itemPageState.brief}</p>
             </Paper>
             {/* Second Container */}
