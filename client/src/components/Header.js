@@ -155,7 +155,7 @@ const Header = ({
       }
       setSlidingIn(true);
       history.push(newValue);
-    }, 250);
+    }, 200);
   };
 
   return (

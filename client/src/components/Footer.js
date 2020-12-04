@@ -91,7 +91,7 @@ const Footer = ({
       }
       setSlidingIn(true);
       history.push(newValue);
-    }, 250);
+    }, 200);
   };
   return (
     <Grid container justify="center" className={classes.footerContainer}>

@@ -57,7 +57,7 @@ const HomeCard = ({
       setSlideDirection("left");
       setSlidingIn(true);
       history.push(link);
-    }, 250);
+    }, 200);
   };
 
   return (

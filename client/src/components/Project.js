@@ -66,7 +66,7 @@ const Project = ({
       setSlidingIn(true);
       setPageState("/item");
       history.push("/item");
-    }, 250);
+    }, 200);
   };
 
   return (
