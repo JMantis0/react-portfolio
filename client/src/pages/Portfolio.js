@@ -120,7 +120,7 @@ const projectData = {
       "Local Storage",
       "Responsive",
     ],
-    deployedLink: "https://jmantis0.githubio/work-day-scheduler",
+    deployedLink: "https://jmantis0.github.io/work-day-scheduler",
     gitHubRepoLink: "https://github.com/JMantis0/work-day-scheduler",
     cardImage: "/assets/images/wd-scheduler.JPG",
   },

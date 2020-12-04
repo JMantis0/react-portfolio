@@ -88,9 +88,9 @@ const Project = ({
           <Typography gutterBottom variant="h5" component="h2">
             {projectTitle}
           </Typography>
-          {/* <Typography variant="body2" color="textSecondary" component="p">
-            {description}
-          </Typography> */}
+          <Typography variant="body2" color="textSecondary" component="p">
+           Click to learn more
+          </Typography>
         </CardContent>
       </CardActionArea>
     </Card>
