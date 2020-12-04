@@ -78,7 +78,7 @@ const ProjectPage = ({
       setSlideDirection("right");
       setSlidingIn(true);
       history.push("/portfolio");
-    }, 250);
+    }, 200);
   };
   return (
     <Paper className={classes.outer}>
