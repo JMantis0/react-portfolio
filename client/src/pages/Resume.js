@@ -60,16 +60,6 @@ function Resume(props) {
                       pageNumber={pageNumber}
                     />
                   </Document>
-                  <div className={classes.horizontalLine}></div>
-
-                  <Document file={resume} onLoadSuccess={onDocumentLoadSuccess}>
-                    <Page
-                      width={size.width}
-                      className={classes.resume}
-                      scale={1}
-                      pageNumber={2}
-                    />
-                  </Document>
                 </div>
               )}
             />
