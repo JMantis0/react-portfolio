@@ -25,9 +25,6 @@ const homeCardData = {
   },
 };
 const useStyles = makeStyles((mainTheme) => ({
-  homeContainer: {
-    // margin: "10px 0 150px 0",
-  },
   outerPaper: {
     backgroundColor: mainTheme.palette.background.paperSecond,
     padding: "40px",
@@ -39,7 +36,7 @@ const Home = ({ setPageState, setSlideDirection, setSlidingIn }) => {
   const classes = useStyles();
   return (
     <Paper className={classes.outerPaper}>
-      <Grid container className={classes.homeContainer} justify="space-around">
+      <Grid container justify="space-around">
         {Object.keys(homeCardData).map((key) => {
           return (
             <Grid key={key} xs={3} style={{ textAlign: "center" }} item>
