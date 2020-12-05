@@ -19,23 +19,23 @@ const About = () => {
     <Paper className={classes.root}>
       <Paper className={classes.inner}>
         <p>
-          I am a Full Stack Web developer holding a Bachelor of Mathematics and
+          I am a Full Stack Web developer holding a Bachelor of Science in Mathematics and
           Statistics from Miami University. I recently earned a certificate in
-          Full Stack Web Development Boot Camp from the University of Washington
+          Full Stack Web Development from the University of Washington
           where I developed skills in:{" "}
         </p>
         <p>
-          JavaScript, Node.js, Express, React.js, CSS, HTML, responsive web
-          design, MySQL, Mongo DB, Progressive Web Applications,
-          service-workers, server-side API's, Web API's and more.
+          JavaScript, Node.js, Express, React.js, CSS, HTML, Responsive Web
+          Design, SQL, Mongo DB, Progressive Web Applications,
+          Service-Workers, Server-Side API's, Web API's and more.
         </p>
         <p>
           I currently works as an Hub Supervisor for UPS, overseeing Air
           Operations and equipment administration.
         </p>
         <p>
-          In my spare time I enjoys studying piano and chess, hiking, board
-          games, weight training, skiing good books, and the occasional video
+          In my spare time I enjoy studying piano and chess, hiking, board
+          games, weight training, skiing, good books, and the occasional video
           game.
         </p>
       </Paper>
