@@ -3,22 +3,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/JMantis0/react-portfolio)  ![GitHub language count](https://img.shields.io/github/languages/count/JMantis0/react-portfolio)  ![GitHub top language](https://img.shields.io/github/languages/top/JMantis0/react-portfolio)  
 
 ## Description
-
-Portfolio of Jesse Mazur, built with React and Material UI.
-A work in progress.
-
-## Table of Contents
-* [Installation](#installation)
-* [Usage](#usage)
-* [Credits](#credits)
-* [License](#license)
-* [Contributing](#contributing)
-* [Tests](#tests)
-
-## Installation
-
-Visit the [site](https://jmazur-react-portfolio.herokuapp.com/)
-
+This is my portfolio website, 
 ## Usage
 
 Browse it

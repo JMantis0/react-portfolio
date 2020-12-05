@@ -76,7 +76,7 @@ const MobileDrawer = ({ setPageState, itemTabState }) => {
       </List>
       <Divider />
       <List>
-        {["Home", "Portfolio", "About", "Resume", "Contact", itemTabState].map(
+        {["Home", "Portfolio", "About", "Resume", "Contact"].map(
           (text, index) => (
             <ListItem
               button
