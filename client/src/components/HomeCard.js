@@ -19,6 +19,11 @@ const useStyles = makeStyles((mainTheme) => ({
   media: {
     width: "35%",
   },
+  cardContent: {
+    [mainTheme.breakpoints.down("700")]: {
+      padding: "5px",
+    },
+  },
   cardTitle: {
     [mainTheme.breakpoints.between("500", "600")]: {
       fontSize: "4vw",
@@ -69,7 +74,7 @@ const HomeCard = ({
     >
       <CardActionArea>
         <img className={classes.media} src={cardImage}></img>
-        <CardContent>
+        <CardContent className={classes.cardContent}>
           <Typography
             className={classes.cardTitle}
             gutterBottom
