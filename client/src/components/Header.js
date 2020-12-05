@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Hidden from "@material-ui/core/Hidden";
+import ToolTip from "@material-ui/core/ToolTip";
 import MobileDrawer from "./MobileDrawer";
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
@@ -69,6 +70,10 @@ const Header = ({
     bannerParagraph: {
       margin: 0,
       fontSize: "24px",
+    },
+    mernSpan: {
+      textDecorationLine: "underline",
+      textDecorationStyle: "dotted",
     },
     tabs: {
       width: "75%",
@@ -227,13 +232,14 @@ const Header = ({
             </p>
             <p className={classes.bannerParagraph}>
               <span
-              // className={classes.hiddenBelow540}
               >
                 {"Experienced in "}
               </span>
               <span className={classes.hiddenBelow510}>{"developing"}</span>
               <span className={classes.hiddenBelow580}>{" & designing "}</span>
-              <span>{" MERN "}</span>
+              <ToolTip title={"test"}>
+                <span className={classes.mernSpan}>{" MERN "}</span>
+              </ToolTip>
               <span className={classes.hiddenAbove345}>{"apps."}</span>
               <span className={classes.hiddenBelow345}>{"applications."}</span>
             </p>
