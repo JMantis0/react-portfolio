@@ -9,14 +9,14 @@ const projectData = {
   metroApp: {
     title: "Metro App",
     brief:
-      "The Metro App provides management teams a tool that protects service commitments to customers by tracking and and updating the status of UPS package cars with a much greater accuracy and efficiency than traditional methods.",
+      "The Metro App provides management teams a tool that protects service commitments to customers by tracking and updating the status of UPS package cars with greater accuracy and efficiency than traditional methods.",
     techs: [
       "Node",
       "Express",
       "MySQL",
       "Sequelize",
       "Axios",
-      "xlsx",
+      "Xlsx",
       "React",
       "Material UI",
       "Indexed DB",
@@ -47,7 +47,7 @@ const projectData = {
   javaScriptQuiz: {
     title: "JavaScript Quiz",
     brief:
-      "The Depth of Knowledge: Javascript application is designed to provide coding students a timed quiz on JavaScript fundamentals that stores high scores so that they can gauge their progress compared to other students.",
+      "The Depth of Knowledge: Javascript application is designed to provide coding students a timed quiz on JavaScript fundamentals that stores high scores so that they can gauge and compare their progress to other students.",
     techs: [
       "JavaScript",
       "jQuery",
@@ -95,11 +95,11 @@ const projectData = {
       "CSS",
       "JavaScript",
       "jQuery",
-      "Responsive",
+      "Responsive Design",
       "MicrosoftAzure Text Translate API",
       "TomTom Maps API",
       "Zurb Foundation Framework",
-      "font awesome",
+      "Font awesome",
     ],
     deployedLink: "https://progharrison234.github.io/european-translation-map/",
     gitHubRepoLink:
@@ -109,7 +109,7 @@ const projectData = {
   workDayScheduler: {
     title: "Work Day Scheduler",
     brief:
-      "The Work Day Scheduler provides employees with a busy schedule a tool to add important events to a daily planner, so that they can manage their time and tasks more effectively.",
+      "The Work Day Scheduler provides employees that have a busy schedule with a tool to add important events to a daily planner, so that they can manage their time and tasks more effectively.",
     techs: [
       "HTML",
       "CSS",
@@ -118,7 +118,7 @@ const projectData = {
       "moment.js",
       "Bootstrap",
       "Local Storage",
-      "Responsive",
+      "Responsive Design",
     ],
     deployedLink: "https://jmantis0.github.io/work-day-scheduler",
     gitHubRepoLink: "https://github.com/JMantis0/work-day-scheduler",
@@ -135,10 +135,10 @@ const projectData = {
       "Javascript",
       "jQuery",
       "MySQL",
-      "sequelize",
-      "passport",
-      "express",
-      "particle.js",
+      "Sequelize",
+      "Passport",
+      "Express",
+      "Particle.js",
     ],
     deployedLink: "https://brewrs.herokuapp.com/",
     gitHubRepoLink: "https://github.com/JMantis0/brewR",
@@ -147,7 +147,7 @@ const projectData = {
   eatDaBurger: {
     title: "Eat - Da - Burger",
     brief:
-      "Eat-Da-Burger is a full stack resaurant application that lets users input the names of burgers they'd like to eat.  When a user submits a burger, the app displays it on the left hand side of the page -- waiting to be devoured.  Each burger in the waiting area also has a 'Devour' button.  When clicked the burger will move to the right side of the page.",
+      "Eat-Da-Burger is a full stack restaurant application that lets users input the names of burgers they'd like to eat.  When a user submits a burger, the app displays it on the left hand side of the page -- waiting to be devoured.  Each burger in the waiting area also has a 'Devour' button.  When clicked the burger will move to the right side of the page.",
     techs: [
       "HTML",
       "CSS",
@@ -155,9 +155,9 @@ const projectData = {
       "jQuery",
       "Bootstrap",
       "MySQL",
-      "sequelize",
-      "express",
-      "express-handlebars",
+      "Sequelize",
+      "Express",
+      "Express-handlebars",
       "MVC",
     ],
     deployedLink: "https://secret-scrubland-53219.herokuapp.com/",

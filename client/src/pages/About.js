@@ -22,9 +22,7 @@ const About = () => {
           I am a Full Stack Web developer holding a Bachelor of Science in Mathematics and
           Statistics from Miami University. I recently earned a certificate in
           Full Stack Web Development from the University of Washington
-          where I developed skills in:{" "}
-        </p>
-        <p>
+          where I developed skills in
           JavaScript, Node.js, Express, React.js, CSS, HTML, Responsive Web
           Design, SQL, Mongo DB, Progressive Web Applications,
           Service-Workers, Server-Side API's, Web API's and more.
