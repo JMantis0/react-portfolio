@@ -63,6 +63,15 @@ function App() {
 
   //  mainTheme supplies typography to theme consumers
   const mainTheme = createMuiTheme({
+    overrides: {
+      MuiTooltip: {
+        tooltip: {
+          fontSize: "1.2em",
+          color: "#F25CA2",
+          backgroundColor: "transparent",
+        },
+      },
+    },
     palette: {
       type: "dark",
       border: pink,

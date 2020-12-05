@@ -6,6 +6,7 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Hidden from "@material-ui/core/Hidden";
 import ToolTip from "@material-ui/core/ToolTip";
+import Paper from "@material-ui/core/Paper";
 import MobileDrawer from "./MobileDrawer";
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
@@ -74,6 +75,11 @@ const Header = ({
     mernSpan: {
       textDecorationLine: "underline",
       textDecorationStyle: "dotted",
+    },
+    bluePaper: {
+      backgroundColor: mainTheme.palette.colors.blue1,
+      padding: "2.5%",
+      boxShadow: "1px 1px 5px 5px #F25CA2",
     },
     tabs: {
       width: "75%",
@@ -231,13 +237,24 @@ const Header = ({
               {"."}
             </p>
             <p className={classes.bannerParagraph}>
-              <span
-              >
-                {"Experienced in "}
-              </span>
+              <span>{"Experienced in "}</span>
               <span className={classes.hiddenBelow510}>{"developing"}</span>
               <span className={classes.hiddenBelow580}>{" & designing "}</span>
-              <ToolTip title={"test"}>
+              <ToolTip
+                arrow={true}
+                enterTouchDelay={200}
+                title={
+                  <Paper className={classes.bluePaper}>
+                    <ul style={{ marginLeft: "-20px", width: "180px" }}>
+                      <li>Mongo DB</li>
+                      <li>MySQL</li>
+                      <li>Express</li>
+                      <li>React</li>
+                      <li>Node</li>
+                    </ul>
+                  </Paper>
+                }
+              >
                 <span className={classes.mernSpan}>{" MERN "}</span>
               </ToolTip>
               <span className={classes.hiddenAbove345}>{"apps."}</span>
