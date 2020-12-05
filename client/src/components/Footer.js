@@ -98,13 +98,13 @@ const Footer = ({
       <Grid item xs={9}>
         <Paper>
           <Grid container justify="space-around">
-            <Grid xs={2} item>
+            <Grid xs={4} item>
               <Button target="_blank" href="https://github.com/JMantis0/">
                 {"GitHub "}
                 <GitHubIcon />
               </Button>
             </Grid>
-            <Grid xs={2} item>
+            <Grid xs={4} item>
               <Button
                 target="_blank"
                 href="https://www.linkedin.com/in/jesse-mazur/"
@@ -113,7 +113,7 @@ const Footer = ({
                 <LinkedInIcon />
               </Button>
             </Grid>
-            <Grid xs={2} item>
+            <Grid xs={4} item>
               <Button target="_blank" href="https://www.facebook.com/jesmaz/">
                 {"Facebook "}
                 <FacebookIcon />
