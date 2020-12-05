@@ -5,7 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import Hidden from "@material-ui/core/Hidden";
-import ToolTip from "@material-ui/core/ToolTip";
+import Tooltip from "@material-ui/core/Tooltip";
 import Paper from "@material-ui/core/Paper";
 import MobileDrawer from "./MobileDrawer";
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
@@ -240,7 +240,7 @@ const Header = ({
               <span>{"Experienced in "}</span>
               <span className={classes.hiddenBelow510}>{"developing"}</span>
               <span className={classes.hiddenBelow580}>{" & designing "}</span>
-              <ToolTip
+              <Tooltip
                 arrow={true}
                 enterTouchDelay={200}
                 title={
@@ -255,10 +255,10 @@ const Header = ({
                   </Paper>
                 }
               >
-                <span className={classes.mernSpan}>{" MERN "}</span>
-              </ToolTip>
-              <span className={classes.hiddenAbove345}>{"apps."}</span>
-              <span className={classes.hiddenBelow345}>{"applications."}</span>
+                <span className={classes.mernSpan}>{"MERN"}</span>
+              </Tooltip>
+              <span className={classes.hiddenAbove345}>{" apps."}</span>
+              <span className={classes.hiddenBelow345}>{" applications."}</span>
             </p>
           </Typography>
         </Grid>
