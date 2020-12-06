@@ -93,15 +93,15 @@ const Header = ({
         margin: "0 0 0 45%",
       },
     },
-    hiddenBelow460: {
+    hiddenBelow525: {
       display: "static",
-      [mainTheme.breakpoints.between("0", "460")]: {
+      [mainTheme.breakpoints.between("0", "525")]: {
         display: "none",
       },
     },
-    hiddenBelow510: {
+    hiddenBelow547: {
       display: "static",
-      [mainTheme.breakpoints.down("510")]: {
+      [mainTheme.breakpoints.down("547")]: {
         display: "none",
       },
     },
@@ -111,27 +111,33 @@ const Header = ({
         display: "none",
       },
     },
-    hiddenBelow580: {
+    hiddenBelow735: {
       display: "static",
-      [mainTheme.breakpoints.down("580")]: {
+      [mainTheme.breakpoints.down("735")]: {
         display: "none",
       },
     },
-    hiddenBelow570: {
+    hiddenBelow720: {
       display: "static",
-      [mainTheme.breakpoints.down("570")]: {
+      [mainTheme.breakpoints.down("720")]: {
         display: "none",
       },
     },
-    hiddenAbove345: {
+    hiddenAbove410: {
       display: "static",
-      [mainTheme.breakpoints.up("345")]: {
+      [mainTheme.breakpoints.up("410")]: {
         display: "none",
       },
     },
-    hiddenBelow345: {
+    hiddenBelow410: {
       display: "static",
-      [mainTheme.breakpoints.down("345")]: {
+      [mainTheme.breakpoints.down("410")]: {
+        display: "none",
+      },
+    },
+    hiddenBelow387: {
+      display: "static",
+      [mainTheme.breakpoints.down("387")]: {
         display: "none",
       },
     },
@@ -231,15 +237,16 @@ const Header = ({
             <p className={classes.bannerParagraph}>
               {/* Burgeoning  */}
               {"Web Developer "}
-              <span className={classes.hiddenBelow460}>{"& Designer "}</span>
-              {" based in Seattle"}
-              <span className={classes.hiddenBelow570}>{", Washington"}</span>
+              <span className={classes.hiddenBelow525}>{"& Designer "}</span>
+              <span className={classes.hiddenBelow387}>{" based "}</span>
+              {"in Seattle"}
+              <span className={classes.hiddenBelow720}>{", Washington"}</span>
               {"."}
             </p>
             <p className={classes.bannerParagraph}>
               <span>{"Experienced in "}</span>
-              <span className={classes.hiddenBelow510}>{"developing"}</span>
-              <span className={classes.hiddenBelow580}>{" & designing "}</span>
+              <span className={classes.hiddenBelow547}>{"developing "}</span>
+              <span className={classes.hiddenBelow735}>{"& designing "}</span>
               <Tooltip
                 arrow={true}
                 enterTouchDelay={200}
@@ -257,8 +264,8 @@ const Header = ({
               >
                 <span className={classes.mernSpan}>{"MERN"}</span>
               </Tooltip>
-              <span className={classes.hiddenAbove345}>{" apps."}</span>
-              <span className={classes.hiddenBelow345}>{" applications."}</span>
+              <span className={classes.hiddenAbove410}>{" apps."}</span>
+              <span className={classes.hiddenBelow410}>{" applications."}</span>
             </p>
           </Typography>
         </Grid>

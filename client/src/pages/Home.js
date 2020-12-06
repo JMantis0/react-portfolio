@@ -27,7 +27,7 @@ const homeCardData = {
 const useStyles = makeStyles((mainTheme) => ({
   outerPaper: {
     backgroundColor: mainTheme.palette.background.paperSecond,
-    padding: "40px",
+    padding: "3.5%",
     marginBottom: "40px",
   },
 }));
