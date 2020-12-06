@@ -135,9 +135,9 @@ const Header = ({
         display: "none",
       },
     },
-    hiddenBelow387: {
+    hiddenBelow386: {
       display: "static",
-      [mainTheme.breakpoints.down("387")]: {
+      [mainTheme.breakpoints.down("386")]: {
         display: "none",
       },
     },
@@ -238,7 +238,7 @@ const Header = ({
               {/* Burgeoning  */}
               {"Web Developer "}
               <span className={classes.hiddenBelow525}>{"& Designer "}</span>
-              <span className={classes.hiddenBelow387}>{" based "}</span>
+              <span className={classes.hiddenBelow386}>{" based "}</span>
               {"in Seattle"}
               <span className={classes.hiddenBelow720}>{", Washington"}</span>
               {"."}
