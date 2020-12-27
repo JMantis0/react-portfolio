@@ -25,14 +25,12 @@ Includes Five Pages:
 - **Express** Web application framework.
 - **React** JavaScript library for user interfaces.
 - **Material UI** React user interface framework.
-- **React-PDF** Module that Displays PDFs as images within React apps.
+- **React-PDF** Module that Displays PDFs as images within React apps with functioning links.
 - **React-SizeMe** Module that makes React components aware of their size.
 
 ## Notable Features
-
-- *ThemeProvider* A Material UI component that leverages react Context to provide css to elements throughout the site.
-- *Slide* A Material UI component that adds sliding animations to the site.
-- *Mobile Responsive Design* A combination of Grids and Media Queries provide a pleasant user experience on small viewports and mobile devices.
+- **Sliding Animations on Page Change** Accomplished with the Material UI component <Slide>.
+- **Mobile Responsive Design** A combination of Grids and Media Queries provide a pleasant user experience on small view ports and mobile devices.
 
 
 ## License
