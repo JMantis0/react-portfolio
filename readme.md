@@ -5,13 +5,28 @@
 ![mainScreenshot](./client/public/assets/images/Portfolio-Shot.jpg)
 
 ## Description
-This is my portfolio website, 
-## Usage
+Portfolio Website for Web Developer Jesse Mazur.
 
-Browse it
+Includes Five Pages:
 
-## Credits
+- A Home page at the site's landing point.
 
+- A Portfolio page that displays some of Jesse's projects.
+
+- An About page that provides some information about Jesse
+
+- A Resume page that displays Jesse's resume
+
+- A Contact page that contains information on how to communicate with Jesse.
+
+## Site Technologies
+
+- **Node.js** JavaScript runtime environment.
+- **Express** Web application framework.
+- **React** JavaScript library for user interfaces.
+- **Material UI** React user interface framework.
+- **React-PDF** Module that Displays PDFs as images within React apps.
+- **React-SizeMe** Module that makes React components aware of their size.
 
 
 ## License
