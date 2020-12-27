@@ -9,15 +9,15 @@ Portfolio Website for Web Developer Jesse Mazur.
 
 Includes Five Pages:
 
-- A Home page at the site's landing point.
+- A **Home** page at the site's landing point.
 
-- A Portfolio page that displays some of Jesse's projects.
+- A **Portfolio** page that displays some of Jesse's projects.
 
-- An About page that provides some information about Jesse
+- An **About** page that provides some information about Jesse
 
-- A Resume page that displays Jesse's resume
+- A **Resume** page that displays Jesse's resume
 
-- A Contact page that contains information on how to communicate with Jesse.
+- A **Contact** page that contains information on how to communicate with Jesse.
 
 ## Site Technologies
 
@@ -25,8 +25,12 @@ Includes Five Pages:
 - **Express** Web application framework.
 - **React** JavaScript library for user interfaces.
 - **Material UI** React user interface framework.
-- **React-PDF** Module that Displays PDFs as images within React apps.
+- **React-PDF** Module that Displays PDFs as images within React apps with functioning links.
 - **React-SizeMe** Module that makes React components aware of their size.
+
+## Notable Features
+- **Sliding Animations on Page Change** Accomplished with the Material UI component <Slide>.
+- **Mobile Responsive Design** A combination of Grids and Media Queries provide a pleasant user experience on small view ports and mobile devices.
 
 
 ## License
