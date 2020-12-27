@@ -2,6 +2,8 @@
 # [Jesse Mazur Portfolio](https://jmazur-react-portfolio.herokuapp.com/)
 ![GitHub repo size](https://img.shields.io/github/repo-size/JMantis0/react-portfolio)  ![GitHub language count](https://img.shields.io/github/languages/count/JMantis0/react-portfolio)  ![GitHub top language](https://img.shields.io/github/languages/top/JMantis0/react-portfolio)  
 
+![mainScreenshot](./client/public/assets/images/Portfolio-Shot.jpg)
+
 ## Description
 This is my portfolio website, 
 ## Usage
