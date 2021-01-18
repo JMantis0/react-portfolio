@@ -48,6 +48,9 @@ const Footer = ({
     bottomNavigation: {
       paddingTop: "20px",
     },
+    muiSelected: {
+      color: "#ffffff",
+    },
     footerContainer: {
       //
       paddingBottom: "40px",

@@ -53,13 +53,73 @@ function App() {
   });
   const [slidingIn, setSlidingIn] = useState(true);
 
-  const gotoPage = () => {};
   // Color scheme from adobe site color.adobe.com/explore
-  const pink = "#F25CA2";
-  const blue1 = "#0433BF";
-  const blue2 = "#032CA6";
-  const blue3 = "#021859";
-  const aqua = "#0B9ED9";
+
+  //GLOBAL CITIZEN THEME
+
+  const accent = "#F25CA2";   //pink
+  const primary = "#0433BF";  //blue1
+  const secondary = "#032CA6";  //blue2
+  const tertiary = "#021859";  //blue3
+  const altAccent = "#0B9ED9";   //aqua
+  const textPrimary = "#ffffff";
+  const textSecondary = "#F25CA2";
+  
+  // OCEAN AGENCY THEME
+  
+  // const accent = "#D9CB04";
+  // const primary = "#D9B504"; 
+  // const secondary = "#A68B03";  
+  // const tertiary = "#735702"; 
+  // const altAccent = "#402401";
+  // const textPrimary = "#ffffff";
+  // const textSecondary = "#ffe6f7"
+
+  // HUA - LA BRIDGE THEME
+
+  // const accent = "#402232";   //maroon
+  // const primary = "#D5E5F2";  //offwhite
+  // const secondary = "#364C59";  //steel
+  // const tertiary = "#5A798C";  //gray
+  // const altAccent = "#A9C6D9";   //light blue
+  // const textPrimary = "#ffffff";
+  // const textSecondary = "#ffe6f7"
+
+  // const secondTheme = createMuiTheme({
+  //   overrides: {
+  //     MuiTooltip: {
+  //       tooltip: {
+  //         fontSize: "1.2em",
+  //         color: "#F25CA2",
+  //         backgroundColor: "transparent",
+  //       },
+  //     },
+  //   },
+  //   palette: {
+  //     type: "dark",
+  //     border: pink,
+  //     colors: {
+  //       pink: "#F25CA2",
+  //       blue1: "#0433BF",
+  //       blue2: "#032CA6",
+  //       blue3: "#021859",
+  //       aqua: "#0B9ED9",
+  //     },
+  //     background: {
+  //       paper: blue3,
+  //       paperSecond: blue2,
+  //       default: aqua,
+  //     },
+  //     text: {
+  //       // primary: aqua,
+  //       secondary: pink,
+  //     },
+  //   },
+  //   typography: {
+  //     fontFamily: "'Kumbh Sans', sans-serif;",
+  //   },
+  //   spacing: 8,
+  // })
 
   //  mainTheme supplies typography to theme consumers
   const mainTheme = createMuiTheme({
@@ -74,22 +134,22 @@ function App() {
     },
     palette: {
       type: "dark",
-      border: pink,
+      border: accent,
       colors: {
-        pink: "#F25CA2",
-        blue1: "#0433BF",
-        blue2: "#032CA6",
-        blue3: "#021859",
-        aqua: "#0B9ED9",
+        accent: accent,
+        primary: primary,
+        secondary: secondary,
+        tertiary: tertiary,
+        altAccent: altAccent,
       },
       background: {
-        paper: blue3,
-        paperSecond: blue2,
-        default: aqua,
+        paper: tertiary,
+        paperSecond: secondary,
+        default: altAccent,
       },
       text: {
-        // primary: aqua,
-        secondary: pink,
+        primary: textPrimary,
+        secondary: textSecondary,
       },
     },
     typography: {

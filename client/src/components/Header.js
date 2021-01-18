@@ -76,11 +76,6 @@ const Header = ({
       textDecorationLine: "underline",
       textDecorationStyle: "dotted",
     },
-    bluePaper: {
-      backgroundColor: mainTheme.palette.colors.blue1,
-      padding: "2.5%",
-      boxShadow: "1px 1px 5px 5px #F25CA2",
-    },
     tabs: {
       width: "75%",
       margin: "0 0 0 15%",
@@ -251,7 +246,7 @@ const Header = ({
                 arrow={true}
                 enterTouchDelay={200}
                 title={
-                  <Paper className={classes.bluePaper}>
+                  <Paper className={classes.paper}>
                     <ul style={{ marginLeft: "-20px", width: "180px" }}>
                       <li>Mongo DB</li>
                       <li>MySQL</li>
