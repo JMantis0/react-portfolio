@@ -26,6 +26,8 @@ const homeCardData = {
 };
 const useStyles = makeStyles((mainTheme) => ({
   outerPaper: {
+    backgroundImage: "url(/assets/images/pastelTriangles.jpg)",
+
     backgroundColor: mainTheme.palette.background.paperSecond,
     padding: "3.5%",
     marginBottom: "40px",

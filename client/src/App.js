@@ -32,6 +32,7 @@ function App() {
   const [pageState, setPageState] = useState("/");
   const [slideDirection, setSlideDirection] = useState("right");
   const [itemTabState, setItemTabState] = useState("Weather Dashboard");
+  const [slidingIn, setSlidingIn] = useState(true);
   const [itemPageState, setItemPageState] = useState({
     title: "Weather Dashboard",
     brief:
@@ -51,75 +52,14 @@ function App() {
     repoLink: "http://github.com/JMantis0/weather-dashboard",
     liveLink: "https://jmantis0.github.io/weather-dashboard/",
   });
-  const [slidingIn, setSlidingIn] = useState(true);
-
-  // Color scheme from adobe site color.adobe.com/explore
-
-  //GLOBAL CITIZEN THEME
-
-  const accent = "#F25CA2";   //pink
-  const primary = "#0433BF";  //blue1
-  const secondary = "#032CA6";  //blue2
-  const tertiary = "#021859";  //blue3
-  const altAccent = "#0B9ED9";   //aqua
-  const textPrimary = "#ffffff";
-  const textSecondary = "#F25CA2";
-  
-  // OCEAN AGENCY THEME
-  
-  // const accent = "#D9CB04";
-  // const primary = "#D9B504"; 
-  // const secondary = "#A68B03";  
-  // const tertiary = "#735702"; 
-  // const altAccent = "#402401";
-  // const textPrimary = "#ffffff";
-  // const textSecondary = "#ffe6f7"
-
-  // HUA - LA BRIDGE THEME
-
-  // const accent = "#402232";   //maroon
-  // const primary = "#D5E5F2";  //offwhite
-  // const secondary = "#364C59";  //steel
-  // const tertiary = "#5A798C";  //gray
-  // const altAccent = "#A9C6D9";   //light blue
-  // const textPrimary = "#ffffff";
-  // const textSecondary = "#ffe6f7"
-
-  // const secondTheme = createMuiTheme({
-  //   overrides: {
-  //     MuiTooltip: {
-  //       tooltip: {
-  //         fontSize: "1.2em",
-  //         color: "#F25CA2",
-  //         backgroundColor: "transparent",
-  //       },
-  //     },
-  //   },
-  //   palette: {
-  //     type: "dark",
-  //     border: pink,
-  //     colors: {
-  //       pink: "#F25CA2",
-  //       blue1: "#0433BF",
-  //       blue2: "#032CA6",
-  //       blue3: "#021859",
-  //       aqua: "#0B9ED9",
-  //     },
-  //     background: {
-  //       paper: blue3,
-  //       paperSecond: blue2,
-  //       default: aqua,
-  //     },
-  //     text: {
-  //       // primary: aqua,
-  //       secondary: pink,
-  //     },
-  //   },
-  //   typography: {
-  //     fontFamily: "'Kumbh Sans', sans-serif;",
-  //   },
-  //   spacing: 8,
-  // })
+  const accent = "#F25CA2"; //   not being used?
+  const primary = "#eeeeee"; //  not being used?
+  const secondary = "#cccccc"; //secondary background paper
+  const tertiary = "#eeeeee"; //header, footer, and cards
+  const altAccent = "#0B9ED9"; // furthest background and selected Footer Icon
+  const background = "#ffffff";
+  const textPrimary = "#000000";
+  const textSecondary = "#b30059";
 
   //  mainTheme supplies typography to theme consumers
   const mainTheme = createMuiTheme({
@@ -134,7 +74,7 @@ function App() {
     },
     palette: {
       type: "dark",
-      border: accent,
+      // border: accent,
       colors: {
         accent: accent,
         primary: primary,
@@ -145,7 +85,7 @@ function App() {
       background: {
         paper: tertiary,
         paperSecond: secondary,
-        default: altAccent,
+        default: background,
       },
       text: {
         primary: textPrimary,
@@ -171,136 +111,140 @@ function App() {
         margin: "0 0 0 5%",
       },
       [mainTheme.breakpoints.up("1300")]: {
-        maxWidth: "1170px",
+        // maxWidth: "1170px",
         margin: "0 auto 0 auto",
       },
     },
-
+    outer: {
+      backgroundImage: "url(/assets/images/triangles.jpg)",
+    },
     tabsGrid: {},
   }));
   const classes = useStyles();
 
   return (
     <ThemeProvider theme={mainTheme}>
-      <Grid className={classes.root} container justify="center">
-        <CssBaseline />
-        <Router>
-          {/* HEADER COMPONENT */}
-          <Header
-            setSlidingIn={setSlidingIn}
-            itemTabState={itemTabState}
-            setPageState={setPageState}
-            slideDirection={slideDirection}
-            setSlideDirection={setSlideDirection}
-            pageState={pageState}
-            classes={classes}
-          />
-          <Route exact path="/">
-            <Slide
-              direction={slideDirection}
-              in={slidingIn}
-              mountOnEnter
-              unmountOnExit
-            >
-              <div>
-                {/* HOME "PAGE" */}
-                <Home
-                  setSlidingIn={setSlidingIn}
-                  setSlideDirection={setSlideDirection}
-                  setPageState={setPageState}
-                  pageState={pageState}
-                />
-              </div>
-            </Slide>
-          </Route>
-          <Route exact path="/portfolio">
-            <Slide
-              direction={slideDirection}
-              in={slidingIn}
-              mountOnEnter
-              unmountOnExit
-            >
-              <div>
-                {/* PORTFOLIO "PAGE" */}
-                <Portfolio
-                  setSlideDirection={setSlideDirection}
-                  setSlidingIn={setSlidingIn}
-                  setPageState={setPageState}
-                  setItemTabState={setItemTabState}
-                  setItemPageState={setItemPageState}
-                  itemTabState={itemTabState}
-                  itemPageState={itemPageState}
-                />
-              </div>
-            </Slide>
-          </Route>
-          <Route exact path="/about">
-            <Slide
-              direction={slideDirection}
-              in={slidingIn}
-              mountOnEnter
-              unmountOnExit
-            >
-              <div>
-                {/* ABOUT "PAGE" */}
-                <About />
-              </div>
-            </Slide>
-          </Route>
-          <Route exact path="/resume">
-            <Slide
-              direction={slideDirection}
-              in={slidingIn}
-              mountOnEnter
-              unmountOnExit
-            >
-              <div style={{ width: "100%" }}>
-                <Resume />
-              </div>
-            </Slide>
-          </Route>
-          <Route exact path="/contact">
-            <Slide
-              id="contactSlide"
-              direction={slideDirection}
-              in={slidingIn}
-              mountOnEnter
-              unmountOnExit
-            >
-              {/* CONTACT "PAGE" */}
-              <div style={{ width: "100%" }}>
-                <Contact />
-              </div>
-            </Slide>
-          </Route>
-          <Route exact path="/item">
-            <Slide
-              direction={slideDirection}
-              in={slidingIn}
-              mountOnEnter
-              unmountOnExit
-            >
-              <div>
-                {/* PROJECTPAGE "PAGE" */}
-                <ProjectPage
-                  itemPageState={itemPageState}
-                  setSlideDirection={setSlideDirection}
-                  setSlidingIn={setSlidingIn}
-                  setPageState={setPageState}
-                />
-              </div>
-            </Slide>
-          </Route>
-          <Grid container justify="center">
-            <Footer
+      <Grid container className={classes.outer}>
+        <Grid className={classes.root} container justify="center">
+          <CssBaseline />
+          <Router>
+            {/* HEADER COMPONENT */}
+            <Header
               setSlidingIn={setSlidingIn}
-              setSlideDirection={setSlideDirection}
+              itemTabState={itemTabState}
               setPageState={setPageState}
+              slideDirection={slideDirection}
+              setSlideDirection={setSlideDirection}
               pageState={pageState}
               classes={classes}
             />
-          </Grid>
-        </Router>
+            <Route exact path="/">
+              <Slide
+                direction={slideDirection}
+                in={slidingIn}
+                mountOnEnter
+                unmountOnExit
+              >
+                <div>
+                  {/* HOME "PAGE" */}
+                  <Home
+                    setSlidingIn={setSlidingIn}
+                    setSlideDirection={setSlideDirection}
+                    setPageState={setPageState}
+                    pageState={pageState}
+                  />
+                </div>
+              </Slide>
+            </Route>
+            <Route exact path="/portfolio">
+              <Slide
+                direction={slideDirection}
+                in={slidingIn}
+                mountOnEnter
+                unmountOnExit
+              >
+                <div>
+                  {/* PORTFOLIO "PAGE" */}
+                  <Portfolio
+                    setSlideDirection={setSlideDirection}
+                    setSlidingIn={setSlidingIn}
+                    setPageState={setPageState}
+                    itemPageState={itemPageState}
+                    setItemPageState={setItemPageState}
+                    setItemTabState={setItemTabState}
+                    itemTabState={itemTabState}
+                  />
+                </div>
+              </Slide>
+            </Route>
+            <Route exact path="/about">
+              <Slide
+                direction={slideDirection}
+                in={slidingIn}
+                mountOnEnter
+                unmountOnExit
+              >
+                <div>
+                  {/* ABOUT "PAGE" */}
+                  <About />
+                </div>
+              </Slide>
+            </Route>
+            <Route exact path="/resume">
+              <Slide
+                direction={slideDirection}
+                in={slidingIn}
+                mountOnEnter
+                unmountOnExit
+              >
+                <div style={{ width: "100%" }}>
+                  <Resume />
+                </div>
+              </Slide>
+            </Route>
+            <Route exact path="/contact">
+              <Slide
+                id="contactSlide"
+                direction={slideDirection}
+                in={slidingIn}
+                mountOnEnter
+                unmountOnExit
+              >
+                {/* CONTACT "PAGE" */}
+                <div style={{ width: "100%" }}>
+                  <Contact />
+                </div>
+              </Slide>
+            </Route>
+            <Route exact path="/item">
+              <Slide
+                direction={slideDirection}
+                in={slidingIn}
+                mountOnEnter
+                unmountOnExit
+              >
+                <div>
+                  {/* PROJECTPAGE "PAGE" */}
+                  <ProjectPage
+                    itemPageState={itemPageState}
+                    setSlideDirection={setSlideDirection}
+                    setSlidingIn={setSlidingIn}
+                    setPageState={setPageState}
+                  />
+                </div>
+              </Slide>
+            </Route>
+            <Grid container justify="center">
+              <Footer
+                setSlidingIn={setSlidingIn}
+                setSlideDirection={setSlideDirection}
+                setPageState={setPageState}
+                pageState={pageState}
+                classes={classes}
+              />
+            </Grid>
+          </Router>
+        </Grid>
       </Grid>
     </ThemeProvider>
   );

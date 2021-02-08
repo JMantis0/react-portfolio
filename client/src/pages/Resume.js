@@ -23,7 +23,8 @@ function Resume(props) {
       marginBottom: "10px",
     },
     root: {
-      backgroundColor: mainTheme.palette.background.paperSecond,
+      backgroundImage: "url(/assets/images/pastelTriangles.jpg)",
+      // backgroundColor: mainTheme.palette.background.paperSecond,
       padding: "5%",
       marginBottom: "50px",
     },

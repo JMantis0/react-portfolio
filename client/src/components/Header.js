@@ -11,6 +11,7 @@ import MobileDrawer from "./MobileDrawer";
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 
+
 const Header = ({
   // classes,
   setPageState,
@@ -45,7 +46,13 @@ const Header = ({
       },
     },
     appBar: {
-      backgroundColor: mainTheme.palette.background.paper,
+      backgroundImage: `url(/assets/images/jumbo.jpg)`,
+
+      backgroundPosition: "center",
+      backgroundSize: "cover",
+      backgroundRepeat: "no-repeat",
+      borderRadius: 5,
+      marginTop: "10px",
       padding: "2px 0 0 0",
       // height: "100px",
       width: "100%",
@@ -65,8 +72,13 @@ const Header = ({
     tab: {
       textTransform: "capitalize",
       minWidth: "1px",
-      width: "20%",
-      fontSize: "18px",
+      width: "19%",
+      fontSize: "22px",
+      fontWeight: 600,
+      color: mainTheme.palette.text.primary,
+      backgroundColor: "#ffffff",
+      borderRadius: 8,
+      marginLeft: "3px",
     },
     bannerParagraph: {
       margin: 0,

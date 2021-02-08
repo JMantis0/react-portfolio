@@ -1,0 +1,8 @@
+#root {
+  /* background-image: url(/assets/images/triangles.jpg), */
+  background-color: black;
+}
+
+div {
+  background-color: black!important;
+}

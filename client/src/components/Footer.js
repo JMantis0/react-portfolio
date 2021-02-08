@@ -40,6 +40,7 @@ const Footer = ({
     },
     otherLinks: {},
     bottomBar: {
+      backgroundColor: "transparent",
       top: "auto",
       position: "static",
       bottom: 0,
@@ -47,17 +48,27 @@ const Footer = ({
     },
     bottomNavigation: {
       paddingTop: "20px",
+      backgroundColor: "transparent",
     },
-    muiSelected: {
-      color: "#ffffff",
+    actionItemStyles: {
+      "&:hover": {
+        backgroundColor: "#ee0000",
+      },
+      "&$selected": {
+        color: mainTheme.palette.colors.altAccent,
+      },
+      "&$hover": {
+        background: "#eeeeee",
+      },
     },
+    selected: {},
     footerContainer: {
       //
       paddingBottom: "40px",
       paddingTop: "40px",
       boxShadow:
         "0px -2px 4px -1px rgba(0,0,0,0.2), 0px -4px 5px 0px rgba(0,0,0,0.14), 0px -1px 10px 0px rgba(0,0,0,0.12)",
-      backgroundColor: mainTheme.palette.background.paper,
+      backgroundImage: "url(/assets/images/jumbo.jpg)",
       // position: "fixed",
       // bottom: "0",
       "& *": {
@@ -99,7 +110,7 @@ const Footer = ({
   return (
     <Grid container justify="center" className={classes.footerContainer}>
       <Grid item xs={9}>
-        <Paper>
+        {/* <Paper> */}
           <Grid container justify="space-around">
             <Grid xs={4} item>
               <Button target="_blank" href="https://github.com/JMantis0/">
@@ -123,12 +134,12 @@ const Footer = ({
               </Button>
             </Grid>
           </Grid>
-        </Paper>
+        {/* </Paper> */}
       </Grid>
       <Grid container justify="space-around">
         <Grid item xs={12}>
           <AppBar className={classes.bottomBar}>
-            <BottomNavigation
+            {/* <BottomNavigation
               value={pageState}
               onChange={(event, value) => {
                 handleChange(event, value);
@@ -137,31 +148,56 @@ const Footer = ({
               className={classes.bottomNavigation}
             >
               <BottomNavigationAction
+                classes={{
+                  root: classes.actionItemStyles,
+                  selected: classes.selected,
+                  hover: classes.hover,
+                }}
                 value="/"
                 label="Home"
                 icon={<HomeIcon />}
               />
               <BottomNavigationAction
+                classes={{
+                  root: classes.actionItemStyles,
+                  selected: classes.selected,
+                  hover: classes.hover,
+                }}
                 value="/portfolio"
                 label="Portfolio"
                 icon={<FolderSpecialIcon />}
               />
               <BottomNavigationAction
+                classes={{
+                  root: classes.actionItemStyles,
+                  selected: classes.selected,
+                  hover: classes.hover,
+                }}
                 value="/about"
                 label="About"
                 icon={<InfoIcon />}
               />
               <BottomNavigationAction
+                classes={{
+                  root: classes.actionItemStyles,
+                  selected: classes.selected,
+                  hover: classes.hover,
+                }}
                 value="/resume"
                 label="Resume"
                 icon={<DescriptionIcon />}
               />
               <BottomNavigationAction
+                classes={{
+                  root: classes.actionItemStyles,
+                  selected: classes.selected,
+                  hover: classes.hover,
+                }}
                 value="/contact"
                 label="Contact"
                 icon={<ContactMailIcon />}
               />
-            </BottomNavigation>
+            </BottomNavigation> */}
           </AppBar>
         </Grid>
       </Grid>

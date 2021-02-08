@@ -15,12 +15,13 @@ const useStyles = makeStyles((mainTheme) => ({
     marginBottom: "50px",
   },
   outer: {
-    backgroundColor: mainTheme.palette.background.paperSecond,
+    backgroundImage: "url(/assets/images/pastelTriangles.jpg)",
     padding: "5%",
     marginBottom: "50px",
   },
   inner: {
     backgroundColor: mainTheme.palette.background.paper,
+    // opacity: "75%",
     padding: "2.5%",
   },
   button: {},
@@ -50,6 +51,7 @@ const useStyles = makeStyles((mainTheme) => ({
     margin: "20px 10px 20px 10px",
     padding: "10px",
     boxShadow: `1px 1px 5px 5px ${mainTheme.palette.colors.pink}`,
+    opacity: "100%",
   },
   horizontalLine: {
     content: " ",
@@ -92,7 +94,7 @@ const ProjectPage = ({
           {/* First Container */}
           {/* Title of Project */}
           <Grid item xs={12} sm={8}>
-            <Paper className={classes.secondPaper}>
+            {/* <Paper className={classes.secondPaper}> */}
               <h1 style={{ display: "inline" }}>{itemPageState.title}</h1>
               <Button
                 variant="contained"
@@ -109,15 +111,15 @@ const ProjectPage = ({
               </Button>
               <div className={classes.horizontalLine}></div>
               <p>{itemPageState.brief}</p>
-            </Paper>
+            {/* </Paper> */}
             {/* Second Container */}
-            <Paper className={classes.secondPaper}>
+            {/* <Paper className={classes.secondPaper}> */}
               <img
                 className={classes.mainImage}
                 alt="projectPic"
                 src={itemPageState.mainPic}
               ></img>
-            </Paper>
+            {/* </Paper> */}
           </Grid>
 
           <Grid xs={12} sm={4} item>

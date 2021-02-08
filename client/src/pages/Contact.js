@@ -13,13 +13,14 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((mainTheme) => ({
   root: {
-    backgroundColor: mainTheme.palette.background.paperSecond,
+    backgroundImage: "url(/assets/images/pastelTriangles.jpg)",
     padding: "5%",
     marginBottom: "50px",
   },
   inner: {
     backgroundColor: mainTheme.palette.background.paper,
     padding: "5%",
+    opacity: "85%",
   },
   textField: {
     margin: "10px 0",
@@ -55,15 +56,15 @@ const Contact = () => {
   // Messages sent to back end to be stored in db expect a body in the form {name: STRING, email: STRING, phone: STRING, message: STRING }
 
   return (
-    <Paper className={classes.root} >
+    <Paper className={classes.root}>
       <Paper className={classes.inner}>
         {/* <Grid item xs={12}> */}
-          <Paper className={classes.secondPaper}>
-            <Typography variant="h5">Contact Jesse</Typography>
-            <div className={classes.horizontalLine}></div>
-          </Paper>
-          <Typography variant="h6">Email: rootmazur@gmail.com</Typography>
-          <Typography variant="h6">Phone/Text: (216)262.2023</Typography>
+        <Paper className={classes.secondPaper}>
+          <Typography variant="h5">Contact Jesse</Typography>
+          <div className={classes.horizontalLine}></div>
+        </Paper>
+        <Typography variant="h6">Email: rootmazur@gmail.com</Typography>
+        <Typography variant="h6">Phone/Text: (216)262.2023</Typography>
         {/* </Grid> */}
       </Paper>
     </Paper>

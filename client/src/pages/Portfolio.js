@@ -168,11 +168,12 @@ const projectData = {
 
 const useStyles = makeStyles((mainTheme) => ({
   root: {
-    marginBottom: "50px",
   },
   outerPaper: {
-    backgroundColor: mainTheme.palette.background.paperSecond,
-    padding: "0 2.5%",
+    backgroundImage: "url(/assets/images/pastelTriangles.jpg)",
+    padding: "5%",
+    marginBottom: "50px",
+
   },
 }));
 
