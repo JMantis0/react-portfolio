@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((mainTheme) => ({
   root: {
-    backgroundColor: mainTheme.palette.background.paperSecond,
+    backgroundImage: "url(/assets/images/pastelTriangles.jpg)",
     padding: "5%",
     marginBottom: "50px",
   },

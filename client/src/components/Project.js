@@ -23,6 +23,9 @@ const useStyles = makeStyles((mainTheme) => ({
   borderTop: {
     borderTop: `10px solid ${mainTheme.palette.border}`,
   },
+  subText: {
+    fontSize: "16px",
+  }
 }));
 
 const Project = ({
@@ -88,7 +91,7 @@ const Project = ({
           <Typography gutterBottom variant="h5" component="h2">
             {projectTitle}
           </Typography>
-          <Typography variant="body2" color="textSecondary" component="p">
+          <Typography className={classes.subText} variant="body2" color="textSecondary" component="p">
            Click to learn more
           </Typography>
         </CardContent>
