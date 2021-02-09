@@ -132,7 +132,7 @@ const ProjectPage = ({
                     // className={classes.pinkButton}
                     href={itemPageState.liveLink}
                   >
-                    Live Link
+                    {itemPageState.title} Site
                   </a>
                 </li>
                 {/* Repository Link */}
@@ -143,7 +143,7 @@ const ProjectPage = ({
                     target="_blank"
                     href={itemPageState.repoLink}
                   >
-                    Repo Link
+                    {itemPageState.title} Repository
                   </a>
                 </li>
               </ul>

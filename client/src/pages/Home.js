@@ -3,32 +3,11 @@ import Grid from "@material-ui/core/Grid";
 import HomeCard from "../components/HomeCard";
 import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
+import homeCardData from "../assets/json/homeCardData.json"
 
-const homeCardData = {
-  portfolio: {
-    cardTitle: "Portfolio",
-    link: "/portfolio",
-    cardImage: "/assets/images/portfolio-icon.png",
-    description: "View Portfolio",
-  },
-  about: {
-    cardTitle: "About",
-    link: "/about",
-    cardImage: "/assets/images/about-icon.png",
-    description: "Learn about Jesse",
-  },
-  resume: {
-    cardTitle: "Resume",
-    link: "/resume",
-    cardImage: "/assets/images/resume-icon.png",
-    description: "View Resume",
-  },
-};
 const useStyles = makeStyles((mainTheme) => ({
   outerPaper: {
     backgroundImage: "url(/assets/images/pastelTriangles.jpg)",
-
-    backgroundColor: mainTheme.palette.background.paperSecond,
     padding: "3.5%",
     marginBottom: "40px",
   },
