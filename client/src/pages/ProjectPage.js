@@ -94,57 +94,59 @@ const ProjectPage = ({
           {/* First Container */}
           {/* Title of Project */}
           <Grid item xs={12} sm={8}>
-            {/* <Paper className={classes.secondPaper}> */}
-              <h1 style={{ display: "inline" }}>{itemPageState.title}</h1>
-              <Button
-                variant="contained"
-                // className={classes.pinkButton}
-                classes={{ root: classes.pinkButton }}
-                style={{ margin: "0 0 10px 10px" }}
-                // style={{ display: "inline" }}
-                onClick={() => {
-                  handleClick();
-                }}
-                variant="contained"
-              >
-                Back to Portfolio
-              </Button>
-              <div className={classes.horizontalLine}></div>
-              <p>{itemPageState.brief}</p>
-            {/* </Paper> */}
+            <h1 style={{ display: "inline" }}>{itemPageState.title}</h1>
+            <Button
+              variant="contained"
+              // className={classes.pinkButton}
+              classes={{ root: classes.pinkButton }}
+              style={{ margin: "0 0 10px 10px" }}
+              // style={{ display: "inline" }}
+              onClick={() => {
+                handleClick();
+              }}
+              variant="contained"
+            >
+              Back to Portfolio
+            </Button>
+            <div className={classes.horizontalLine}></div>
+            <p>{itemPageState.brief}</p>
             {/* Second Container */}
-            {/* <Paper className={classes.secondPaper}> */}
-              <img
-                className={classes.mainImage}
-                alt="projectPic"
-                src={itemPageState.mainPic}
-              ></img>
-            {/* </Paper> */}
+            <img
+              className={classes.mainImage}
+              alt="projectPic"
+              src={itemPageState.mainPic}
+            ></img>
           </Grid>
 
           <Grid xs={12} sm={4} item>
             <Paper className={classes.secondPaper}>
               <h1 style={{ display: "inline" }}>Links</h1>
               <div className={classes.horizontalLine}></div>
-              {/* Live Link Button */}
-              <Button
-                variant="contained"
-                target="_blank"
-                href={itemPageState.liveLink}
-                className={classes.pinkButton}
-                href={itemPageState.liveLink}
-              >
-                Live Link
-              </Button>
-              {/* GitHub Repository Button */}
-              <Button
-                variant="contained"
-                className={classes.pinkButton}
-                target="_blank"
-                href={itemPageState.repoLink}
-              >
-                Repo Link
-              </Button>
+              {/* Live Link */}
+              <ul>
+                <li>
+                  <a
+                    // variant="contained"
+                    target="_blank"
+                    // href={itemPageState.liveLink}
+                    // className={classes.pinkButton}
+                    href={itemPageState.liveLink}
+                  >
+                    Live Link
+                  </a>
+                </li>
+                {/* Repository Link */}
+                <li>
+                  <a
+                    // variant="contained"
+                    // className={classes.pinkButton}
+                    target="_blank"
+                    href={itemPageState.repoLink}
+                  >
+                    Repo Link
+                  </a>
+                </li>
+              </ul>
             </Paper>
             {/* Back to Portfolio Button */}
             <Paper className={classes.secondPaper}>
