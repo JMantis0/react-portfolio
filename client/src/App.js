@@ -64,6 +64,23 @@ function App() {
   //  mainTheme supplies typography to theme consumers
   const mainTheme = createMuiTheme({
     overrides: {
+      MuiTab: {
+        root: {
+          "&:hover": {
+            backgroundColor: "#000000",
+            color: "#eeff00",
+          },
+          "&$selected": {
+            backgroundColor: "#eeff00",
+            color: "#000000",
+            fontWeight: "900",
+            "&:hover": {
+              backgroundColor: "#eeff00",
+              color: "#000000",
+            },
+          },
+        },
+      },
       MuiTooltip: {
         tooltip: {
           fontSize: "1.2em",

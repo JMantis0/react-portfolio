@@ -13,6 +13,7 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((mainTheme) => ({
   root: {
     marginBottom: "50px",
+    
   },
   outer: {
     backgroundImage: "url(/assets/images/pastelTriangles.jpg)",
