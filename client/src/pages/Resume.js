@@ -23,14 +23,14 @@ function Resume(props) {
       marginBottom: "10px",
     },
     root: {
-      backgroundImage: "url(/assets/images/pastelTriangles.jpg)",
-      // backgroundColor: mainTheme.palette.background.paperSecond,
+      backgroundImage: "url(/assets/images/AquaShapes.jpg)",
       padding: "5%",
       marginBottom: "50px",
     },
     inner: {
       backgroundColor: mainTheme.palette.background.paper,
       padding: "5%",
+      opacity: "80%",
     },
   }));
   const classes = useStyles();

@@ -1,0 +1,20 @@
+{
+  "portfolio": {
+    "cardTitle": "Portfolio",
+    "link": "/portfolio",
+    "cardImage": "/assets/images/portfolio-icon.png",
+    "description": "View Portfolio"
+  },
+  "about": {
+    "cardTitle": "About",
+    "link": "/about",
+    "cardImage": "/assets/images/about-icon.png",
+    "description": "Learn about Jesse"
+  },
+  "resume": {
+    "cardTitle": "Resume",
+    "link": "/resume",
+    "cardImage": "/assets/images/resume-icon.png",
+    "description": "View Resume"
+  }
+}

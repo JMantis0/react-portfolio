@@ -11,7 +11,6 @@ import MobileDrawer from "./MobileDrawer";
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
 
-
 const Header = ({
   // classes,
   setPageState,
@@ -47,7 +46,6 @@ const Header = ({
     },
     appBar: {
       backgroundImage: `url(/assets/images/jumbo.jpg)`,
-
       backgroundPosition: "center",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
@@ -57,6 +55,7 @@ const Header = ({
       // height: "100px",
       width: "100%",
       minWidth: "10px",
+      padding: "0 0 20px 0"
     },
     tabsGridItem: {
       marginTop: "50px",
@@ -77,9 +76,16 @@ const Header = ({
       fontWeight: 600,
       color: mainTheme.palette.text.primary,
       backgroundColor: "#ffffff",
-      borderRadius: 8,
+      // borderRadius: 8,
+      opacity: "100%",
+      border: "8px solid #1ff0ff",
       marginLeft: "3px",
+      // "&:hover": {
+      //   backgroundColor: "black",
+      //   color: "white",
+      // },
     },
+    selectedTab: {},
     bannerParagraph: {
       margin: 0,
       fontSize: "24px",
@@ -91,6 +97,9 @@ const Header = ({
     tabs: {
       width: "75%",
       margin: "0 0 0 15%",
+      //   -ms-transform: skewX(-20deg);
+      // -webkit-transform: skewX(-20deg);
+      transform: "skewX(-20deg)",
       [mainTheme.breakpoints.between("960", "1280")]: {
         width: "70%",
         margin: "0 0 0 25%",
@@ -99,6 +108,11 @@ const Header = ({
         width: "50%",
         margin: "0 0 0 45%",
       },
+    },
+    tabLabel: {
+      transform: "skewX(20deg)",
+      fontSize: "22px",
+      fontWeight: 600,
     },
     hiddenBelow525: {
       display: "static",
@@ -213,23 +227,51 @@ const Header = ({
                     indicatorColor={"none"}
                     className={classes.tabs}
                   >
-                    <Tab className={classes.tab} value="/" label="Home" />
+                    <Tab
+                      selected={false}
+                      className={classes.tab}
+                      value="/"
+                      label={
+                        <Typography className={classes.tabLabel}>
+                          Home
+                        </Typography>
+                      }
+                    />
                     <Tab
                       className={classes.tab}
                       value="/portfolio"
-                      label="Portfolio"
+                      label={
+                        <Typography className={classes.tabLabel}>
+                          Portfolio
+                        </Typography>
+                      }
                     />
-                    <Tab className={classes.tab} value="/about" label="About" />
+                    <Tab
+                      className={classes.tab}
+                      value="/about"
+                      label={
+                        <Typography className={classes.tabLabel}>
+                          About
+                        </Typography>
+                      }
+                    />
                     <Tab
                       className={classes.tab}
                       value="/resume"
-                      label="Resume"
+                      label={
+                        <Typography className={classes.tabLabel}>
+                          Resume
+                        </Typography>
+                      }
                     />
                     <Tab
                       className={classes.tab}
                       value="/contact"
-                      label="Contact"
-                      selected
+                      label={
+                        <Typography className={classes.tabLabel}>
+                          Contact
+                        </Typography>
+                      }
                     />
                   </Tabs>
                 </Hidden>

@@ -19,6 +19,24 @@ const useStyles = makeStyles((mainTheme) => ({
   project: {
     boxShadow: mainTheme.shadows[24],
     border: `10px solid ${mainTheme.palette.border}`,
+    "&:hover": {
+      boxShadow: "0 0 0 0 rgba(0, 0, 0, 1)",
+      transform: "scale(1)",
+      animation: "$pulse 2s infinite",
+    },
+  },
+  "@keyframes pulse": {
+    "0%": {
+      transform: "scale(0.95)",
+      boxShadow: "0 0 0 0 rgb(0, 0, 0, .7)",
+    },
+    "70%": {
+      transform: "scale(1)",
+      boxShadow: "0 0 0 10px rgba(0, 0, 0, 0)",
+    },
+    "100%": {
+      transform: "scale(0.95)",
+    },
   },
   borderTop: {
     borderTop: `10px solid ${mainTheme.palette.border}`,
@@ -74,7 +92,7 @@ const Project = ({
 
   return (
     <Card
-      // className={classes.project}
+      className={classes.project}
       onClick={() => {
         handleClick();
       }}

@@ -4,9 +4,10 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((mainTheme) => ({
   root: {
-    backgroundImage: "url(/assets/images/pastelTriangles.jpg)",
+    backgroundImage: "url(/assets/images/ColorShapes.jpg)",
     padding: "5%",
     marginBottom: "50px",
+    opacity: "85%",
   },
   inner: {
     backgroundColor: mainTheme.palette.background.paper,
@@ -16,7 +17,7 @@ const useStyles = makeStyles((mainTheme) => ({
     content: " ",
     display: "block",
     width: "100%",
-    backgroundColor: "#e7e9eb",
+    backgroundColor: "#000000",
     color: "#eeeeee",
     height: "2px",
     marginBottom: "10px",

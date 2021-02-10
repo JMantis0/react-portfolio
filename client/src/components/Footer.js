@@ -8,7 +8,7 @@ import BottomNavigationAction from "@material-ui/core/BottomNavigationAction";
 import AppBar from "@material-ui/core/AppBar";
 import HomeIcon from "@material-ui/icons/Home";
 import FolderSpecialIcon from "@material-ui/icons/FolderSpecial";
-import Button from "@material-ui/core/Button";
+import a from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 
 import InfoIcon from "@material-ui/icons/Info";
@@ -62,10 +62,34 @@ const Footer = ({
       },
     },
     selected: {},
+
+    ftrBtn: {
+      textDecoration: "underline",
+      margin: "0 5px",
+      color: "#1ff0ff",
+      fontSize: "20px",
+      fontWeight: 900,
+      "&:hover": {
+        color: "#eeff00",
+      },
+      [mainTheme.breakpoints.down("680")]: {
+        fontSize: "3vw",
+        // border: "1px solid #1ff0ff",
+        // backgroundColor: "#ffffff"
+      },
+    },
+    ftrIcon: {
+      [mainTheme.breakpoints.down("680")]: {
+        fontSize: "4vw",
+        position: "relative",
+        top: "8px",
+      },
+    },
+
     footerContainer: {
-      //
-      paddingBottom: "40px",
-      paddingTop: "40px",
+      borderRadius: 8,
+      paddingBottom: "20px",
+      paddingTop: "20px",
       boxShadow:
         "0px -2px 4px -1px rgba(0,0,0,0.2), 0px -4px 5px 0px rgba(0,0,0,0.14), 0px -1px 10px 0px rgba(0,0,0,0.12)",
       backgroundImage: "url(/assets/images/jumbo.jpg)",
@@ -111,29 +135,38 @@ const Footer = ({
     <Grid container justify="center" className={classes.footerContainer}>
       <Grid item xs={9}>
         {/* <Paper> */}
-          <Grid container justify="space-around">
-            <Grid xs={4} item>
-              <Button target="_blank" href="https://github.com/JMantis0/">
-                {"GitHub "}
-                <GitHubIcon />
-              </Button>
-            </Grid>
-            <Grid xs={4} item>
-              <Button
-                target="_blank"
-                href="https://www.linkedin.com/in/jesse-mazur/"
-              >
-                {"LinkedIn "}
-                <LinkedInIcon />
-              </Button>
-            </Grid>
-            <Grid xs={4} item>
-              <Button target="_blank" href="https://www.facebook.com/jesmaz/">
-                {"Facebook "}
-                <FacebookIcon />
-              </Button>
-            </Grid>
-          </Grid>
+        {/* <Grid container justify="space-around"> */}
+        {/* <Grid xs={4} item> */}
+        <a
+          className={classes.ftrBtn}
+          target="_blank"
+          href="https://github.com/JMantis0/"
+        >
+          <GitHubIcon className={classes.ftrIcon} />
+          {"GitHub "}
+        </a>
+        {/* </Grid> */}
+        {/* <Grid xs={4} item> */}
+        <a
+          className={classes.ftrBtn}
+          target="_blank"
+          href="https://www.linkedin.com/in/jesse-mazur/"
+        >
+          <LinkedInIcon className={classes.ftrIcon} />
+          {"LinkedIn "}
+        </a>
+        {/* </Grid> */}
+        {/* <Grid xs={4} item> */}
+        <a
+          className={classes.ftrBtn}
+          target="_blank"
+          href="https://www.facebook.com/jesmaz/"
+        >
+          <FacebookIcon className={classes.ftrIcon} />
+          {"Facebook "}
+        </a>
+        {/* </Grid> */}
+        {/* </Grid> */}
         {/* </Paper> */}
       </Grid>
       <Grid container justify="space-around">
@@ -198,6 +231,10 @@ const Footer = ({
                 icon={<ContactMailIcon />}
               />
             </BottomNavigation> */}
+
+            <a href="https://www.vecteezy.com/free-vector/glass">
+              Glass Vectors by Vecteezy
+            </a>
           </AppBar>
         </Grid>
       </Grid>
