@@ -11,10 +11,26 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((mainTheme) => ({
   root: {
     // height: 275,
+    opacity: "85%",
     padding: "40px 0 40px 0",
-    // "&:hover": {
-    //   backgroundColor: "#ee0000",
-    // },
+    "&:hover": {
+      boxShadow: "0 0 0 0 rgba(0, 0, 0, 1)",
+      transform: "scale(1)",
+      animation: "$pulse 2s infinite",
+    },
+  },
+  "@keyframes pulse": {
+    "0%": {
+      transform: "scale(0.95)",
+      boxShadow: "0 0 0 0 rgb(0, 0, 0, .7)",
+    },
+    "70%": {
+      transform: "scale(1)",
+      boxShadow: "0 0 0 10px rgba(0, 0, 0, 0)",
+    },
+    "100%": {
+      transform: "scale(0.95)",
+    },
   },
   media: {
     width: "35%",
@@ -72,7 +88,7 @@ const HomeCard = ({
       }}
       className={classes.root}
     >
-      <CardActionArea>
+      {/* <CardActionArea> */}
         <img className={classes.media} src={cardImage}></img>
         <CardContent className={classes.cardContent}>
           <Typography
@@ -92,15 +108,6 @@ const HomeCard = ({
             {description}
           </Typography>
         </CardContent>
-      </CardActionArea>
-      {/* <CardActions>
-        <Button style={{textAlign: "center"}} size="small" color="primary">
-          Click
-        </Button> */}
-      {/* <Button size="small" color="primary">
-          Learn more
-        </Button> */}
-      {/* </CardActions> */}
     </Card>
   );
 };

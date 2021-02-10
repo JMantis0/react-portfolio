@@ -9,7 +9,8 @@ const useStyles = makeStyles((mainTheme) => ({
   root: {
   },
   outerPaper: {
-    backgroundImage: "url(/assets/images/ColorShapes.jpg)",
+    backgroundImage: "url(/assets/images/pastelTriangles.jpg)",
+    backgroundSize: "cover",
     padding: "5%",
     marginBottom: "50px",
   },

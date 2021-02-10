@@ -7,7 +7,7 @@ import homeCardData from "../assets/json/homeCardData.json"
 
 const useStyles = makeStyles((mainTheme) => ({
   outerPaper: {
-    backgroundImage: "url(/assets/images/pastelTriangles.jpg)",
+    backgroundImage: "url(/assets/images/YellowShapes.jpg)",
     padding: "3.5%",
     marginBottom: "40px",
   },

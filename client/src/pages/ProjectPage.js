@@ -57,7 +57,7 @@ const useStyles = makeStyles((mainTheme) => ({
     content: " ",
     display: "block",
     width: "100%",
-    backgroundColor: "#e7e9eb",
+    backgroundColor: "#000000",
     color: "#eeeeee",
     height: "2px",
     marginBottom: "10px",

@@ -63,7 +63,7 @@ const Footer = ({
     },
     selected: {},
     footerContainer: {
-      //
+      borderRadius: 8,
       paddingBottom: "40px",
       paddingTop: "40px",
       boxShadow:
@@ -114,8 +114,8 @@ const Footer = ({
           <Grid container justify="space-around">
             <Grid xs={4} item>
               <Button target="_blank" href="https://github.com/JMantis0/">
-                {"GitHub "}
                 <GitHubIcon />
+                {"GitHub "}
               </Button>
             </Grid>
             <Grid xs={4} item>
@@ -123,14 +123,14 @@ const Footer = ({
                 target="_blank"
                 href="https://www.linkedin.com/in/jesse-mazur/"
               >
-                {"LinkedIn "}
                 <LinkedInIcon />
+                {"LinkedIn "}
               </Button>
             </Grid>
             <Grid xs={4} item>
               <Button target="_blank" href="https://www.facebook.com/jesmaz/">
-                {"Facebook "}
                 <FacebookIcon />
+                {"Facebook "}
               </Button>
             </Grid>
           </Grid>
@@ -198,6 +198,8 @@ const Footer = ({
                 icon={<ContactMailIcon />}
               />
             </BottomNavigation> */}
+
+            <a href="https://www.vecteezy.com/free-vector/glass">Glass Vectors by Vecteezy</a>
           </AppBar>
         </Grid>
       </Grid>

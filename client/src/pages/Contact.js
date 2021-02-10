@@ -13,14 +13,14 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((mainTheme) => ({
   root: {
-    backgroundImage: "url(/assets/images/pastelTriangles.jpg)",
+    backgroundImage: "url(/assets/images/PurpleShapes.jpg)",
     padding: "5%",
     marginBottom: "50px",
   },
   inner: {
     backgroundColor: mainTheme.palette.background.paper,
     padding: "5%",
-    opacity: "85%",
+    opacity: "90%",
   },
   textField: {
     margin: "10px 0",
@@ -43,7 +43,7 @@ const useStyles = makeStyles((mainTheme) => ({
     content: " ",
     display: "block",
     width: "100%",
-    backgroundColor: "#e7e9eb",
+    backgroundColor: "#000000",
     color: "#eeeeee",
     height: "2px",
     marginBottom: "10px",
@@ -59,10 +59,8 @@ const Contact = () => {
     <Paper className={classes.root}>
       <Paper className={classes.inner}>
         {/* <Grid item xs={12}> */}
-        <Paper className={classes.secondPaper}>
-          <Typography variant="h5">Contact Jesse</Typography>
-          <div className={classes.horizontalLine}></div>
-        </Paper>
+        <Typography variant="h5">Contact Jesse</Typography>
+        <div className={classes.horizontalLine}></div>
         <Typography variant="h6">Email: rootmazur@gmail.com</Typography>
         <Typography variant="h6">Phone/Text: (216)262.2023</Typography>
         {/* </Grid> */}
