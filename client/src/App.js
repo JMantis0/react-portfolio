@@ -29,7 +29,9 @@ import ProjectPage from "./pages/ProjectPage";
 // Component definition
 function App() {
   // pageState and setPageState are passed to components that link to other pages within the React Router
-  const [pageState, setPageState] = useState("/");
+  const [pageState, setPageState] = useState(
+    `/${window.location.href.split("/").pop()}`
+  );
   const [slideDirection, setSlideDirection] = useState("right");
   const [itemTabState, setItemTabState] = useState("Weather Dashboard");
   const [slidingIn, setSlidingIn] = useState(true);

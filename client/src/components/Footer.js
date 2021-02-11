@@ -150,7 +150,7 @@ const Footer = ({
         <a
           className={classes.ftrBtn}
           target="_blank"
-          href="https://www.linkedin.com/in/jesse-mazur/"
+          href="https://www.linkedin.com/in/jesse-mazur/" 
         >
           <LinkedInIcon className={classes.ftrIcon} />
           {"LinkedIn "}

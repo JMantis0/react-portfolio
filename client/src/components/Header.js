@@ -10,6 +10,7 @@ import Paper from "@material-ui/core/Paper";
 import MobileDrawer from "./MobileDrawer";
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
+var classNames = require('classnames');
 
 const Header = ({
   // classes,
@@ -24,7 +25,6 @@ const Header = ({
   //  use setPageState prop from App.js to route.
 
   const useStyles = makeStyles((mainTheme) => ({
-    //  headerBanner is underneath the Appbar, above the pages.
     headerBanner: {
       //   [theme.breakpoints.down("xs")]: {
       //     margin: "35px 0 0 0",
@@ -33,7 +33,6 @@ const Header = ({
       marginBottom: "35px",
       width: "100%",
     },
-    //  headerImage is the avatar-like circular photo in the header
     headerImage: {
       width: "100px",
       height: "100px",
@@ -52,13 +51,12 @@ const Header = ({
       borderRadius: 5,
       marginTop: "10px",
       padding: "2px 0 0 0",
-      // height: "100px",
       width: "100%",
       minWidth: "10px",
-      padding: "0 0 20px 0"
+      padding: "0 0 20px 0",
     },
     tabsGridItem: {
-      marginTop: "50px",
+      marginTop: "20px",
       width: "100%",
     },
     lastTab: {
@@ -76,16 +74,23 @@ const Header = ({
       fontWeight: 600,
       color: mainTheme.palette.text.primary,
       backgroundColor: "#ffffff",
-      // borderRadius: 8,
       opacity: "100%",
       border: "8px solid #1ff0ff",
       marginLeft: "3px",
-      // "&:hover": {
-      //   backgroundColor: "black",
-      //   color: "white",
-      // },
+      marginTop: "3px",
     },
-    selectedTab: {},
+    subTab: {
+      textTransform: "capitalize",
+      minWidth: "1px",
+      width: "19%",
+      height: "100%",
+      fontWeight: 600,
+      color: mainTheme.palette.text.primary,
+      backgroundColor: "#ffffff",
+      opacity: "100%",
+      border: "3px solid #1ff0ff",
+      marginLeft: "3px",
+    },
     bannerParagraph: {
       margin: 0,
       fontSize: "24px",
@@ -95,24 +100,59 @@ const Header = ({
       textDecorationStyle: "dotted",
     },
     tabs: {
-      width: "75%",
-      margin: "0 0 0 15%",
+      width: "95%",
+      margin: "0 0 0 5%",
       //   -ms-transform: skewX(-20deg);
       // -webkit-transform: skewX(-20deg);
       transform: "skewX(-20deg)",
       [mainTheme.breakpoints.between("960", "1280")]: {
-        width: "70%",
-        margin: "0 0 0 25%",
+        width: "90%",
+        margin: "0 0 0 10%",
       },
       [mainTheme.breakpoints.between("1280", "1920")]: {
-        width: "50%",
-        margin: "0 0 0 45%",
+        width: "90%",
+        margin: "0 0 0 10%",
+      },
+    },
+    subTabs: {
+      height: "30px!important",
+      minHeight: 0,
+      "& *": {
+        height: "30px!important",
+        minHeight: 0,
+      },
+      width: "95%",
+      margin: "0 0 0 33%",
+      //   -ms-transform: skewX(-20deg);
+      // -webkit-transform: skewX(-20deg);
+      transform: "skewX(20deg)",
+      [mainTheme.breakpoints.between("960", "1280")]: {
+        width: "90%",
+        margin: "0 0 0 38%",
+      },
+      [mainTheme.breakpoints.between("1280", "1920")]: {
+        width: "90%",
+        margin: "0 0 0 38%",
       },
     },
     tabLabel: {
       transform: "skewX(20deg)",
       fontSize: "22px",
       fontWeight: 600,
+      [mainTheme.breakpoints.between("600", "800")]: {
+        fontSize: "2.5vw",
+      },
+    },
+    subTabLabel: {
+      height: "100%",
+      marginTop: "3px",
+      transform: "skewX(-20deg)",
+      fontSize: "18px",
+      fontWeight: 600,
+      [mainTheme.breakpoints.between("600", "800")]: {
+        fontSize: "15px",
+        marginTop: "5px",
+      },
     },
     hiddenBelow525: {
       display: "static",
@@ -184,7 +224,6 @@ const Header = ({
     }
     setSlidingIn(false);
     setPageState(newValue);
-
     setTimeout(() => {
       if (orderMapper[newValue] < orderMapper[pageState]) {
         setSlideDirection("right");
@@ -220,10 +259,46 @@ const Header = ({
                 </Hidden>
                 <Hidden xsDown>
                   <Tabs
+                    onChange={handleChange}
+                    aria-label="header navigation tabs"
+                    indicatorColor={"none"}
+                    className={classes.subTabs}
+                  >
+                    <Tab
+                      className={classes.subTab}
+                      href="https://github.com/JMantis0/"
+                      target="_blank"
+                      label={
+                        <Typography className={classes.subTabLabel}>
+                          GitHub
+                        </Typography>
+                      }
+                    />
+                    <Tab
+                      className={classes.subTab}
+                      href="https://www.linkedin.com/in/jesse-mazur/"
+                      target="_blank"
+                      label={
+                        <Typography className={classes.subTabLabel}>
+                          LinkedIn
+                        </Typography>
+                      }
+                    />
+                    <Tab
+                      className={classes.subTab}
+                      href="https://www.facebook.com/jesmaz/"
+                      target="_blank"
+                      label={
+                        <Typography className={classes.subTabLabel}>
+                          Facebook
+                        </Typography>
+                      }
+                    />
+                  </Tabs>
+                  <Tabs
                     value={pageState}
                     onChange={handleChange}
                     aria-label="header navigation tabs"
-                    id="<Tabs>"
                     indicatorColor={"none"}
                     className={classes.tabs}
                   >
@@ -238,6 +313,7 @@ const Header = ({
                       }
                     />
                     <Tab
+                     
                       className={classes.tab}
                       value="/portfolio"
                       label={
