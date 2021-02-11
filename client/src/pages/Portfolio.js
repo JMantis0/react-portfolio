@@ -10,7 +10,7 @@ const useStyles = makeStyles((mainTheme) => ({
   },
   outerPaper: {
     backgroundImage: "url(/assets/images/pastelTriangles.jpg)",
-    backgroundSize: "cover",
+    // backgroundSize: "cover",
     padding: "5%",
     marginBottom: "50px",
   },

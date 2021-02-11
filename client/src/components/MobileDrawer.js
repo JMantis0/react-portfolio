@@ -27,6 +27,43 @@ import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles({
   list: {
     width: 200,
+    backgroundColor: "white",
+  },
+  listItem: {
+    borderTop: "1px solid #1ff0ff",
+  },
+  drawerIcon: {
+    border: "8px solid #1ff0ff",
+    backgroundColor: "#ffffff",
+    margin: "0 10px 0 0",
+    "&:hover": {
+      backgroundColor: "#ffffff",
+    },
+    "&:active": {
+      backgroundColor: "#000000",
+      color: "#eeff00",
+    },
+  },
+  outer: {
+    backgroundColor: "white",
+  },
+  accountIcon: {
+    color: "black",
+  },
+  homeIcon: {
+    color: "#fbe341",
+  },
+  portfolioIcon: {
+    color: "#ff936c",
+  },
+  aboutIcon: {
+    color: "#fd3661",
+  },
+  resumeIcon: {
+    color: "#1899b8",
+  },
+  contactIcon: {
+    color: "#c2448d",
   },
   fullList: {
     width: "auto",
@@ -66,9 +103,9 @@ const MobileDrawer = ({ setPageState, itemTabState }) => {
     >
       <List>
         {["Jesse Mazur"].map((text, index) => (
-          <ListItem button key={text}>
+          <ListItem className={classes.listItem} button key={text}>
             <ListItemIcon>
-              <AccountCircleTwoToneIcon />
+              <AccountCircleTwoToneIcon className={classes.accountIcon} />
             </ListItemIcon>
             <ListItemText primary={text} />
           </ListItem>
@@ -79,6 +116,7 @@ const MobileDrawer = ({ setPageState, itemTabState }) => {
         {["Home", "Portfolio", "About", "Resume", "Contact"].map(
           (text, index) => (
             <ListItem
+              className={classes.listItem}
               button
               key={text}
               onClick={() => {
@@ -91,12 +129,22 @@ const MobileDrawer = ({ setPageState, itemTabState }) => {
                 }
               }}
             >
-              <ListItemIcon>
-                {text === "Home" ? <HomeTwoToneIcon /> : null}
-                {text === "Portfolio" ? <FolderSpecialTwoToneIcon /> : null}
-                {text === "About" ? <InfoTwoToneIcon /> : null}
-                {text === "Resume" ? <DescriptionTwoToneIcon /> : null}
-                {text === "Contact" ? <ContactMailTwoToneIcon /> : null}
+              <ListItemIcon className={classes.listIcon}>
+                {text === "Home" ? (
+                  <HomeTwoToneIcon className={classes.homeIcon} />
+                ) : null}
+                {text === "Portfolio" ? (
+                  <FolderSpecialTwoToneIcon className={classes.portfolioIcon} />
+                ) : null}
+                {text === "About" ? (
+                  <InfoTwoToneIcon className={classes.aboutIcon} />
+                ) : null}
+                {text === "Resume" ? (
+                  <DescriptionTwoToneIcon className={classes.resumeIcon} />
+                ) : null}
+                {text === "Contact" ? (
+                  <ContactMailTwoToneIcon className={classes.contactIcon} />
+                ) : null}
               </ListItemIcon>
               {/* primary prop is what text on actual element button inside drawer*/}
               <ListItemText primary={text} />
@@ -115,7 +163,10 @@ const MobileDrawer = ({ setPageState, itemTabState }) => {
           {["right"].map((anchor) => (
             <React.Fragment key={anchor}>
               {/* Here is where to implement Hamburger Icon or Menu Icon */}
-              <Button onClick={toggleDrawer(anchor, true)}>
+              <Button
+                className={classes.drawerIcon}
+                onClick={toggleDrawer(anchor, true)}
+              >
                 <MenuIcon />
               </Button>
               <Drawer
