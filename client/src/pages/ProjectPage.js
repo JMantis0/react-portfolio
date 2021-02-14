@@ -13,7 +13,6 @@ import { useHistory } from "react-router-dom";
 const useStyles = makeStyles((mainTheme) => ({
   root: {
     marginBottom: "50px",
-    
   },
   outer: {
     backgroundImage: "url(/assets/images/pastelTriangles.jpg)",
@@ -21,8 +20,10 @@ const useStyles = makeStyles((mainTheme) => ({
     marginBottom: "50px",
   },
   inner: {
-    backgroundColor: mainTheme.palette.background.paper,
-    // opacity: "75%",
+    // backgroundImage: "url(/assets/images/BeigeScratches.jpg)",
+
+    // backgroundColor: mainTheme.palette.background.paper,
+    opacity: "90%",
     padding: "2.5%",
   },
   button: {},
@@ -36,13 +37,28 @@ const useStyles = makeStyles((mainTheme) => ({
   },
   pinkButton: {
     textTransform: "capitalize",
-    background: `linear-gradient(45deg, ${mainTheme.palette.colors.pink} 30%, #FF8E53 90%)`,
-    border: 0,
+    // background: `linear-gradient(45deg, white 30%, #FF8E53 90%)`,
+    background: "#white",
+    border: "3px solid #1ff0ff",
     borderRadius: 3,
     boxShadow: "0 3px 5px 2px rgba(255, 105, 135, .3)",
-    color: "white",
+    color: "black",
     height: 40,
     padding: "0 30px",
+    opacity: "100%!important",
+    "&:hover": {
+      backgroundColor: "black",
+      color: "YELLOW",
+    },
+    "&:active": {
+      backgroundColor: "yellow",
+      color: "black",
+    },
+  },
+  link: {
+    "&:hover": {
+      color: "yellow",
+    },
   },
   dog: {
     fontSize: "100px",
@@ -98,10 +114,8 @@ const ProjectPage = ({
             <h1 style={{ display: "inline" }}>{itemPageState.title}</h1>
             <Button
               variant="contained"
-              // className={classes.pinkButton}
               classes={{ root: classes.pinkButton }}
               style={{ margin: "0 0 10px 10px" }}
-              // style={{ display: "inline" }}
               onClick={() => {
                 handleClick();
               }}
@@ -127,10 +141,8 @@ const ProjectPage = ({
               <ul>
                 <li>
                   <a
-                    // variant="contained"
+                    className={classes.link}
                     target="_blank"
-                    // href={itemPageState.liveLink}
-                    // className={classes.pinkButton}
                     href={itemPageState.liveLink}
                   >
                     {itemPageState.title} Site
@@ -139,8 +151,7 @@ const ProjectPage = ({
                 {/* Repository Link */}
                 <li>
                   <a
-                    // variant="contained"
-                    // className={classes.pinkButton}
+                    className={classes.link}
                     target="_blank"
                     href={itemPageState.repoLink}
                   >

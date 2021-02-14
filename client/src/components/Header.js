@@ -10,7 +10,7 @@ import Paper from "@material-ui/core/Paper";
 import MobileDrawer from "./MobileDrawer";
 import { makeStyles, createMuiTheme } from "@material-ui/core/styles";
 import { useHistory } from "react-router-dom";
-var classNames = require('classnames');
+var classNames = require("classnames");
 
 const Header = ({
   // classes,
@@ -34,13 +34,17 @@ const Header = ({
       width: "100%",
     },
     headerImage: {
-      width: "100px",
-      height: "100px",
+      width: "12vw",
+      height: "12vw",
       position: "relative",
       top: "15px",
-      left: "10%",
+      left: "20%",
       [mainTheme.breakpoints.up("1300")]: {
-        left: "12%",
+        left: "25%",
+      },
+      [mainTheme.breakpoints.down("937")]: {
+        width: "112px",
+        height: "112px",
       },
     },
     appBar: {
@@ -54,6 +58,7 @@ const Header = ({
       width: "100%",
       minWidth: "10px",
       padding: "0 0 20px 0",
+      maxHeight: "135px",
     },
     tabsGridItem: {
       marginTop: "20px",
@@ -259,7 +264,6 @@ const Header = ({
                 </Hidden>
                 <Hidden xsDown>
                   <Tabs
-                    onChange={handleChange}
                     aria-label="header navigation tabs"
                     indicatorColor={"none"}
                     className={classes.subTabs}
@@ -313,7 +317,6 @@ const Header = ({
                       }
                     />
                     <Tab
-                     
                       className={classes.tab}
                       value="/portfolio"
                       label={

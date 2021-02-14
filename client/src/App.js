@@ -136,6 +136,7 @@ function App() {
     },
     outer: {
       backgroundImage: "url(/assets/images/triangles.jpg)",
+      backgroundSize: "cover",
     },
     tabsGrid: {},
   }));
