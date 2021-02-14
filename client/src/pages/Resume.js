@@ -26,6 +26,8 @@ function Resume(props) {
       backgroundImage: "url(/assets/images/AquaShapes.jpg)",
       padding: "5%",
       marginBottom: "50px",
+      width: "85%",
+      marginLeft: "7.5%",
     },
     inner: {
       backgroundColor: mainTheme.palette.background.paper,
