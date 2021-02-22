@@ -4,7 +4,7 @@ import { Document, Page } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import resume from "../assets/pdf/jesse-mazur-resume.pdf";
+import resume from "../assets/pdf/Technical Resume - Jesse Mazur.pdf";
 import { pdfjs } from "react-pdf";
 import { SizeMe, withSize } from "react-sizeme";
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
@@ -61,6 +61,12 @@ function Resume(props) {
                       className={classes.resume}
                       scale={1}
                       pageNumber={pageNumber}
+                    />
+                    <Page
+                      width={size.width}
+                      className={classes.resume}
+                      scale={1}
+                      pageNumber={2}
                     />
                   </Document>
                 </div>
