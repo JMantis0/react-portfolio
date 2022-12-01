@@ -1,6 +1,3 @@
-// import axios for RESTfulness
-import axios from "axios";
-
 // React Imports
 import React from "react";
 import { useState, useRef } from "react";
