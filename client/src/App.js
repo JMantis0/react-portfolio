@@ -14,11 +14,11 @@ import Slide from "@material-ui/core/Slide";
 //  React Router Dom imports
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-// custom component imports
+// Custom component imports
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-// page imports
+// Page imports
 import Home from "./pages/Home";
 import Resume from "./pages/Resume";
 import Portfolio from "./pages/Portfolio";
